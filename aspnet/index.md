@@ -6,12 +6,12 @@ author: Rick-Anderson
 ms.author: riande
 title: Documentazione di ASP.NET
 ms.date: 08/24/2018
-description: Informazioni su come sviluppatore per ASP.NET e applicazioni Web ASP.NET. Ottenere la documentazione, il codice di esempio, le esercitazioni e altro ancora.
+description: Informazioni su come sviluppatore per ASP.NET e applicazioni Web ASP.NET. Ottenere la documentazione, il codice di esempio, le esercitazioni e altro.
 ms.openlocfilehash: 6309704444d60d42d49c3a8f1683045dc503e761
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 04/06/2020
 ms.locfileid: "78616424"
 ---
 <!-- markdownlint-disable MD033 -->
@@ -80,7 +80,7 @@ ms.locfileid: "78616424"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Riferimento API</h3>
+                                                    <h3>Informazioni di riferimento sulle API</h3>
                                                     <p>Esplorare la libreria di classi di ASP.NET Core.</p>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@ ms.locfileid: "78616424"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Concetti fondamentali</h3>
+                                                    <h3>Nozioni fondamentali</h3>
                                                     <p>Informazioni di base su ASP.NET Core.</p>
                                                 </div>
                                             </div>
@@ -147,13 +147,13 @@ ms.locfileid: "78616424"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contributi agli esempi e alla documentazione ASP.NET Core</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuire agli esempi e alla documentazione ASP.NET Core</a></p>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#core_tutorials">Esercitazioni</a>
+                        <a href="#core_tutorials">Tutorial</a>
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
@@ -278,8 +278,8 @@ ms.locfileid: "78616424"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contributi agli esempi e alla documentazione ASP.NET Core</a></p>
-                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Versione di Visual Studio 2015/project.json della documentazione</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuire agli esempi e alla documentazione ASP.NET Core</a></p>
+                                    <p><a href="https://docs.microsoft.com/dotnet/articles/project-json">Trovare la versione di Visual Studio 2015/project.json della documentazione</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -433,7 +433,7 @@ ms.locfileid: "78616424"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contributi agli esempi e alla documentazione ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuire agli esempi e alla documentazione ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
@@ -562,13 +562,13 @@ ms.locfileid: "78616424"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contributi agli esempi e alla documentazione ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuire agli esempi e alla documentazione ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#aspnet_tutorials">Esercitazioni</a>
+                        <a href="#aspnet_tutorials">Tutorial</a>
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
@@ -695,7 +695,7 @@ ms.locfileid: "78616424"
                             </li>
                             <li class="fullSpan">
                                 <div class="container footer">
-                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contributi agli esempi e alla documentazione ASP.NET</a></p>
+                                    <p><a href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribuire agli esempi e alla documentazione ASP.NET</a></p>
                                 </div>
                             </li>
                         </ul>
