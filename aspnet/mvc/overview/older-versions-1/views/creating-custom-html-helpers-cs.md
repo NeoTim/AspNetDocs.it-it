@@ -1,37 +1,37 @@
 ---
-uid: aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
-title: Creazione di helper HTML personalizzati (C#) | Microsoft Docs
+uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
+title: Creazione di helper HTML personalizzati Documenti Microsoft
 author: microsoft
-description: L'obiettivo di questa esercitazione è illustrare come creare helper HTML personalizzati che è possibile usare nelle visualizzazioni MVC. Sfruttando l'helper HTML...
+description: L'obiettivo di questa esercitazione è illustrare come è possibile creare helper HTML personalizzati che è possibile usare all'interno delle visualizzazioni MVC. Sfruttando HTML Helper...
 ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 264ff9850bad397826b45649d52fbfefafc53a01
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 7a2e5a5b42aa5bf267a42fef2fcad7022001ce6f
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78600240"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675335"
 ---
 # <a name="creating-custom-html-helpers-c"></a>Creazione di helper HTML personalizzati (C#)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-[Scaricare PDF](https://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
+[Scarica il PDF](https://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
 
-> L'obiettivo di questa esercitazione è illustrare come creare helper HTML personalizzati che è possibile usare nelle visualizzazioni MVC. Sfruttando gli helper HTML, è possibile ridurre la quantità di tipi noiosi di tag HTML che è necessario eseguire per creare una pagina HTML standard.
+> L'obiettivo di questa esercitazione è illustrare come è possibile creare helper HTML personalizzati che è possibile usare all'interno delle visualizzazioni MVC. Sfruttando gli helper HTML, è possibile ridurre la quantità di noiosa digitazione di tag HTML che è necessario eseguire per creare una pagina HTML standard.
 
-L'obiettivo di questa esercitazione è illustrare come creare helper HTML personalizzati che è possibile usare nelle visualizzazioni MVC. Sfruttando gli helper HTML, è possibile ridurre la quantità di tipi noiosi di tag HTML che è necessario eseguire per creare una pagina HTML standard.
+L'obiettivo di questa esercitazione è illustrare come è possibile creare helper HTML personalizzati che è possibile usare all'interno delle visualizzazioni MVC. Sfruttando gli helper HTML, è possibile ridurre la quantità di noiosa digitazione di tag HTML che è necessario eseguire per creare una pagina HTML standard.
 
-Nella prima parte di questa esercitazione vengono descritti alcuni degli helper HTML esistenti inclusi in ASP.NET MVC Framework. Vengono quindi descritti due metodi per la creazione di helper HTML personalizzati: viene illustrato come creare helper HTML personalizzati creando un metodo statico e creando un metodo di estensione.
+Nella prima parte di questa esercitazione, descrivere alcuni degli helper HTML esistenti inclusi con il framework di MVC ASP.NET. Successivamente, descrivo due metodi di creazione di helper HTML personalizzati: spiego come creare helper HTML personalizzati creando un metodo statico e creando un metodo di estensione.
 
 ## <a name="understanding-html-helpers"></a>Informazioni sugli helper HTML
 
-Un helper HTML è semplicemente un metodo che restituisce una stringa. La stringa può rappresentare qualsiasi tipo di contenuto desiderato. Ad esempio, è possibile usare gli helper HTML per eseguire il rendering di tag HTML standard come HTML `<input>` e tag di `<img>`. È anche possibile usare gli helper HTML per eseguire il rendering di contenuto più complesso, ad esempio una scheda o una tabella HTML di dati del database.
+Un HTML Helper è solo un metodo che restituisce una stringa. La stringa può rappresentare qualsiasi tipo di contenuto desiderato. Ad esempio, è possibile utilizzare gli helper HTML `<input>` `<img>` per eseguire il rendering di tag HTML standard come HTML e tag. È inoltre possibile utilizzare gli helper HTML per eseguire il rendering di contenuto più complesso, ad esempio una striscia di schede o una tabella HTML di dati del database.
 
-Il framework ASP.NET MVC include il seguente set di helper HTML standard (non è un elenco completo):
+Il framework di ASP.NET riferimento MVC include il set di helper HTML standard (questo non è un elenco completo):
 
 - Html.ActionLink()
 - Html.BeginForm()
@@ -45,77 +45,77 @@ Il framework ASP.NET MVC include il seguente set di helper HTML standard (non è
 - Html.TextArea()
 - Html.TextBox()
 
-Si consideri, ad esempio, il modulo nel listato 1. Questo form viene sottoposto a rendering con l'aiuto di due degli helper HTML standard (vedere la figura 1). Questo modulo usa i metodi di supporto `Html.BeginForm()` e `Html.TextBox()` per eseguire il rendering di un semplice form HTML.
+Si consideri, ad esempio, il modulo nel listato 1. Questo form viene eseguito il rendering con l'aiuto di due degli helper HTML standard (vedere Figura 1). Questo modulo `Html.BeginForm()` usa `Html.TextBox()` i metodi e Helper per eseguire il rendering di un semplice modulo HTML.
 
-[![pagina sottoposta a rendering con helper HTML](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
+[![Pagina di rendering con helper HTML](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
 
-**Figura 01**: rendering della pagina con helper HTML ([fare clic per visualizzare l'immagine con dimensioni complete](creating-custom-html-helpers-cs/_static/image3.png))
+**Figura 01**: Pagina di cui è stato eseguito il rendering con elementi di supporto HTML ([Fare clic per visualizzare l'immagine](creating-custom-html-helpers-cs/_static/image3.png)a dimensioni intere)
 
-**Listato 1-`Views\Home\Index.aspx`**
+**Lista torto 1 –`Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample1.aspx)]
 
-Il metodo helper HTML. BeginForm () viene usato per creare i tag HTML `<form>` di apertura e chiusura. Si noti che il metodo `Html.BeginForm()` viene chiamato all'interno di un'istruzione using. L'istruzione using garantisce che il tag `<form>` venga chiuso alla fine del blocco using.
+Il metodo Helper Di Html.BeginForm() viene utilizzato `<form>` per creare i tag HTML di apertura e chiusura. Si noti che il `Html.BeginForm()` metodo viene chiamato all'interno di un'istruzione using. L'istruzione using assicura `<form>` che il tag venga chiuso alla fine del blocco using.
 
-Se si preferisce, anziché creare un blocco using, è possibile chiamare il metodo helper HTML. EndForm () per chiudere il tag `<form>`. Usare qualsiasi approccio per la creazione di un tag `<form>` di apertura e chiusura che sembra più intuitivo.
+Se preferite, invece di creare un using block, potete chiamare `<form>` il metodo Helper Html.EndForm() per chiudere il tag. Usa qualsiasi approccio per creare `<form>` un tag di apertura e chiusura che ti sembri più intuitivo.
 
-Il `Html.TextBox()` metodi helper vengono usati nel listato 1 per eseguire il rendering dei tag HTML `<input>`. Se si seleziona Visualizza origine nel browser, viene visualizzata l'origine HTML nel listato 2. Si noti che l'origine contiene tag HTML standard.
+I `Html.TextBox()` metodi helper vengono utilizzati `<input>` nel listato 1 per eseguire il rendering dei tag HTML. Se si seleziona visualizza origine nel browser, l'origine HTML viene visualizzata nel listato 2. Si noti che l'origine contiene tag HTML standard.
 
 > [!IMPORTANT]
-> Si noti che viene eseguito il rendering dell'helper `Html.TextBox()`-HTML con tag `<%= %>` invece dei tag `<% %>`. Se non si include il segno di uguale, non viene eseguito il rendering di alcun elemento nel browser.
+> si noti che il `<%= %>` -HTML `<% %>` Helper viene eseguito il `Html.TextBox()`rendering con tag anziché tag. Se non si include il segno di uguale, non viene eseguito il rendering di alcun elemento nel browser.
 
-Il Framework di MVC ASP.NET contiene un piccolo set di helper. È molto probabile che sia necessario estendere il framework MVC con gli helper HTML personalizzati. Nella parte restante di questa esercitazione vengono illustrati due metodi per la creazione di helper HTML personalizzati.
+Il framework di ASP.NET MVC contiene un piccolo set di helper. Molto probabilmente, sarà necessario estendere il framework MVC con helper HTML personalizzati. Nella parte restante di questa esercitazione vengono appesi due metodi di creazione di helper HTML personalizzati.
 
-**Listato 2: `Index.aspx Source`**
+**Listato 2 –`Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample2.aspx)]
 
-### <a name="creating-html-helpers-with-static-methods"></a>Creazione di helper HTML con metodi statici
+### <a name="creating-html-helpers-with-static-methods"></a>Creazione di helper HTML con metodi staticiCreating HTML Helpers with Static Methods
 
-Il modo più semplice per creare un nuovo helper HTML consiste nel creare un metodo statico che restituisca una stringa. Si supponga, ad esempio, che si decida di creare un nuovo helper HTML che esegue il rendering di un tag HTML `<label>`. Per eseguire il rendering di una `<label>`, è possibile utilizzare la classe nel listato 2.
+Il modo più semplice per creare un nuovo helper HTML consiste nel creare un metodo statico che restituisce una stringa. Si supponga, ad esempio, che si decide di `<label>` creare un nuovo helper HTML che esegue il rendering di un tag HTML. È possibile utilizzare la classe nel `<label>` listato 2 per eseguire il rendering di un file .
 
-**Listato 2: `Helpers\LabelHelper.cs`**
+**Listato 2 –`Helpers\LabelHelper.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample3.cs)]
 
-Non c'è niente di speciale sulla classe nel listato 2. Il metodo `Label()` restituisce semplicemente una stringa.
+Non c'è niente di speciale nella classe nella lista 2. Il `Label()` metodo restituisce semplicemente una stringa.
 
-La vista index modificata nel listato 3 usa il `LabelHelper` per eseguire il rendering dei tag HTML `<label>`. Si noti che la vista include una direttiva `<%@ imports %>` che importa lo spazio dei nomi `Application1.Helpers`.
+La vista Indice modificata `LabelHelper` nel listato 3 utilizza la per eseguire il rendering dei tag HTML. `<label>` Si noti che `<%@ imports %>` la visualizzazione `Application1.Helpers` include una direttiva che importa lo spazio dei nomi.
 
-**Listato 2: `Views\Home\Index2.aspx`**
+**Listato 2 –`Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample4.aspx)]
 
-### <a name="creating-html-helpers-with-extension-methods"></a>Creazione di helper HTML con i metodi di estensione
+### <a name="creating-html-helpers-with-extension-methods"></a>Creazione di helper HTML con metodi di estensioneCreating HTML Helpers with Extension Methods
 
-Se si desidera creare helper HTML che funzionano esattamente come gli helper HTML standard inclusi nel framework ASP.NET MVC, è necessario creare i metodi di estensione. I metodi di estensione consentono di aggiungere nuovi metodi a una classe esistente. Quando si crea un metodo helper HTML, si aggiungono nuovi metodi alla classe HtmlHelper rappresentata dalla proprietà HTML di una visualizzazione.
+Se si desidera creare helper HTML che funzionano come gli helper HTML standard inclusi nel framework di ASP.NET MVC, è necessario creare metodi di estensione. I metodi di estensione consentono di aggiungere nuovi metodi a una classe esistente. Quando si crea un metodo HTML Helper, si aggiungono nuovi metodi alla classe HtmlHelper rappresentata dalla proprietà Html di una visualizzazione.
 
-La classe nel listato 3 aggiunge un metodo di estensione alla classe `HtmlHelper` denominata `Label()`. Ci sono un paio di aspetti da notare in merito a questa classe. Si noti prima di tutto che la classe è una classe statica. È necessario definire un metodo di estensione con una classe statica.
+La classe nel listato 3 `HtmlHelper` aggiunge `Label()`un metodo di estensione alla classe denominata . Ci sono un paio di cose che dovresti notare su questa classe. In primo luogo, si noti che la classe è una classe statica. È necessario definire un metodo di estensione con una classe statica.
 
-In secondo luogo, si noti che il primo parametro del `Label()` metodo è preceduto dalla parola chiave `this`. Il primo parametro di un metodo di estensione indica la classe estesa dal metodo di estensione.
+In secondo luogo, si `Label()` noti che il `this`primo parametro del metodo è preceduto dalla parola chiave . Il primo parametro di un metodo di estensione indica la classe che il metodo di estensione estende.
 
-**Listato 3-`Helpers\LabelExtensions.cs`**
+**Lista 3 –`Helpers\LabelExtensions.cs`**
 
 [!code-csharp[Main](creating-custom-html-helpers-cs/samples/sample5.cs)]
 
-Dopo aver creato un metodo di estensione e aver compilato correttamente l'applicazione, il metodo di estensione viene visualizzato in Visual Studio IntelliSense come tutti gli altri metodi di una classe (vedere la figura 2). L'unica differenza è che i metodi di estensione vengono visualizzati con un simbolo speciale accanto ad essi (icona di una freccia verso il basso).
+Dopo aver creato un metodo di estensione e compilare correttamente l'applicazione, il metodo di estensione viene visualizzato in Visual Studio Intellisense come tutti gli altri metodi di una classe (vedere Figura 2). L'unica differenza è che i metodi di estensione vengono visualizzati con un simbolo speciale accanto a loro (un'icona di una freccia verso il basso).
 
-[![usando il metodo di estensione HTML. Label ()](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
+[![Utilizzo del metodo di estensione Html.Label()](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
 
-**Figura 02**: uso del metodo di estensione HTML. Label () ([fare clic per visualizzare l'immagine con dimensioni complete](creating-custom-html-helpers-cs/_static/image6.png))
+**Figura 02**: Utilizzo del metodo di estensione Html.Label() ([Fare clic per visualizzare l'immagine](creating-custom-html-helpers-cs/_static/image6.png)a dimensioni intere )
 
-La vista index modificata nel listato 4 usa il metodo di estensione HTML. Label () per eseguire il rendering di tutti i tag `<label>`.
+La vista Index modificata nel listato 4 utilizza il `<label>` metodo di estensione Html.Label() per eseguire il rendering di tutti i relativi tag.
 
-**Listato 4-`Views\Home\Index3.aspx`**
+**Lista 4 –`Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-cs/samples/sample6.aspx)]
 
 ## <a name="summary"></a>Riepilogo
 
-In questa esercitazione sono stati appresi due metodi per la creazione di helper HTML personalizzati. In primo luogo, si è appreso come creare un helper HTML `Label()` personalizzato creando un metodo statico che restituisce una stringa. A questo punto si è appreso come creare un metodo di helper HTML `Label()` personalizzato creando un metodo di estensione nella classe `HtmlHelper`.
+In questa esercitazione sono stati acquisiti due metodi per creare helper HTML personalizzati. In primo luogo, si `Label()` è appreso come creare un helper HTML personalizzato creando un metodo statico che restituisce una stringa. Successivamente, hai imparato a `Label()` creare un metodo helper HTML `HtmlHelper` personalizzato creando un metodo di estensione nella classe.
 
-In questa esercitazione si è concentrato sulla creazione di un metodo helper HTML estremamente semplice. Tenere presente che un helper HTML può essere complicato come si desidera. È possibile compilare helper HTML che eseguono il rendering di contenuti avanzati, ad esempio visualizzazioni ad albero, menu o tabelle di dati del database.
+In questo tutorial, mi sono concentrato sulla creazione di un metodo HTML Helper estremamente semplice. Rendersi conto che un HTML Helper può essere complicato come si desidera. È possibile creare helper HTML che eseguono il rendering di contenuto avanzato, ad esempio visualizzazioni struttura ad albero, menu o tabelle di dati del database.
 
 > [!div class="step-by-step"]
-> [Precedente](asp-net-mvc-views-overview-cs.md)
-> [Successivo](using-the-tagbuilder-class-to-build-html-helpers-cs.md)
+> [Successivo](asp-net-mvc-views-overview-cs.md)
+> [precedente](using-the-tagbuilder-class-to-build-html-helpers-cs.md)

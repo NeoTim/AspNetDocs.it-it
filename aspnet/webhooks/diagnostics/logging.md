@@ -1,26 +1,26 @@
 ---
 uid: webhooks/diagnostics/logging
-title: Registrazione webhook ASP.NET | Microsoft Docs
+title: ASP.NET di registrazione di WebHooks Documenti Microsoft
 author: rick-anderson
-description: Come eseguire la registrazione nei webhook ASP.NET.
+description: Come eseguire la registrazione in ASP.NET WebHook.
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: f71bc442-5f80-481b-a32c-a0ec18dee9d6
-ms.openlocfilehash: a05b32c4a8f9577bcf6170bd19a9e440b1aeb75b
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 350732acbd3a73bddb8f8b20dcd50c225d89be82
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78547880"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675349"
 ---
-# <a name="aspnet-webhooks-logging"></a>Registrazione webhook ASP.NET
+# <a name="aspnet-webhooks-logging"></a>ASP.NET di registrazione di WebHook
 
-Microsoft ASP.NET webhook usa la registrazione come modo per segnalare problemi e problemi. Per impostazione predefinita, i log vengono scritti usando [System. Diagnostics. Trace](https://msdn.microsoft.com/library/system.diagnostics.trace) , dove possono essere modificati usando i [listener di traccia](https://msdn.microsoft.com/library/system.diagnostics.tracelistener.aspx) come qualsiasi altro flusso di log.
+Microsoft ASP.NET WebHooks utilizza la registrazione per segnalare problemi e problemi. Per impostazione predefinita i log vengono scritti utilizzando [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace) in cui possono essere mandati utilizzando [i listener](https://msdn.microsoft.com/library/system.diagnostics.tracelistener.aspx) di traccia come qualsiasi altro flusso di log.
 
-Quando si distribuisce un'applicazione Web come app Web di Azure, i log vengono selezionati automaticamente e possono essere gestiti insieme a qualsiasi altra registrazione [System. Diagnostics. Trace](https://msdn.microsoft.com/library/system.diagnostics.trace) . Per informazioni dettagliate, vedere [abilitare la registrazione diagnostica per le app Web nel servizio app Azure](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/)
+Quando si distribuisce l'applicazione Web come app Web di Azure, i log vengono raccolti automaticamente e possono essere gestiti insieme a qualsiasi altra registrazione [System.Diagnostics.Trace.When](https://msdn.microsoft.com/library/system.diagnostics.trace) deploying your Web Application as an Azure Web App, the logs are automatically picked up and can be managed together with any other System.Diagnostics.Trace logging. Per informazioni dettagliate, vedere [Abilitare la registrazione diagnostica per le app Web nel servizio app](https://azure.microsoft.com/documentation/articles/web-sites-enable-diagnostic-log/) di AzureFor details, please see Enable diagnostics logging for web apps in Azure App Service
 
-Inoltre, i log possono essere ottenuti direttamente dall'interno di Visual Studio, come descritto in [risolvere i problemi di un'app Web nel servizio app Azure usando Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs).
+Inoltre, i log possono essere ottenuti direttamente dall'interno di Visual Studio come descritto in Risolvere i problemi di [un'app Web nel servizio app di Azure usando Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs).
 
-## <a name="redirecting-logs"></a>Reindirizzamento dei log
+## <a name="redirecting-logs"></a>Reindirizzamento dei registri
 
-Anziché scrivere log in [System. Diagnostics. Trace](https://msdn.microsoft.com/library/system.diagnostics.trace), è possibile fornire un'implementazione di registrazione alternativa che possa accedere direttamente a un gestore di log, ad esempio [log4net](http://logging.apache.org/log4net/) e [NLog](http://nlog-project.org/). È sufficiente fornire un'implementazione di [ILogger](https://github.com/aspnet/AspNetWebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Common/Diagnostics/ILogger.cs) e registrarla con un motore di inserimento delle dipendenze a scelta, che verrà prelevata da Microsoft ASP.NET webhook. Per informazioni dettagliate, vedere [inserimento delle dipendenze nella API Web ASP.NET 2](https://www.asp.net/web-api/overview/advanced/dependency-injection) .
+Anziché scrivere log in [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace), è possibile fornire un'implementazione di registrazione alternativa in grado di accedere direttamente a un gestore di log, ad esempio [Log4Net](http://logging.apache.org/log4net/) e [NLog](http://nlog-project.org/). È sufficiente fornire un'implementazione di [ILogger](https://github.com/aspnet/AspNetWebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Common/Diagnostics/ILogger.cs) e registrarlo con un motore di inserimento delle dipendenze di propria scelta e verrà prelevato da Microsoft ASP.NET WebHooks. Per informazioni [dettagliate,](https://www.asp.net/web-api/overview/advanced/dependency-injection) vedere Inserimento delle dipendenze in ASP.NET API Web 2.Please see Dependency Injection in ASP.NET Web API 2 for details.

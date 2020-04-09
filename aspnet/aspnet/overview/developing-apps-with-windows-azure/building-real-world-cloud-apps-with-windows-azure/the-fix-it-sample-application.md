@@ -1,398 +1,398 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
-title: "Appendice: l'applicazione di esempio Fix it (compilazione di app Cloud reali con Azure) | Microsoft Docs"
+title: "Appendice: L'applicazione di esempio Fix It (Creazione di app cloud reali con Azure) Documenti Microsoft"
 author: MikeWasson
-description: La creazione di app cloud del mondo reale con l'e-book di Azure si basa su una presentazione sviluppata da Scott Guthrie. Vengono illustrati 13 modelli e procedure che possono essere...
+description: L'e-book Building Real World Cloud Apps with Azure si basa su una presentazione sviluppata da Scott Guthrie. Spiega 13 schemi e pratiche che possono...
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
 ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78583447"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675992"
 ---
-# <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Appendice: l'applicazione di esempio Fix it (compilazione di app Cloud reali con Azure)
+# <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Appendice: L'applicazione di esempio Fix It (Creazione di app cloud reali con Azure)Appendix: The Fix It Sample Application (Building Real-World Cloud Apps with Azure)
 
 di [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra)
 
-[Scaricare il progetto Correggi it](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
+[Scarica the Fix It Project](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
-> La **creazione di app cloud del mondo reale con** l'e-book di Azure si basa su una presentazione sviluppata da Scott Guthrie. Vengono illustrati 13 modelli e procedure che consentono di sviluppare correttamente app Web per il cloud. Per informazioni sull'e-book, vedere [il primo capitolo](introduction.md).
+> L'e-book **Building Real World Cloud Apps with Azure** si basa su una presentazione sviluppata da Scott Guthrie. Vengono illustrati 13 modelli e procedure che consentono di sviluppare con successo app Web per il cloud. Per informazioni sull'e-book, vedere [il primo capitolo](introduction.md).
 
-Questa appendice per la creazione di app Cloud reali con e-book di Azure contiene le sezioni seguenti che forniscono informazioni aggiuntive sull'applicazione di esempio Fix it che è possibile scaricare:
+Questa appendice all'e-book Building Real World Cloud Apps with Azure contiene le sezioni seguenti che forniscono informazioni aggiuntive sull'applicazione di esempio Fix It che è possibile scaricare:
 
 - [Problemi noti](#knownissues)
 - [Procedure consigliate](#bestpractices)
-- [Come eseguire l'app da Visual Studio nel computer locale](#run-in-vs)
-- [Come distribuire l'app di base in app Web del servizio app Azure usando gli script di Windows PowerShell](#deploybase)
-- [Risoluzione dei problemi relativi agli script di Windows PowerShell](#troubleshooting)
-- [Come distribuire l'app con l'elaborazione delle code in app Web del servizio app Azure e un servizio cloud di Azure](#deployqueues)
+- [Come eseguire l'app da Visual Studio nel computer localeHow to run the app from Visual Studio on your local computer](#run-in-vs)
+- [Come distribuire l'app di base in App Web del servizio app di Azure usando gli script di Windows PowerShell](#deploybase)
+- [Risoluzione dei problemi relativi agli script di Windows PowerShellTroubleshooting the Windows PowerShell scripts](#troubleshooting)
+- [Come distribuire l'app con l'elaborazione della coda alle app Web del servizio app di Azure e a un servizio cloud di AzureHow to deploy the app with queue processing to Azure App Web Apps and an Azure Cloud Service](#deployqueues)
 
 <a id="knownissues"></a>
 ## <a name="known-issues"></a>Problemi noti
 
-L'app per la correzione è stata originariamente sviluppata per illustrare il più semplice possibile alcuni dei modelli presentati in questo e-book. Tuttavia, poiché l'e-book riguarda la creazione di app reali, abbiamo sottoposto il codice di correzione a un processo di revisione e test simile a quello che avremmo fatto per il software rilasciato. Sono stati rilevati diversi problemi e, come per qualsiasi applicazione reale, alcuni di essi sono stati corretti e alcuni di essi sono stati rilasciati a una versione successiva.
+L'applicazione Fix It è stato originariamente sviluppato al fine di illustrare nel modo più semplice possibile alcuni dei modelli presentati in questo e-book. Tuttavia, dal momento che l'e-book riguarda la creazione di applicazioni reali, abbiamo sottoposto il codice Fix It a un processo di revisione e test simile a quello che faremmo per il software rilasciato. Abbiamo trovato una serie di problemi, e come con qualsiasi applicazione reale, alcuni di loro abbiamo risolto e alcuni di loro abbiamo rinviato a una versione successiva.
 
-Nell'elenco seguente sono inclusi i problemi che devono essere risolti in un'applicazione di produzione, ma per un motivo o un altro si è deciso di non risolvere nella versione iniziale dell'applicazione di esempio Fix it.
+L'elenco seguente include i problemi che devono essere risolti in un'applicazione di produzione, ma per un motivo o per l'altro abbiamo deciso di non risolvere nella versione iniziale dell'applicazione di esempio Fix It.
 
 ### <a name="security"></a>Sicurezza
 
-- Assicurarsi che non sia possibile assegnare un'attività a un proprietario inesistente.
-- Assicurarsi che sia possibile visualizzare e modificare solo le attività create o assegnate all'utente.
-- Usare HTTPS per le pagine di accesso e i cookie di autenticazione.
+- Assicurarsi di non poter assegnare un'attività a un proprietario inesistente.
+- Assicurarsi di poter visualizzare e modificare solo le attività create o assegnate all'utente.
+- Utilizzare HTTPS per le pagine di accesso e i cookie di autenticazione.
 - Specificare un limite di tempo per i cookie di autenticazione.
 
 ### <a name="input-validation"></a>Convalida dell'input
 
-In generale, un'app di produzione esegue una maggiore convalida dell'input rispetto all'app per la correzione. Ad esempio, la dimensione dell'immagine o le dimensioni del file di immagine consentite per il caricamento devono essere limitate.
+In generale, un'app di produzione eseguirebbe più convalida dell'input rispetto all'app Fix It. Ad esempio, la dimensione del file immagine / immagine consentita per il caricamento deve essere limitata.
 
-### <a name="administrator-functionality"></a>Funzionalità amministratore
+### <a name="administrator-functionality"></a>Funzionalità dell'amministratore
 
-Un amministratore deve essere in grado di modificare la proprietà per le attività esistenti. Il creatore di un'attività, ad esempio, potrebbe lasciare l'azienda, lasciando che non sia disponibile l'autorizzazione a mantenere l'attività a meno che non sia abilitato l'accesso amministrativo.
+Un amministratore deve essere in grado di modificare la proprietà delle attività esistenti. Ad esempio, il creatore di un'attività potrebbe lasciare l'azienda, senza che nessuno abbia l'autorità per mantenere l'attività a meno che non sia abilitato l'accesso amministrativo.
 
-### <a name="queue-message-processing"></a>Elaborazione messaggi in coda
+### <a name="queue-message-processing"></a>Elaborazione dei messaggi della coda
 
-L'elaborazione dei messaggi in coda nell'app per la correzione è stata progettata per essere semplice per illustrare il modello di lavoro incentrato sulle code con una quantità minima di codice. Questo semplice codice non sarebbe adatto per un'applicazione di produzione effettiva.
+L'elaborazione dei messaggi in coda nell'app Fix It è stata progettata per essere semplice per illustrare il modello di lavoro incentrato sulla coda con una quantità minima di codice. Questo codice semplice non sarebbe adeguato per un'applicazione di produzione effettiva.
 
-- Il codice non garantisce che ogni messaggio della coda venga elaborato al massimo una volta. Quando si riceve un messaggio dalla coda, si verifica un periodo di timeout durante il quale il messaggio è invisibile ad altri listener della coda. Se il timeout scade prima che il messaggio venga eliminato, il messaggio diventa nuovamente visibile. Pertanto, se un'istanza del ruolo di lavoro impiega molto tempo per l'elaborazione di un messaggio, è teoricamente possibile che lo stesso messaggio venga elaborato due volte, ottenendo un'attività duplicata nel database. Per altre informazioni su questo problema, vedere [uso delle code di archiviazione di Azure](https://msdn.microsoft.com/library/ff803365.aspx#sec7).
-- La logica di polling della coda può essere più conveniente, suddividendo in batch il recupero dei messaggi. Ogni volta che si chiama [CloudQueue. GetMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), è previsto un costo per la transazione. In alternativa, è possibile chiamare [CloudQueue. GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (prendere nota del plurale ' s'), che ottiene più messaggi in una singola transazione. I costi delle transazioni per le code di archiviazione di Azure sono molto bassi, quindi l'effetto sui costi non è sostanziale nella maggior parte degli scenari.
-- Il loop stretto nel codice di elaborazione dei messaggi della coda causa l'affinità della CPU, che non usa in modo efficiente le VM multicore. Una progettazione migliore usa il parallelismo delle attività per eseguire diverse attività asincrone in parallelo.
-- L'elaborazione dei messaggi della coda ha solo una gestione delle eccezioni rudimentale. Ad esempio, il codice non gestisce [i messaggi non elaborabili](https://msdn.microsoft.com/library/ms789028.aspx). Quando l'elaborazione del messaggio genera un'eccezione, è necessario registrare l'errore ed eliminare il messaggio. in caso contrario, il ruolo di lavoro tenterà di elaborarlo di nuovo e il ciclo continuerà per un periodo illimitato.
+- Il codice non garantisce che ogni messaggio della coda verrà elaborato al massimo una volta. Quando si ottiene un messaggio dalla coda, si verifica un periodo di timeout, durante il quale il messaggio è invisibile ad altri listener della coda. Se il timeout scade prima che il messaggio venga eliminato, il messaggio diventa nuovamente visibile. Pertanto, se un'istanza del ruolo di lavoro impiega molto tempo nell'elaborazione di un messaggio, è teoricamente possibile che lo stesso messaggio venga elaborato due volte, generando un'attività duplicata nel database. Per altre informazioni su questo problema, vedere Uso delle code di Archiviazione di Azure .For more information about this issue, see [Using Azure Storage Queues](https://msdn.microsoft.com/library/ff803365.aspx#sec7).
+- La logica di polling della coda potrebbe essere più conveniente, eseguendo in batch il recupero dei messaggi. Ogni volta che chiami [CloudQueue.GetMessageAsync,](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx)c'è un costo di transazione. Al contrario, è possibile chiamare [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (notare il plurale 's'), che ottiene più messaggi in una singola transazione. I costi di transazione per le code di archiviazione di Azure sono molto bassi, pertanto l'impatto sui costi non è sostanziale nella maggior parte degli scenari.
+- Il ciclo stretto nel codice di elaborazione dei messaggi della coda causa l'affinità della CPU, che non utilizza macchine virtuali multi-core in modo efficiente. Una progettazione migliore userebbe il parallelismo delle attività per eseguire diverse attività asincrone in parallelo.
+- L'elaborazione dei messaggi in coda ha solo una gestione rudimentale delle eccezioni. Ad esempio, il codice non gestisce i [messaggi non elaborabili.](https://msdn.microsoft.com/library/ms789028.aspx) Quando l'elaborazione dei messaggi causa un'eccezione, è necessario registrare l'errore ed eliminare il messaggio, altrimenti il ruolo di lavoro tenterà di elaborarlo nuovamente e il ciclo continuerà all'infinito.
 
-### <a name="sql-queries-are-unbounded"></a>Query SQL non associate
+### <a name="sql-queries-are-unbounded"></a>Le query SQL sono senza limiti
 
-Il codice corrente di correzione it non impone alcun limite per il numero di righe che possono essere restituite dalle query per le pagine di indice. Se nel database viene immesso un volume elevato di attività, le dimensioni degli elenchi ottenuti potrebbero causare problemi di prestazioni. La soluzione consiste nell'implementare il paging. Per un esempio, vedere [ordinamento, filtro e paging con la Entity Framework in un'applicazione MVC ASP.NET](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md).
+Il codice Fix It corrente non pone alcun limite al numero di righe che le query per le pagine di indice potrebbero restituire. Se nel database viene immesso un volume elevato di attività, le dimensioni degli elenchi ricevuti potrebbero causare problemi di prestazioni. La soluzione consiste nell'implementare il paging. Per un esempio, vedere [Ordinamento, filtro e paging con Entity Framework in un'applicazione MVC ASP.NET](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md).
 
-### <a name="view-models-recommended"></a>Modelli di visualizzazione consigliati
+### <a name="view-models-recommended"></a>Visualizza i modelli consigliati
 
-L'app Fix it usa la classe di entità FixItTask per passare le informazioni tra il controller e la visualizzazione. Una procedura consigliata consiste nell'usare i modelli di visualizzazione. Il modello di dominio, ad esempio la classe di entità FixItTask, è progettato in base a quanto necessario per la persistenza dei dati, mentre un modello di visualizzazione può essere progettato per la presentazione dei dati. Per altre informazioni, vedere [12 ASP.NET MVC Best Practices](https://codeclimber.net.nz/archive/2009/10/27/12-asp.net-mvc-best-practices.aspx).
+L'app Fix It usa la classe di entità FixItTask per passare informazioni tra il controller e la visualizzazione. È consigliabile utilizzare i modelli di visualizzazione. Il modello di dominio (ad esempio, la classe di entità FixItTask) è progettato in base a ciò che è necessario per la persistenza dei dati, mentre un modello di visualizzazione può essere progettato per la presentazione dei dati. Per ulteriori informazioni, vedere [12 ASP.NET MVC Best Practices](https://codeclimber.net.nz/archive/2009/10/27/12-asp.net-mvc-best-practices.aspx).
 
-### <a name="secure-image-blob-recommended"></a>BLOB di immagini protette consigliato
+### <a name="secure-image-blob-recommended"></a>Blob di immagini sicuro consigliatoSecure image blob recommended
 
-L'app Fix it archivia le immagini caricate come pubbliche, ovvero chiunque possa trovare l'URL può accedere alle immagini. Le immagini possono essere protette anziché pubbliche.
+L'app Fix It archivia le immagini caricate come pubbliche, il che significa che chiunque trovi l'URL può accedere alle immagini. Le immagini potrebbero essere protette invece che pubbliche.
 
 ### <a name="no-powershell-automation-scripts-for-queues"></a>Nessun script di automazione di PowerShell per le code
 
-Gli script di automazione di PowerShell di esempio sono stati scritti solo per la versione di base di correzione eseguita completamente in app Azure app Web del servizio. Non sono stati forniti script per la configurazione e la distribuzione nell'app Web e l'ambiente del servizio cloud necessario per l'elaborazione delle code.
+Gli script di automazione di PowerShell di esempio sono stati scritti solo per la versione di base di Fix It che viene eseguita interamente nelle app Web del servizio app di Azure.Sample PowerShell automation scripts were written only for the base version of Fix It that runs entirely in Azure App Service Web Apps. Non sono stati forniti script per l'impostazione e la distribuzione nell'app Web, oltre all'ambiente del servizio cloud necessario per l'elaborazione delle code.
 
-### <a name="special-handling-for-html-codes-in-user-input"></a>Gestione speciale per i codici HTML nell'input utente
+### <a name="special-handling-for-html-codes-in-user-input"></a>Gestione speciale per i codici HTML nell'input dell'utente
 
-ASP.NET impedisce automaticamente molti modi in cui gli utenti malintenzionati potrebbero provare gli attacchi di scripting tra siti immettendo lo script nelle caselle di testo di input dell'utente. E l'helper `DisplayFor` MVC usato per visualizzare i titoli delle attività e le note codificano automaticamente i valori che invia al browser. Tuttavia, in un'app di produzione è consigliabile adottare misure aggiuntive. Per ulteriori informazioni, vedere la pagina relativa [alla convalida delle richieste in ASP.NET](https://msdn.microsoft.com/library/hh882339.aspx).
+ASP.NET impedisce automaticamente molti modi in cui gli utenti malintenzionati potrebbero tentare attacchi di cross-site scripting immettendo script nelle caselle di testo di input dell'utente. E l'helper MVC `DisplayFor` utilizzato per visualizzare i titoli delle attività e le note codifica automaticamente automaticamente i valori che invia al browser. Ma in un'app di produzione potresti voler adottare misure aggiuntive. Per ulteriori informazioni, vedere Convalida delle richieste [in ASP.NET](https://msdn.microsoft.com/library/hh882339.aspx).
 
 <a id="bestpractices"></a>
 ## <a name="best-practices"></a>Procedure consigliate
 
-Di seguito sono riportati alcuni problemi che sono stati risolti dopo essere stati individuati nella revisione del codice e i test della versione originale dell'app per la correzione. Alcune sono state causate dal fatto che il codificatore originale non è a conoscenza di una particolare procedura consigliata, alcune semplicemente perché il codice è stato scritto rapidamente e non era destinato al software rilasciato. In questo articolo vengono elencati i problemi in caso di elementi appresi da questa revisione e test che potrebbero essere utili ad altri utenti che sviluppano anche app Web.
+Di seguito sono riportati alcuni problemi risolti dopo essere stati individuati nella revisione del codice e nel test della versione originale dell'app Fix It. Alcuni sono stati causati dal programmatore originale non essendo a conoscenza di una particolare best practice, alcuni semplicemente perché il codice è stato scritto rapidamente e non era destinato per il software rilasciato. Stiamo elencando i problemi qui nel caso in cui ci sia qualcosa che abbiamo imparato da questa recensione e test che potrebbe essere utile per gli altri che stanno anche sviluppando applicazioni web.
 
-### <a name="dispose-the-database-repository"></a>Eliminare il repository di database
+### <a name="dispose-the-database-repository"></a>Eliminare l'archivio del database
 
-La classe `FixItTaskRepository` deve eliminare l'istanza di `DbContext` Entity Framework. Questa operazione è stata apportata implementando `IDisposable` nella classe `FixItTaskRepository`:
+La `FixItTaskRepository` classe deve eliminare `DbContext` l'istanza di Entity Framework. Abbiamo fatto questo `IDisposable` implementando nella `FixItTaskRepository` classe:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample1.cs)]
 
-Si noti che AutoFac eliminerà automaticamente l'istanza `FixItTaskRepository`, quindi non è necessario eliminarla in modo esplicito.
+Si noti che AutoFac rimuoverà automaticamente l'istanza, `FixItTaskRepository` pertanto non è necessario eliminarla in modo esplicito.
 
-Un'altra opzione consiste nel rimuovere la variabile membro `DbContext` da `FixItTaskRepository`e creare invece una variabile `DbContext` locale all'interno di ogni metodo del repository, all'interno di un'istruzione `using`. Esempio:
+Un'altra opzione `DbContext` consiste nel `FixItTaskRepository`rimuovere la variabile `DbContext` membro da , e `using` creare invece una variabile locale all'interno di ogni metodo del repository, all'interno di un'istruzione . Ad esempio:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
 ### <a name="register-singletons-as-such-with-di"></a>Registrare i singleton come tali con DI
 
-Poiché è necessaria una sola istanza della classe `PhotoService` e della classe `Logger`, queste classi devono essere [registrate come istanze singole per l'inserimento di dipendenze](https://code.google.com/p/autofac/wiki/InstanceScope) in *DependenciesConfig.cs*:
+Poiché è necessaria `PhotoService` una `Logger` sola istanza della classe e della classe, queste classi devono essere [registrate come istanze singole per l'inserimento](https://code.google.com/p/autofac/wiki/InstanceScope) delle dipendenze in *DependenciesConfig.cs*:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample3.cs?highlight=1,3)]
 
-### <a name="security-dont-show-error-details-to-users"></a>Sicurezza: non visualizzare i dettagli dell'errore per gli utenti
+### <a name="security-dont-show-error-details-to-users"></a>Sicurezza: non mostrare dettagli sull'errore agli utenti
 
-L'app per la correzione originale non disponeva di una pagina di errore generica e consente di visualizzare tutte le eccezioni fino all'interfaccia utente, pertanto alcune eccezioni come gli errori di connessione al database potrebbero comportare la visualizzazione di una traccia dello stack completa nel browser. Informazioni dettagliate sugli errori possono a volte facilitare gli attacchi da parte di utenti malintenzionati. La soluzione consiste nel registrare i dettagli dell'eccezione e visualizzare una pagina di errore per l'utente che non include i dettagli dell'errore. La correzione dell'app it era già in registrazione e per visualizzare una pagina di errore è stato aggiunto `<customErrors mode=On>` nel file Web. config.
+L'app Fix It originale non disponeva di una pagina di errore generica e lasciava che tutte le eccezioni si propagasse all'interfaccia utente, pertanto alcune eccezioni, ad esempio errori di connessione al database, potrebbero causare la visualizzazione di un'analisi dello stack completa nel browser. Informazioni dettagliate sugli errori possono talvolta facilitare gli attacchi da parte di utenti malintenzionati. La soluzione consiste nel registrare i dettagli dell'eccezione e visualizzare una pagina di errore per l'utente che non include i dettagli dell'errore. L'app Fix It era già la registrazione e per `<customErrors mode=On>` visualizzare una pagina di errore, è stato aggiunto nel file Web.config.
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample4.xml?highlight=2)]
 
-Per impostazione predefinita, in questo modo *Views\Shared\Error.cshtml* viene visualizzato per individuare eventuali errori. È possibile personalizzare *Error. cshtml* o creare una visualizzazione della pagina di errore personalizzata e aggiungere un attributo `defaultRedirect`. È inoltre possibile specificare diverse pagine di errore per errori specifici.
+Per impostazione predefinita, per gli errori viene visualizzata la visualizzazione di *visualizzazioni, ovvero Shared, Errorhtml.* È possibile personalizzare *Error.cshtml* o creare una `defaultRedirect` visualizzazione della pagina di errore personalizzata e aggiungere un attributo. È inoltre possibile specificare pagine di errore diverse per errori specifici.
 
-### <a name="security-only-allow-a-task-to-be-edited-by-its-creator"></a>Sicurezza: consente solo la modifica di un'attività da un creatore
+### <a name="security-only-allow-a-task-to-be-edited-by-its-creator"></a>Sicurezza: consente solo a un'attività di essere modificata dal suo creatore
 
-La pagina di indice del dashboard Mostra solo le attività create dall'utente connesso, ma un utente malintenzionato potrebbe creare un URL con un ID per l'attività di un altro utente. È stato aggiunto il codice in *DashboardController.cs* per restituire 404 in questo caso:
+La pagina Indice dashboard mostra solo le attività create dall'utente connesso, ma un utente malintenzionato potrebbe creare un URL con un ID per l'attività di un altro utente. Abbiamo aggiunto il codice in *DashboardController.cs* per restituire un 404 in questo caso:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample5.cs?highlight=9-14,24-29)]
 
 ### <a name="dont-swallow-exceptions"></a>Non ingoiare eccezioni
 
-L'app Fix it originale ha appena restituito null dopo la registrazione di un'eccezione risultante da una query SQL:
+L'applicazione Fix It originale appena restituito null dopo la registrazione di un'eccezione che ha causato da una query SQL:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample6.cs?highlight=4)]
 
-In questo modo, l'utente avrà l'aspetto dell'esito positivo della query, ma non ha restituito alcuna riga. La soluzione consiste nel generare nuovamente l'eccezione dopo l'intercettazione e la registrazione:
+In questo modo sarebbe guardare all'utente come se la query ha avuto esito positivo, ma semplicemente non ha restituito alcuna riga. La soluzione consiste nel generare nuovamente l'eccezione dopo l'intercettazione e la registrazione:Solution is to re-throw the exception after catching and logging:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample7.cs)]
 
 ### <a name="catch-all-exceptions-in-worker-roles"></a>Intercettare tutte le eccezioni nei ruoli di lavoro
 
-Eventuali eccezioni non gestite in un ruolo di lavoro provocheranno il riciclo della macchina virtuale, pertanto si desidera eseguire il wrapping di tutte le operazioni eseguite in un blocco try-catch e gestire tutte le eccezioni.
+Eventuali eccezioni non gestite in un ruolo di lavoro causeranno il riciclo della macchina virtuale, pertanto si desidera eseguire il wrapping di tutte le operazioni in un blocco try-catch e gestire tutte le eccezioni.
 
-### <a name="specify-length-for-string-properties-in-entity-classes"></a>Specificare la lunghezza per le proprietà di stringa nelle classi di entità
+### <a name="specify-length-for-string-properties-in-entity-classes"></a>Specificare la lunghezza per le proprietà stringa nelle classi di entitàSpecify length for string properties in entity classes
 
-Per visualizzare il codice semplice, la versione originale dell'app Fix it non ha specificato lunghezze per i campi dell'entità FixItTask e, di conseguenza, sono stati definiti come varchar (max) nel database. Di conseguenza, l'interfaccia utente accetta quasi tutte le quantità di input. Specificando i limiti delle lunghezze che si applicano sia all'input utente nella pagina Web che alla dimensione della colonna nel database:
+Per visualizzare codice semplice, la versione originale dell'app Fix It non ha specificato lunghezze per i campi dell'entità FixItTask e di conseguenza sono state definite come varchar(max) nel database. Di conseguenza, l'interfaccia utente accetterebbe quasi qualsiasi quantità di input. Specificando lunghezze vengono impostati i limiti che si applicano sia all'input dell'utente nella pagina Web che alle dimensioni delle colonne nel database:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample8.cs?highlight=4,7,10,12,14)]
 
-### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>Contrassegnare i membri privati come ReadOnly quando non si prevede di modificare
+### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>Contrassegnare i membri privati come readonly quando non è previsto che cambino
 
-Ad esempio, nella classe `DashboardController` viene creata un'istanza di `FixItTaskRepository` e non si prevede che venga modificata, quindi è stata definita come [ReadOnly](https://msdn.microsoft.com/library/acdd6hb7.aspx).
+Ad esempio, `DashboardController` nella classe `FixItTaskRepository` viene creata un'istanza di che non è prevista la modifica, pertanto è stata definita [readonly](https://msdn.microsoft.com/library/acdd6hb7.aspx).
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample9.cs?highlight=3)]
 
-### <a name="use-listany-instead-of-listcount-gt-0"></a>Usare l'elenco. Any () anziché list. Count () &gt; 0
+### <a name="use-listany-instead-of-listcount-gt-0"></a>Lista d'uso. Any() al posto di list. Count() &gt; 0
 
-Se si è interessati al fatto che uno o più elementi in un elenco corrispondano ai criteri specificati, usare il metodo [any](https://msdn.microsoft.com/library/bb534972.aspx) , perché restituisce non appena viene trovato un elemento che consente di adattare i criteri, mentre il metodo `Count` deve sempre scorrere ogni elemento. Il file *index. cshtml* del dashboard includeva originariamente il codice seguente:
+Se si è interessati solo se uno o più elementi in [Any](https://msdn.microsoft.com/library/bb534972.aspx) un elenco soddisfano i criteri specificati, utilizzare il `Count` Any metodo, perché restituisce non appena viene trovato un elemento che si adatta ai criteri, mentre il metodo deve sempre scorrere ogni elemento. Il file Dashboard *Index.cshtml* originariamente aveva questo codice:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample10.cshtml)]
 
-L'operazione è stata modificata in questo modo:
+L'abbiamo cambiato in questo:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample11.cshtml?highlight=1)]
 
-### <a name="generate-urls-in-mvc-views-using-mvc-helpers"></a>Generare URL nelle visualizzazioni MVC usando gli helper MVC
+### <a name="generate-urls-in-mvc-views-using-mvc-helpers"></a>Generare URL nelle visualizzazioni MVC usando gli helper MVCGenerate URLs in MVC views using MVC helpers
 
-Per il pulsante **Crea un Fix it** nella Home page, l'app Fix it ha codificato un elemento Anchor:
+Per il pulsante **Crea una correzione** nella home page, l'app Fix It è hardcoded un elemento di ancoraggio:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample12.cshtml)]
 
-Per i collegamenti di visualizzazione/azione di questo tipo è preferibile usare l'helper HTML [URL. Action](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) , ad esempio:
+Per i collegamenti visualizzazione/azione come questo è preferibile utilizzare l'helper HTML [Url.Action,](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) ad esempio:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample13.cshtml)]
 
-### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>Usare Task. Delay anziché thread. Sleep nel ruolo di lavoro
+### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>Usare Task.Delay anziché Thread.Sleep nel ruolo di lavoroUse Task.Delay instead of Thread.Sleep in worker role
 
-Il modello nuovo-progetto inserisce `Thread.Sleep` nel codice di esempio per un ruolo di lavoro, ma la causa della sospensione del thread può causare la generazione di thread superflui aggiuntivi da parte del pool di thread. È possibile evitare tale operazione utilizzando [Task. Delay](https://msdn.microsoft.com/library/hh139096.aspx) .
+Il modello di `Thread.Sleep` nuovo progetto inserisce il codice di esempio per un ruolo di lavoro, ma causando la sospensione del thread può causare il pool di thread generare thread non necessari aggiuntivi. È possibile evitare che utilizzando [Task.Delay](https://msdn.microsoft.com/library/hh139096.aspx) invece.
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample14.cs?highlight=11)]
 
-### <a name="avoid-async-void"></a>Evitare il void asincrono
+### <a name="avoid-async-void"></a>Evitare l'annullamento asincronoAvoid async void
 
-Se un metodo asincrono non deve restituire un valore, restituire un tipo di `Task` anziché `void`.
+Se un metodo asincrono non deve restituire `Task` un valore, restituire un tipo anziché `void`.
 
-Questo esempio è relativo alla classe `FixItQueueManager`:
+Questo esempio è `FixItQueueManager` tratto dalla classe :This example is from the class:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-Usare `async void` solo per i gestori eventi di primo livello. Se si definisce un metodo come `async void`, il chiamante non può **attendere** il metodo o intercettare le eccezioni generate dal metodo. Per ulteriori informazioni, vedere [procedure consigliate nella programmazione asincrona](https://msdn.microsoft.com/magazine/jj991977.aspx).
+È consigliabile utilizzare `async void` solo per i gestori eventi di primo livello. Se si definisce `async void`un metodo come , il chiamante non può **attendere** il metodo o intercettare eventuali eccezioni generate dal metodo. Per ulteriori informazioni, vedere [Procedure consigliate nella programmazione asincrona](https://msdn.microsoft.com/magazine/jj991977.aspx).
 
-### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Usare un token di annullamento per interrompere il ciclo del ruolo di lavoro
+### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Usare un token di annullamento per interrompere il ciclo del ruolo di lavoroUse a cancellation token to break from worker role loop
 
-In genere, il metodo **Run** in un ruolo di lavoro contiene un ciclo infinito. Quando il ruolo di lavoro viene arrestato, viene chiamato il metodo [RoleEntryPoint. OnStop](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) . È consigliabile usare questo metodo per annullare le operazioni eseguite all'interno del metodo **Run** e uscire normalmente. In caso contrario, il processo potrebbe essere terminato nel corso di un'operazione.
+In genere, il **run** metodo su un ruolo di lavoro contiene un ciclo infinito. Quando il ruolo di lavoro viene arrestato, viene chiamato il metodo [RoleEntryPoint.OnStop.](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) È necessario utilizzare questo metodo per annullare il lavoro che viene eseguito all'interno di **Run** metodo e uscire normalmente. In caso contrario, il processo potrebbe essere terminato durante un'operazione.
 
-### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>Rifiutare esplicitamente la procedura di sniffing MIME automatico
+### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>Disattivare la procedura di sniffing MIME automatico
 
-In alcuni casi, Internet Explorer segnala un tipo MIME diverso dal tipo specificato dal server Web. Se, ad esempio, Internet Explorer rileva contenuto HTML in un file fornito con l'intestazione di risposta HTTP Content-Type: text/plain, Internet Explorer determina che il rendering del contenuto deve essere eseguito come HTML. Sfortunatamente, questo "analisi MIME" può causare problemi di sicurezza anche per i server che ospitano contenuto non attendibile. Per contrastare questo problema, Internet Explorer 8 ha apportato alcune modifiche al codice di determinazione del tipo MIME e consente agli sviluppatori di applicazioni di [rifiutare esplicitamente](https://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx)l'analisi MIME. Il codice seguente è stato aggiunto al file *Web. config* .
+In alcuni casi, Internet Explorer segnala un tipo MIME diverso da quello specificato dal server Web. Ad esempio, se Internet Explorer trova contenuto HTML in un file recapitato con l'intestazione di risposta HTTP Content-Type: text/plain, Internet Explorer determina che il rendering del contenuto deve essere eseguito come HTML. Sfortunatamente, questo "sniffing MIME" può anche causare problemi di sicurezza per i server che ospitano contenuto non attendibile. Per combattere questo problema, Internet Explorer 8 ha apportato una serie di modifiche al codice di determinazione di tipo MIME e consente agli sviluppatori di applicazioni di [rifiutare esplicitamente lo sniffing MIME.](https://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx) Il codice seguente è stato aggiunto al file *Web.config.*
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample16.xml?highlight=2-7)]
 
-### <a name="enable-bundling-and-minification"></a>Abilitare la creazione di bundle e minification
+### <a name="enable-bundling-and-minification"></a>Abilitare l'aggregazione e la minimizzazione
 
-Quando Visual Studio crea un nuovo progetto Web, la creazione di bundle e minification di file JavaScript non è abilitata per impostazione predefinita. È stata aggiunta una riga di codice in BundleConfig.cs:
+Quando Visual Studio crea un nuovo progetto web, l'aggregazione e la minimizzazione dei file JavaScript non sono abilitate per impostazione predefinita. È stata aggiunta una riga di codice in BundleConfig.cs:We added a line of code in BundleConfig.cs:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample17.cs?highlight=9)]
 
 ### <a name="set-an-expiration-time-out-for-authentication-cookies"></a>Impostare un timeout di scadenza per i cookie di autenticazione
 
-Per impostazione predefinita, i cookie di autenticazione scadono entro due settimane. Un tempo più breve è più sicuro. È possibile modificare questa impostazione in *StartupAuth.cs*:
+Per impostazione predefinita, i cookie di autenticazione scadono tra due settimane. Un tempo più breve è più sicuro. È possibile modificare questa impostazione in *StartupAuth.cs:*
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample18.cs?highlight=4-5)]
 
 <a id="run-in-vs"></a>
-## <a name="how-to-run-the-app-from-visual-studio-on-your-local-computer"></a>Come eseguire l'app da Visual Studio nel computer locale
+## <a name="how-to-run-the-app-from-visual-studio-on-your-local-computer"></a>Come eseguire l'app da Visual Studio nel computer localeHow to run the app from Visual Studio on your local computer
 
-Esistono due modi per eseguire l'app Fix it:
+Esistono due modi per eseguire l'app Fix It:
 
 - Eseguire l'applicazione di base che scrive nuove attività direttamente nel database SQL.
-- Eseguire l'applicazione usando una coda e un servizio back-end per creare attività. Il modello di coda è descritto nel capitolo [modello di lavoro incentrato sulla coda](queue-centric-work-pattern.md).
+- Eseguire l'applicazione usando una coda più un servizio back-end per creare attività. Il modello di coda è descritto nel capitolo Modello di [lavoro Centra-Centrico](queue-centric-work-pattern.md).
 
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>Eseguire l'applicazione di base
 
 1. Installare [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 2. Installare [Azure SDK per .NET per Visual Studio](https://azure.microsoft.com/downloads/).
-3. Scaricare il file zip da [MSDN Code Gallery](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
-4. In Esplora file fare clic con il pulsante destro del mouse sul file con estensione zip e scegliere Proprietà, quindi nella Finestra Proprietà fare clic su Sblocca.
+3. Scaricare il file .zip da [MSDN Code Gallery](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
+4. In Esplora file fare clic con il pulsante destro del mouse sul file .zip e scegliere Proprietà, quindi nella finestra Proprietà fare clic su Sblocca.
 5. Decomprimere il file.
-6. Fare doppio clic sul file con estensione sln per avviare Visual Studio.
-7. Dal menu **strumenti** fare clic su **Gestione pacchetti NuGet**e quindi su **console di gestione pacchetti**.
-8. Nella console di gestione pacchetti (PMC) fare clic su Ripristina.
+6. Fare doppio clic sul file sln per avviare Visual Studio.
+7. Scegliere Gestione pacchetti **NuGet**dal menu **Strumenti** , quindi **Console gestione pacchetti**.
+8. Nella Console di gestione pacchetti (PMC), fare clic su Ripristina.
 9. Uscire da Visual Studio.
-10. Avviare l' [emulatore di archiviazione di Azure](/azure/storage/common/storage-use-emulator).
-11. Riavviare Visual Studio e aprire il file della soluzione chiuso nel passaggio precedente.
-12. Verificare che il progetto FixIt sia impostato come progetto di avvio, quindi premere CTRL + F5 per eseguire il progetto.
+10. Avviare l'emulatore di [archiviazione di Azure.](/azure/storage/common/storage-use-emulator)
+11. Riavviare Visual Studio, aprendo il file di soluzione chiuso nel passaggio precedente.
+12. Assicurarsi che il progetto FixIt è impostato come progetto di avvio e quindi premere CTRL e F5 per eseguire il progetto.
 
 <a id="queueslocal"></a>
-### <a name="run-the-application-with-queue-processing"></a>Eseguire l'applicazione con l'elaborazione della coda
+### <a name="run-the-application-with-queue-processing"></a>Eseguire l'applicazione con l'elaborazione della codaRun the application with queue processing
 
-1. Seguire le istruzioni per [eseguire l'applicazione di base](#runbase), quindi chiudere il browser e chiudere Visual Studio.
-2. Avviare Visual Studio con privilegi di amministratore. Si userà l'emulatore di calcolo di Azure e che richiede privilegi di amministratore.
-3. Nel file *Web. config* dell'applicazione nel progetto *MyFixIt* (il progetto Web), modificare il valore di `appSettings/UseQueues` su "true":
+1. Seguire le istruzioni per [Eseguire l'applicazione di base](#runbase), quindi chiudere il browser e chiudere Visual Studio.
+2. Avviare Visual Studio con privilegi di amministratore. Si userà l'emulatore di calcolo di Azure e ciò richiede privilegi di amministratore.
+3. Nel file *Web.config* dell'applicazione nel progetto *MyFixIt* (il `appSettings/UseQueues` progetto Web), modificare il valore di su "true":
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
-4. Se l' [emulatore di archiviazione di Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) non è ancora in esecuzione, riavviarlo.
-5. Eseguire simultaneamente il progetto Web FixIt e il progetto MyFixItCloudService.
+4. Se [l'emulatore](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) di archiviazione di Azure non è ancora in esecuzione, riavviarlo.
+5. Eseguire contemporaneamente il progetto Web FixIt e il progetto MyFixItCloudService.
 
-    Uso di Visual Studio:
+    Utilizzo di Visual Studio:Using Visual Studio:
 
-   1. Premere **F5** per eseguire il progetto Fixit.
-   2. In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul progetto MyFixItCloudService, quindi scegliere **debug** > **Avvia nuova istanza**.
+   1. Premere **F5** per eseguire il progetto FixIt.
+   2. In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul progetto MyFixItCloudService , quindi scegliere Avvia **debug** > **nuova istanza**.
 
-    Uso di Visual Studio 2013 Express per il Web:
+    Utilizzo di Visual Studio 2013 Express per Web:
 
    3. In Esplora soluzioni fare clic con il pulsante destro del mouse sulla soluzione FixIt e scegliere **Proprietà**.
-   4. Selezionare **progetti di avvio multipli**.
-   5. Nell'elenco a discesa **azione** in MyFixIt e MyFixItCloudService selezionare **Avvia**.
+   4. Selezionare **Più progetti di avvio**.
+   5. Nell'elenco a discesa **Azione** in MyFixIt e MyFixItCloudService selezionare **Start**.
    6. Fare clic su **OK**.
    7. Premere **F5** per eseguire entrambi i progetti.
 
-      Quando si esegue il progetto MyFixItCloudService, Visual Studio avvia l'emulatore di calcolo di Azure. A seconda della configurazione del firewall, potrebbe essere necessario consentire l'emulatore tramite il firewall.
+      Quando si esegue il progetto MyFixItCloudService, Visual Studio avvia l'emulatore di calcolo di Azure.When you run the MyFixItCloudService project, Visual Studio starts the Azure compute emulator. A seconda della configurazione del firewall, potrebbe essere necessario consentire l'emulatore attraverso il firewall.
 
 <a id="deploybase"></a>
-## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>Come distribuire l'app di base in app Web del servizio app Azure usando gli script di Windows PowerShell
+## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>Come distribuire l'app di base in App Web del servizio app di Azure usando gli script di Windows PowerShell
 
-Per illustrare il modello di [automazione di tutti gli elementi](automate-everything.md) , l'app Correggi it viene fornita con script che configurano un ambiente in Azure e distribuiscono il progetto nel nuovo ambiente. Nelle istruzioni seguenti viene illustrato come utilizzare gli script.
+Per illustrare il modello [Automatizza tutto,](automate-everything.md) l'app Fix It viene fornita con script che configurano un ambiente in Azure e distribuiscono il progetto nel nuovo ambiente. Le istruzioni seguenti spiegano come utilizzare gli script.
 
-Se si vuole eseguire in Azure senza usare le code e sono state apportate le modifiche da eseguire localmente con le code, assicurarsi di impostare di nuovo il valore appSetting di UseQueues su false prima di procedere con le istruzioni seguenti.
+Se si vuole eseguire in Azure senza usare le code e le modifiche sono state apportate per l'esecuzione locale con le code, assicurarsi di impostare il valore useQueues appSetting su false prima di procedere con le istruzioni seguenti.
 
-Queste istruzioni presuppongono che sia già stato scaricato ed eseguito la soluzione Correggi it localmente e che si disponga di un account Azure o che si disponga di una sottoscrizione di Azure che si è autorizzati a gestire.
+Queste istruzioni presuppongono che la soluzione Fix It sia già stata scaricata ed eseguita in locale e che si disponga di un account Azure o di una sottoscrizione di Azure che si è autorizzati a gestire.
 
-1. Installare la console di **Azure PowerShell** . Per istruzioni, vedere [Come installare e configurare Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1).
+1. Installare la console di **Azure PowerShell.Install** the Azure PowerShell console. Per istruzioni, vedere [Come installare e configurare Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1).
 
-    Questa console personalizzata è configurata per l'uso con la sottoscrizione di Azure. Il modulo Azure viene installato nella directory *programmi* e viene importato automaticamente a ogni uso della console di Azure PowerShell.
+    Questa console personalizzata è configurata per funzionare con la sottoscrizione di Azure.This customized console is configured to work with your Azure subscription. Il modulo di Azure viene installato nella directory Programmi e viene importato automaticamente in ogni utilizzo della console di Azure PowerShell.The Azure module is installed in the *Program Files* directory and is automatically imported on every used of the Azure PowerShell console.
 
-    Se si preferisce lavorare in un programma host diverso, ad esempio Windows PowerShell ISE, assicurarsi di usare il cmdlet [Import-Module](https://go.microsoft.com/fwlink/?LinkID=141553) per importare il modulo di Azure o usare un comando nel modulo di Azure per attivare l'importazione automatica del modulo.
-2. Avviare Azure PowerShell con l'opzione **Esegui come amministratore** .
-3. Eseguire il cmdlet [Set-ExecutionPolicy](https://go.microsoft.com/fwlink/p/?linkid=293941) per impostare i criteri di esecuzione Azure PowerShell su `RemoteSigned`. Immettere **Y** (per Sì) per completare la modifica dei criteri.
+    Se si preferisce utilizzare un programma host diverso, ad esempio Windows PowerShell ISE, assicurarsi di usare il cmdlet [Import-Module](https://go.microsoft.com/fwlink/?LinkID=141553) per importare il modulo di Azure o usare un comando nel modulo di Azure per attivare l'importazione automatica del modulo.
+2. Avviare Azure PowerShell con l'opzione **Esegui come amministratore.**
+3. Eseguire il cmdlet [Set-ExecutionPolicy](https://go.microsoft.com/fwlink/p/?linkid=293941) per impostare `RemoteSigned`i criteri di esecuzione di Azure PowerShell su . Immettere **Y** (per Sì) per completare la modifica del criterio.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample20.cmd)]
 
-    Questa impostazione consente di eseguire script locali che non dispongono di una firma digitale. È anche possibile impostare i criteri di esecuzione su `Unrestricted`, in modo da eliminare la necessità di sbloccare il passaggio in un secondo momento, ma questa operazione non è consigliata per motivi di sicurezza.
-4. Eseguire il cmdlet `Add-AzureAccount` per configurare PowerShell con le credenziali per l'account.
+    Questa impostazione consente di eseguire script locali senza firma digitale. È anche possibile impostare `Unrestricted`i criteri di esecuzione su , eliminando la necessità di un passaggio di sblocco in un secondo momento, ma questa operazione non è consigliata per motivi di sicurezza.
+4. Eseguire `Add-AzureAccount` il cmdlet per configurare PowerShell con le credenziali per l'account.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample21.cmd)]
 
-    Queste credenziali scadono dopo un periodo di tempo ed è necessario eseguire nuovamente il cmdlet `Add-AzureAccount`. Poiché questo e-book viene scritto, il limite di tempo prima della scadenza delle credenziali è 12 ore.
-5. Se si dispone di più sottoscrizioni, utilizzare il cmdlet Select-AzureSubscription per specificare la sottoscrizione in cui si desidera creare l'ambiente di test.
-6. Importare un certificato di gestione per la stessa sottoscrizione di Azure usando i cmdlet `Get-AzurePublishSettingsFile` e `Import-AzurePublishSettingsFile`. Il primo di questi cmdlet Scarica un file di certificato e nel secondo si specifica il percorso del file per importarlo. > [!IMPORTANT]
-   > Tenere il file scaricato in un percorso sicuro o eliminarlo al termine dell'operazione, perché contiene un certificato che può essere usato per gestire i servizi di Azure.
+    Queste credenziali scadono dopo un periodo di tempo ed `Add-AzureAccount` è necessario eseguire nuovamente il cmdlet. Mentre questo e-book è in fase di scrittura, il limite di tempo prima della scadenza delle credenziali è di 12 ore.
+5. Se si dispone di più sottoscrizioni, usare il cmdlet Select-AzureSubscription per specificare la sottoscrizione in cui si vuole creare l'ambiente di test.
+6. Importare un certificato di gestione per `Get-AzurePublishSettingsFile` la `Import-AzurePublishSettingsFile` stessa sottoscrizione di Azure usando i cmdlet e . Il primo di questi cmdlet scarica un file di certificato e nel secondo si specifica il percorso di tale file per importarlo. > [!IMPORTANT]
+   > Mantenere il file scaricato in un percorso sicuro o eliminarlo al termine, perché contiene un certificato che può essere usato per gestire i servizi di Azure.Keep the downloaded file in a safe location or delete it when you're done with it, because it contains a certificate that can be used to manage your Azure services.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample22.cmd)]
 
-    Il certificato viene usato per una chiamata API REST che rileva l'indirizzo IP del computer di sviluppo per impostare una regola del firewall nel server di database SQL.
-7. Eseguire il cmdlet [set-location](https://go.microsoft.com/fwlink/p/?linkid=293912) (gli alias sono `cd`, `chdir`e `sl`) per passare alla directory che contiene gli script. Si trovano nella cartella *automazione* nella cartella della soluzione Correggi it. Inserire il percorso tra virgolette se uno dei nomi di directory contiene spazi. Ad esempio, per passare alla directory `c:\Sample Apps\FixIt\Automation` è possibile immettere il comando seguente:
+    Il certificato viene utilizzato per una chiamata all'API REST che rileva l'indirizzo IP del computer di sviluppo per impostare una regola del firewall nel server di database SQL.
+7. Eseguire il cmdlet [Set-Location](https://go.microsoft.com/fwlink/p/?linkid=293912) (gli `chdir`alias `sl`sono `cd`, e ) per passare alla directory che contiene gli script. (Si trovano nella cartella *di automazione* nella cartella della soluzione Fix It.) Inserire il percorso tra virgolette se uno dei nomi di directory contiene spazi. Ad esempio, per `c:\Sample Apps\FixIt\Automation` passare alla directory è possibile immettere il comando seguente:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample23.cmd)]
-8. Per consentire a Windows PowerShell di eseguire questi script, usare il cmdlet [Unblock-file](https://go.microsoft.com/fwlink/p/?linkid=294021) . Gli script sono bloccati perché sono stati scaricati da Internet.
+8. Per consentire a Windows PowerShell di eseguire questi script, utilizzare il cmdlet [Unblock-File.](https://go.microsoft.com/fwlink/p/?linkid=294021) Gli script vengono bloccati perché sono stati scaricati da Internet.
 
     > [!WARNING]
-    > Sicurezza: prima di eseguire `Unblock-File` in un file eseguibile o script, aprire il file nel blocco note, esaminare i comandi e verificare che non contengano codice dannoso.
+    > Sicurezza - `Unblock-File` Prima di eseguire su qualsiasi script o file eseguibile, aprire il file nel Blocco note, esaminare i comandi e verificare che non contengano codice dannoso.
 
-    Ad esempio, il comando seguente esegue il cmdlet `Unblock-File` in tutti gli script della directory corrente.
+    Ad esempio, il comando `Unblock-File` seguente esegue il cmdlet su tutti gli script nella directory corrente.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample24.cmd)]
-9. Per creare l'app Web per la base (nessuna elaborazione delle code) correggerla, eseguire lo script di creazione dell'ambiente.
+9. Per creare l'app Web per l'app Fix It di base (nessuna elaborazione delle code), eseguire lo script di creazione dell'ambiente.
 
-    Il parametro `Name` obbligatorio specifica il nome del database e viene usato anche per l'account di archiviazione creato dallo script. Il nome deve essere univoco a livello globale all'interno del dominio azurewebsites.net. Se si specifica un nome che non è univoco, ad esempio Fixit o test (o anche come nell'esempio fixitdemo), il `New-AzureWebsite` cmdlet ha esito negativo con un errore interno che segnala un conflitto. Lo script converte il nome in tutti i casi minuscoli in modo che siano conformi ai requisiti di nome per le app Web, gli account di archiviazione e i database.
+    Il `Name` parametro obbligatorio specifica il nome del database e viene utilizzato anche per l'account di archiviazione creato dallo script. Il nome deve essere univoco a livello globale all'interno del dominio azurewebsites.net. Se si specifica un nome non univoco, ad esempio Fixit o Test (o `New-AzureWebsite` anche come nell'esempio, fixitdemo), il cmdlet ha esito negativo con un errore interno che segnala un conflitto. Lo script converte il nome in lettere minuscole in modo che sia conforme ai requisiti dei nomi per le app Web, gli account di archiviazione e i database.
 
-    Il parametro obbligatorio `SqlDatabasePassword` specifica la password per l'account amministratore che verrà creato per il database SQL. Non includere caratteri XML speciali nella password (&amp; &lt; &gt;;). Si tratta di una limitazione del modo in cui gli script sono stati scritti, non di un limite di Azure.
+    Il `SqlDatabasePassword` parametro obbligatorio consente di specificare la password per l'account amministratore che verrà creato per il database SQL. Non includere caratteri XML speciali nella&amp; &lt; &gt; password (;). Si tratta di una limitazione del modo in cui sono stati scritti gli script, non di Azure.This is a limitation of the way the scripts were written, not a limitation of Azure.
 
-    Se ad esempio si vuole creare un'app Web denominata "fixitdemo" e usare una password di amministratore SQL Server "Passw0rd1", è possibile immettere il comando seguente:
+    Ad esempio, se si desidera creare un'app Web denominata "fixitdemo" e utilizzare una password di amministratore di SQL Server di "Passw0rd1", è possibile immettere il comando seguente:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample25.cmd)]
 
-    Il nome deve essere univoco nel dominio azurewebsites.net e la password deve soddisfare i requisiti del database SQL per la complessità della password. Il Passw0rd1 di esempio soddisfa i requisiti.
+    Il nome deve essere univoco nel dominio azurewebsites.net e la password deve soddisfare i requisiti del database SQL per la complessità della password. (L'esempio Passw0rd1 soddisfa i requisiti.)
 
-    Si noti che il comando inizia con ".\". Per evitare l'esecuzione dannosa degli script, Windows PowerShell richiede di fornire il percorso completo del file di script quando si esegue uno script. È possibile usare un punto per indicare la directory corrente (".\") o specificare il percorso completo, ad esempio:
+    Si noti che il comando inizia con ". \". Per impedire l'esecuzione di script dannosi, Windows PowerShell richiede di fornire il percorso completo del file di script quando si esegue uno script. È possibile utilizzare un punto per\"indicare la directory corrente (". ) o fornire il percorso completo, ad esempio:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample26.cmd)]
 
-    Per ulteriori informazioni sullo script, utilizzare il cmdlet `Get-Help`.
+    Per ulteriori informazioni sullo script, utilizzare il `Get-Help` cmdlet.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample27.cmd)]
 
-    È possibile usare i parametri `Detailed`, `Full`, `Parameters`e `Examples` del cmdlet Get-Help per filtrare la guida restituita.
+    È possibile `Detailed`utilizzare `Full` `Parameters`i `Examples` parametri , , e del cmdlet Get-Help per filtrare la Guida restituita.
 
-    Se lo script ha esito negativo o genera errori, ad esempio "New-AzureWebsite: call set-AzureSubscription e Select-AzureSubscription First", è possibile che non sia stata completata la configurazione di Azure PowerShell.
+    Se lo script ha esito negativo o genera errori, ad esempio "New-AzureWebsite: Call Set-AzureSubscription e Select-AzureSubscription prima", è possibile che la configurazione di Azure PowerShell non sia stata completata.
 
-    Al termine dello script, è possibile usare il portale di gestione di Azure per visualizzare le risorse create, come illustrato nel capitolo [automazione di tutti gli elementi](automate-everything.md) .
-10. Per distribuire il progetto FixIt nel nuovo ambiente Azure, usare lo script *AzureWebsite. ps1* . Esempio:
+    Al termine dello script, è possibile usare il portale di gestione di Azure per visualizzare le risorse create, come illustrato nel capitolo [Automatizzare tutto.](automate-everything.md)
+10. Per distribuire il progetto FixIt nel nuovo ambiente Azure, usare lo script *AzureWebsite.ps1.To* deploy the FixIt project to the new Azure environment, use the AzureWebsite.ps1 script. Ad esempio:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
-    Al termine della distribuzione, il browser si apre con la correzione dell'esecuzione in Azure.
+    Al termine della distribuzione, il browser viene aperto con Fix It in esecuzione in Azure.When deployment is done, the browser opens with Fix It running in Azure.
 
 <a id="troubleshooting"></a>
-## <a name="troubleshooting-the-windows-powershell-scripts"></a>Risoluzione dei problemi relativi agli script di Windows PowerShell
+## <a name="troubleshooting-the-windows-powershell-scripts"></a>Risoluzione dei problemi relativi agli script di Windows PowerShellTroubleshooting the Windows PowerShell scripts
 
-Gli errori più comuni rilevati durante l'esecuzione di questi script sono correlati alle autorizzazioni. Verificare che `Add-AzureAccount` e `Import-AzurePublishSettingsFile` abbiano avuto esito positivo e che siano stati usati per la stessa sottoscrizione di Azure. Anche se `Add-AzureAccount` ha avuto esito positivo, potrebbe essere necessario eseguirlo di nuovo. Le autorizzazioni aggiunte da `Add-AzureAccount` scadono entro 12 ore.
+Gli errori più comuni riscontrati durante l'esecuzione di questi script sono correlati alle autorizzazioni. Assicurarsi `Add-AzureAccount` che `Import-AzurePublishSettingsFile` e che hanno avuto esito positivo e che sono stati usati per la stessa sottoscrizione di Azure.Make sure that and were successful and that you used them for the same Azure subscription. Anche `Add-AzureAccount` se ha avuto successo potrebbe essere necessario eseguirlo di nuovo. Le autorizzazioni `Add-AzureAccount` aggiunte da scadranno tra 12 ore.
 
-### <a name="object-reference-not-set-to-an-instance-of-an-object"></a>Riferimento a un oggetto non impostato su un'istanza di oggetto.
+### <a name="object-reference-not-set-to-an-instance-of-an-object"></a>Riferimento oggetto non impostato su un'istanza di un oggetto.
 
-Se lo script restituisce errori, ad esempio "riferimento oggetto non impostato su un'istanza di un oggetto", il che significa che Windows PowerShell non è in grado di trovare un oggetto da elaborare (si tratta di un'eccezione di riferimento null), eseguire il cmdlet `Add-AzureAccount` e riprovare a eseguire lo script.
+Se lo script restituisce errori, ad esempio "Riferimento all'oggetto non impostato su un'istanza di un oggetto", il che `Add-AzureAccount` significa che Windows PowerShell non riesce a trovare un oggetto da elaborare (si tratta di un'eccezione di riferimento null), eseguire il cmdlet e riprovare a eseguire lo script.
 
 [!code-console[Main](the-fix-it-sample-application/samples/sample29.cmd)]
 
-### <a name="internalerror-the-server-encountered-an-internal-error"></a>InternalError: si è verificato un errore interno del server.
+### <a name="internalerror-the-server-encountered-an-internal-error"></a>InternalError: il server ha rilevato un errore interno.
 
-Il cmdlet `New-AzureWebsite` restituisce un errore interno quando il nome non è univoco nel dominio azurewebsites.net. Per risolvere l'errore, usare un valore diverso per il nome, che è nel parametro Name di *New-AzureWebsiteEnv. ps1*.
+Il `New-AzureWebsite` cmdlet restituisce un errore interno quando il nome non è univoco nel dominio azurewebsites.net. Per risolvere l'errore, usare un valore diverso per il nome, che si trova nel parametro Name di *New-AzureWebsiteEnv.ps1*.
 
 [!code-console[Main](the-fix-it-sample-application/samples/sample30.cmd)]
 
 ### <a name="restarting-the-script"></a>Riavvio dello script
 
-Se è necessario riavviare lo script *New-AzureWebsiteEnv. ps1* perché non è riuscito prima di stampare il messaggio "script completato", potrebbe essere necessario eliminare le risorse create dallo script prima dell'arresto. Ad esempio, se lo script ha già creato l'app Web ContosoFixItDemo e si esegue di nuovo lo script con lo stesso nome, lo script avrà esito negativo perché il nome è in uso.
+Se è necessario riavviare lo script *New-AzureWebsiteEnv.ps1* perché non è riuscito prima di stampare il messaggio "Script è stato completato", è possibile eliminare le risorse create dallo script prima dell'arresto. Ad esempio, se lo script ha già creato l'app Web ContosoFixItDemo e lo si esegue nuovamente con lo stesso nome, lo script avrà esito negativo perché il nome è in uso.
 
-Per determinare le risorse create dallo script prima dell'arresto, usare i cmdlet seguenti:
+Per determinare le risorse create dallo script prima dell'arresto, utilizzare i cmdlet seguenti:
 
 - `Get-AzureWebsite`
 - `Get-AzureSqlDatabaseServer`
-- `Get-AzureSqlDatabase`: per eseguire questo cmdlet, inviare tramite pipe il nome del server di database a `Get-AzureSqlDatabase`: `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
+- `Get-AzureSqlDatabase`: per eseguire questo cmdlet, assegnare un'epipeiazione al nome del server di database: `Get-AzureSqlDatabase``Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
 
-Per eliminare queste risorse, usare i comandi seguenti. Si noti che se si elimina il server di database, vengono eliminati automaticamente i database associati al server.
+Per eliminare queste risorse, utilizzare i comandi seguenti. Si noti che se si elimina il server di database, si eliminano automaticamente i database associati al server.
 
 - `Get-AzureWebsite -Name <WebsiteName> | Remove-AzureWebsite`
 - `Get-AzureSqlDatabase -Name <DatabaseName> -ServerName <DatabaseServerName> | Remove-SqlAzureDatabase`
 - `Get-AzureSqlDatabaseServer | Remove-AzureSqlDatabaseServer`
 
 <a id="deployqueues"></a>
-## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>Come distribuire l'app con l'elaborazione delle code in app Web del servizio app Azure e un servizio cloud di Azure
+## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>Come distribuire l'app con l'elaborazione della coda alle app Web del servizio app di Azure e a un servizio cloud di AzureHow to deploy the app with queue processing to Azure App Web Apps and an Azure Cloud Service
 
-Per abilitare le code, apportare la modifica seguente nel file MyFixIt\Web.config. In `appSettings`modificare il valore di `UseQueues` su "true":
+Per abilitare le code, apportare la seguente modifica nel file MyFixIt-Web.config. In `appSettings`, modificare `UseQueues` il valore di "true":
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample31.xml)]
 
-Distribuire quindi l'applicazione MVC in un'app Web nel servizio app Azure, come descritto in [precedenza](#deploybase).
+Distribuire quindi l'applicazione MVC in un'app Web nel servizio app di Azure, come descritto [in precedenza.](#deploybase)
 
-Successivamente, creare un nuovo servizio cloud di Azure. Gli script inclusi con l'app Correggi it non creano o distribuiscono il servizio cloud, pertanto è necessario usare portale di Azure a tale scopo. Nel portale fare clic su **nuovo** -- **calcolo** - **servizio cloud** -- **creazione rapida**, quindi immettere un URL e un percorso di Data Center. Usare lo stesso data center in cui è stata distribuita l'app Web.
+Successivamente, creare un nuovo servizio cloud di Azure.Next, create a new Azure cloud service. Gli script inclusi nell'app Fix It non creano o distribuiscono il servizio cloud, pertanto è necessario usare il portale di Azure. Nel portale fare clic su **Nuova** -- **configurazione** -**Creazione rapida**servizio --  **cloud**e quindi immettere un URL e un percorso del data center. Usare lo stesso data center in cui è stata distribuita l'app Web.
 
 ![](the-fix-it-sample-application/_static/image1.png)
 
-Prima di poter distribuire il servizio cloud, è necessario aggiornare alcuni file di configurazione.
+Prima di poter distribuire il servizio cloud, è necessario aggiornare alcuni dei file di configurazione.
 
-In MyFixIt. WorkerRole\app.config, in `connectionStrings`, sostituire il valore della stringa di connessione `appdb` con la stringa di connessione effettiva per il database SQL. È possibile ottenere la stringa di connessione dal portale. Nel portale fare clic su **database sql** - **appdb** - **visualizzare le stringhe di connessione al database SQL per ADO .NET, ODBC, php e JDBC**. Copiare la stringa di connessione ADO.NET e incollare il valore nel file app. config. Sostituire "{Your\_password\_here}" con la password del database. (Supponendo che siano stati usati gli script per distribuire l'app MVC, è stata specificata la password del database nel parametro `SqlDatabasePassword` script).
+In MyFixIt.WorkerRole.app.config, `connectionStrings`in , sostituire `appdb` il valore della stringa di connessione con la stringa di connessione effettiva per il database SQL. È possibile ottenere la stringa di connessione dal portale. Nel portale fare clic su **Sql Databases** - **appdb** - Visualizza stringhe di**connessione database SQL per ADO .Net, ODBC, PHP e JDBC**. Copiare la stringa di connessione ADO.NET e incollare il valore nel file app.config. Sostituirlo con\_\_la password del database. Supponendo che siano stati usati gli script per distribuire l'app MVC, è stata specificata la password del database nel parametro `SqlDatabasePassword` script.
 
-Il risultato dovrebbe essere simile al seguente:
+Il risultato dovrebbe essere simile al seguente:The result should look like the following:
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample32.xml)]
 
-Nello stesso file MyFixIt. WorkerRole\app.config, in `appSettings`, sostituire i due valori segnaposto per l'account di archiviazione di Azure.
+Nello stesso file MyFixIt.WorkerRole.app.config, in `appSettings`, sostituire i due valori segnaposto per l'account di archiviazione di Azure.
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample33.xml?highlight=2-3)]
 
-È possibile ottenere la chiave di accesso dal portale. Vedere [come gestire gli account di archiviazione](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account).
+È possibile ottenere la chiave di accesso dal portale. Vedere [Come gestire gli account di archiviazione](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account).
 
-In MyFixItCloudService\ServiceConfiguration.Cloud.cscfg sostituire gli stessi due segnaposto valori per l'account di archiviazione di Azure.
+In MyFixItCloudService,ServiceConfiguration.Cloud.cscfg sostituire gli stessi due valori di segnaposto per l'account di archiviazione di Azure.In MyFixItCloudService'ServiceConfiguration.Cloud.cscfg, replace the same two placeholders values for the Azure storage account.
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample34.xml?highlight=3)]
 
-A questo punto si è pronti per distribuire il servizio cloud. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto MyFixItCloudService e scegliere **pubblica**. Per ulteriori informazioni, vedere l'argomento relativo alla[distribuzione dell'applicazione in Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz), disponibile nella parte 2 di [questa esercitazione](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36).
+A questo punto si è pronti per distribuire il servizio cloud. In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto MyFixItCloudService e scegliere **Pubblica**. Per altre informazioni, vedere "[Distribuire l'applicazione in Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", che è nella parte 2 di questa [esercitazione.](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)
 
 > [!div class="step-by-step"]
-> [Precedente](more-patterns-and-guidance.md)
+> [Indietro](more-patterns-and-guidance.md)

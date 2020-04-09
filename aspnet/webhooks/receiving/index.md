@@ -1,20 +1,20 @@
 ---
 uid: webhooks/receiving/index
-title: Webhook ASP.NET-ricezione ed elaborazione | Microsoft Docs
+title: ASP.NET WebHook - ricezione ed elaborazione Documenti Microsoft
 author: rick-anderson
-description: Articoli sulla ricezione e l'elaborazione di Webhook in ASP.NET
+description: Articoli sulla ricezione e l'elaborazione di WebHook in ASP.NET
 ms.author: riande
 ms.date: 10/14/2016
 ms.assetid: b22046f9-c7a1-4d46-a80c-c7d2e35aad3b
-ms.openlocfilehash: 9d8d8c162d76da4fbb6b429985107c01c1adec26
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 90a55909b48aed5b6808cf9f3e95172a2b07c902
+ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78637011"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80675179"
 ---
-# <a name="aspnet-webhooks---receiving-and-processing"></a>Webhook ASP.NET-ricezione ed elaborazione
+# <a name="aspnet-webhooks---receiving-and-processing"></a>ASP.NET WebHook - ricezione ed elaborazione
 
-* [Ricevitori webhook](receivers.md)
-* [Elaborazione di Webhook](handlers.md)
-* [Dipendenze ricevitore](dependencies.md)
+* [Ricevitori WebHook](receivers.md)
+* [Elaborazione di WebHook](handlers.md)
+* [Dipendenze del ricevitore](dependencies.md)
