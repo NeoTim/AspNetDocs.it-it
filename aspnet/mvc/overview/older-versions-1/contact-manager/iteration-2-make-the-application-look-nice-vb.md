@@ -1,149 +1,149 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
-title: "#2 iterazione: rendere l'aspetto dell'applicazione gradevole (VB) | Microsoft Docs"
-author: microsoft
-description: In questa iterazione, si migliora l'aspetto dell'applicazione modificando la pagina master e il foglio di stile CSS predefiniti della visualizzazione MVC ASP.NET.
+title: "#2 di iterazione – Rendere l'applicazione un aspetto gradeante (VB) Documenti Microsoft"
+author: rick-anderson
+description: In questa iterazione viene migliorato l'aspetto dell'applicazione modificando la pagina master della visualizzazione MVC ASP.NET predefinita e il foglio di stile CSS.
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f65cb436-e493-46fd-9608-384b27385aa1
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cd392baaefcfc9eef3551bc534e0b912ccd349cc
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 5a97958db442c48bd696f6414f7226127984bc34
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78601983"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542430"
 ---
-# <a name="iteration-2--make-the-application-look-nice-vb"></a>#2 iterazione: rendere l'aspetto dell'applicazione gradevole (VB)
+# <a name="iteration-2--make-the-application-look-nice-vb"></a>Iterazione 2 - Migliorare l'aspetto dell'applicazione (VB)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-[Scarica codice](iteration-2-make-the-application-look-nice-vb/_static/contactmanager_2_vb1.zip)
+[Scarica il codice](iteration-2-make-the-application-look-nice-vb/_static/contactmanager_2_vb1.zip)
 
-> In questa iterazione, si migliora l'aspetto dell'applicazione modificando la pagina master e il foglio di stile CSS predefiniti della visualizzazione MVC ASP.NET.
+> In questa iterazione viene migliorato l'aspetto dell'applicazione modificando la pagina master della visualizzazione MVC ASP.NET predefinita e il foglio di stile CSS.
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Compilazione di un'applicazione MVC di gestione dei contatti ASP.NET (VB)
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Creazione di una gestione dei contatti ASP.NET applicazione MVC (VB)Building a Contact Management ASP.NET MVC Application (VB)
 
-In questa serie di esercitazioni viene creata un'intera applicazione di gestione dei contatti dall'inizio alla fine. L'applicazione Contact Manager consente di archiviare le informazioni di contatto, ovvero nomi, numeri di telefono e indirizzi di posta elettronica, per un elenco di persone.
+In questa serie di esercitazioni viene compilata un'intera applicazione di gestione dei contatti dall'inizio alla fine. L'applicazione Contact Manager consente di memorizzare le informazioni di contatto (nomi, numeri di telefono e indirizzi e-mail) per un elenco di persone.
 
-L'applicazione viene compilata su più iterazioni. Ogni iterazione migliora gradualmente l'applicazione. L'obiettivo di questo approccio di iterazione multipla è quello di consentire di comprendere il motivo di ogni modifica.
+Costruiamo l'applicazione su più iterazioni. Ad ogni iterazione, miglioriamo gradualmente l'applicazione. L'obiettivo di questo approccio a più iterazioni è consentire di comprendere il motivo di ogni modifica.
 
-- #1 iterazione: creare l'applicazione. Nella prima iterazione, il gestore contatti viene creato nel modo più semplice possibile. Viene aggiunto il supporto per le operazioni di base sul database: creazione, lettura, aggiornamento ed eliminazione (CRUD).
+- #1 di iterazione: creare l'applicazione. Nella prima iterazione, creiamo il Contact Manager nel modo più semplice possibile. Aggiungiamo il supporto per le operazioni di base del database: crea, leggi, aggiorna ed elimina (CRUD).
 
-- #2 iterazione: l'aspetto dell'applicazione è gradevole. In questa iterazione, si migliora l'aspetto dell'applicazione modificando la pagina master e il foglio di stile CSS predefiniti della visualizzazione MVC ASP.NET.
+- Iterazione #2 – Rendere l'applicazione un aspetto gradese. In questa iterazione viene migliorato l'aspetto dell'applicazione modificando la pagina master della visualizzazione MVC ASP.NET predefinita e il foglio di stile CSS.
 
-- #3 iterazione: aggiungere la convalida del modulo. Nella terza iterazione viene aggiunta la convalida dei form di base. Si impedisce agli utenti di inviare un modulo senza completare i campi dei moduli richiesti. Vengono convalidati anche gli indirizzi di posta elettronica e i numeri di telefono.
+- #3 iterazione: consente di aggiungere la convalida del form. Nella terza iterazione, aggiungiamo la convalida di base del form. Impediamo alle persone di inviare un modulo senza compilare i campi modulo obbligatori. Convalidiamo anche gli indirizzi e-mail e i numeri di telefono.
 
-- #4 iterazione: rendere l'applicazione a regime di controllo libero. In questa quarta iterazione sono disponibili diversi modelli di progettazione software che semplificano la gestione e la modifica dell'applicazione Contact Manager. Ad esempio, si effettua il refactoring dell'applicazione per usare il modello di repository e il modello di inserimento delle dipendenze.
+- Iterazione #4 – Rendere l'applicazione liberamente accoppiato. In questa quarta iterazione, sfruttiamo diversi modelli di progettazione software per semplificare la manutenzione e la modifica dell'applicazione Contact Manager. Ad esempio, viene eseguito il refactoring dell'applicazione per usare il modello Repository e il modello di inserimento delle dipendenze.
 
-- #5 iterazione: creare unit test. Nella quinta iterazione, l'applicazione viene semplificata per la manutenzione e la modifica mediante l'aggiunta di unit test. Si simulano le classi del modello di dati e si compilano unit test per i controller e la logica di convalida.
+- #5 iterazione: consente di creare unit test. Nella quinta iterazione, seminiamo la nostra applicazione più facile da gestire e modificare aggiungendo unit test. Ci prendiamo gioco delle classi del modello di dati e creiamo unit test per i controller e la logica di convalida.
 
-- #6 iterazione: usare lo sviluppo basato su test. In questa sesta iterazione vengono aggiunte nuove funzionalità all'applicazione scrivendo unit test prima e scrivendo il codice in base agli unit test. In questa iterazione vengono aggiunti gruppi di contatti.
+- #6 di iterazione: utilizzare lo sviluppo basato su test. In questa sesta iterazione, aggiungiamo nuove funzionalità all'applicazione scrivendo prima gli unit test e scrivendo il codice sugli unit test. In questa iterazione vengono aggiunti gruppi di contatti.
 
-- #7 iterazione: aggiungere la funzionalità AJAX. Nella settima iterazione, si migliora la velocità di risposta e le prestazioni dell'applicazione mediante l'aggiunta del supporto per AJAX.
+- #7 di iterazione: aggiungere funzionalità Ajax.Iteration #7 – Add Ajax functionality. Nella settima iterazione, miglioriamo la velocità di risposta e le prestazioni dell'applicazione aggiungendo il supporto per Ajax.
 
 ## <a name="this-iteration"></a>Questa iterazione
 
-L'obiettivo di questa iterazione è migliorare l'aspetto dell'applicazione Contact Manager. Attualmente, Contact Manager usa la pagina master della visualizzazione MVC ASP.NET predefinita e il foglio di stile CSS (vedere la figura 1). Questi non hanno un aspetto valido, ma non voglio che il responsabile del contatto sia simile a tutti gli altri siti Web ASP.NET MVC. Si desidera sostituire questi file con file personalizzati.
+L'obiettivo di questa iterazione è migliorare l'aspetto dell'applicazione Contact Manager. Attualmente, contact Manager utilizza il valore predefinito ASP.NET pagina master visualizzazione MVC e foglio di stile CSS (vedere Figura 1). Questi non sembrano male, ma non voglio che il Contact Manager a guardare proprio come ogni altro ASP.NET mvc sito Web. Voglio sostituire questi file con file personalizzati.
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image1.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image1.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image1.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image1.png)
 
-**Figura 01**: l'aspetto predefinito di un'applicazione MVC ASP.NET ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image2.png))
+**Figura 01**: l'aspetto predefinito di un'applicazione MVC ASP.NET[(Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image2.png)a dimensioni intere)
 
-In questa iterazione vengono illustrati due approcci per migliorare la progettazione visiva dell'applicazione. In primo luogo, viene illustrato come sfruttare i vantaggi di ASP.NET MVC Design Gallery per scaricare un modello di progettazione MVC ASP.NET gratuito. La raccolta di progetti MVC ASP.NET consente di creare un'applicazione Web professionale senza eseguire alcuna operazione.
+In questa iterazione, vengono illustrati due approcci per migliorare la progettazione visiva dell'applicazione. In primo luogo, vi mostrerò come sfruttare il ASP.NET di MVC progettazione per scaricare un modello di progettazione MVC ASP.NET gratuito. La raccolta Progettazione MVC ASP.NET consente di creare un'applicazione Web professionale senza eseguire alcuna operazione.
 
-Ho deciso di non usare un modello di ASP.NET MVC Design Gallery per l'applicazione Contact Manager. Al contrario, avevo un progetto personalizzato creato da una società di progettazione professionale. Nella seconda parte di questa esercitazione, spiegherò come ho collaborato con una società di progettazione professionale per creare la progettazione ASP.NET MVC finale.
+Ho deciso di non utilizzare un modello dalla raccolta di progettazione MVC ASP.NET per l'applicazione Contact Manager. Invece, ho avuto un design personalizzato creato da uno studio di design professionale. Nella seconda parte di questa esercitazione spiego come ho lavorato con una società di progettazione professionale per creare la progettazione finale ASP.NET MVC.
 
-## <a name="the-aspnet-mvc-design-gallery"></a>Raccolta di progettazione MVC ASP.NET
+## <a name="the-aspnet-mvc-design-gallery"></a>Raccolta ASP.NET mvc
 
-ASP.NET MVC Design Gallery è una risorsa gratuita fornita da Microsoft. La raccolta MVC ASP.NET è disponibile all'indirizzo seguente:
+Il ASP.NET MVC Design Gallery è una risorsa gratuita fornita da Microsoft. Il ASP.NET raccolta MVC si trova all'indirizzo seguente:
 
 [https://www.asp.net/mvc/gallery](https://www.asp.net/mvc/gallery)
 
-ASP.NET MVC Design Gallery ospita una raccolta di progetti di siti web gratuiti creati in modo specifico per l'uso in un progetto MVC ASP.NET. Le progettazioni vengono caricate dai membri della community. I visitatori della raccolta possono votare per i propri progetti preferiti (vedere la figura 2).
+Il ASP.NET MVC Design Gallery ospita una raccolta di progetti di siti Web gratuiti creati in modo specifico per l'utilizzo in un progetto MVC ASP.NET. I disegni e modelli vengono caricati dai membri della community. I visitatori della Galleria possono votare per i loro disegni preferiti (vedi Figura 2).
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image2.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image3.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image2.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image3.png)
 
-**Figura 02**: ASP.NET MVC Design Gallery ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image4.png))
+**Figura 02**: il ASP.NET raccolta di progettazione MVC ([Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image4.png)a dimensioni intere )
 
-Durante la scrittura di questa esercitazione, la progettazione più diffusa nella raccolta è un progetto denominato ottobre di David Hauser. È possibile usare questa progettazione per un progetto MVC ASP.NET completando i passaggi seguenti:
+Mentre scrivo questo tutorial, il design più popolare nella galleria è un design chiamato ottobre da David Hauser. È possibile utilizzare questa progettazione per un progetto MVC ASP.NET completando i passaggi seguenti:You can use this design for an ASP.NET MVC project by completing the following steps:
 
-1. Fare clic sul pulsante **download** per scaricare il file zip di ottobre nel computer.
-2. Fare clic con il pulsante destro del mouse sul file zip di ottobre scaricato e scegliere il pulsante **Sblocca** (vedere la figura 3).
+1. Fare clic sul pulsante **Download** per scaricare il file October.zip nel computer.
+2. Fare clic con il pulsante destro del mouse sul file October.zip scaricato e scegliere il pulsante **Sblocca** (vedere la figura 3).
 3. Decomprimere il file in una cartella denominata ottobre.
-4. Selezionare tutti i file dalla cartella DesignTemplate contenuta nella cartella ottobre, fare clic con il pulsante destro del mouse sui file e selezionare l'opzione di menu **copia**.
-5. Fare clic con il pulsante destro del mouse sul nodo del progetto ContactManager nella finestra di Esplora soluzioni di Visual Studio e selezionare l'opzione di menu **Incolla** (vedere la figura 4).
-6. Selezionare l'opzione di menu Visual Studio **modifica, trova e Sostituisci, Sostituisci** e Sostituisci *[NomeProgetto]* con *ContactManager* (vedere la figura 5).
+4. Selezionare tutti i file dalla cartella DesignTemplate contenuta nella cartella Ottobre, fare clic con il pulsante destro del mouse sui file e selezionare l'opzione di menu **Copia**.
+5. Fare clic con il pulsante destro del mouse sul nodo del progetto ContactManager nella finestra Esplora soluzioni di Visual Studio e selezionare l'opzione di menu **Incolla** (vedere la Figura 4).
+6. Selezionare l'opzione di menu di Visual Studio **Modifica, Trova e sostituisci, Sostituisci rapidamente** e *sostituisci [MyProjectName]* con *ContactManager* (vedere Figura 5).
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)
 
-**Figura 03**: sbloccare un file scaricato dal Web ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image6.png))
+**Figura 03**: Sblocco di un file scaricato dal Web ([Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image6.png)a dimensioni intere )
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image4.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image7.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image4.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image7.png)
 
-**Figura 04**: sovrascrivere i file nella Esplora soluzioni ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
+**Figura 04**: sovrascrittura di file in Esplora soluzioni ([Fare clic per visualizzare l'immagine a dimensioni intere](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image5.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image9.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image5.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image9.png)
 
-**Figura 05**: sostituzione di [NomeProgetto] con ContactManager ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image10.png))
+**Figura 05**: Sostituzione di [ProjectName] con ContactManager ([Fare clic per visualizzare l'immagine a dimensioni intere)](iteration-2-make-the-application-look-nice-vb/_static/image10.png)
 
-Dopo aver completato questi passaggi, l'applicazione Web utilizzerà la nuova progettazione. La pagina della figura 6 illustra l'aspetto dell'applicazione Contact Manager con la progettazione di ottobre.
+Dopo aver completato questi passaggi, l'applicazione Web utilizzerà la nuova progettazione. La pagina in Figura 6 illustra l'aspetto dell'applicazione Contact Manager con la progettazione di ottobre.
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image6.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image11.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image6.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image11.png)
 
-**Figura 06**: ContactManager con il modello di ottobre ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image12.png))
+**Figura 06**: ContactManager con il modello di ottobre ([Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image12.png)a dimensioni intere )
 
-## <a name="creating-a-custom-aspnet-mvc-design"></a>Creazione di una progettazione ASP.NET MVC personalizzata
+## <a name="creating-a-custom-aspnet-mvc-design"></a>Creazione di una progettazione MVC ASP.NET personalizzata
 
-ASP.NET MVC Design Gallery offre una selezione efficace di diversi stili di progettazione. La raccolta fornisce un modo indolore per personalizzare l'aspetto delle applicazioni MVC ASP.NET. Ovviamente, la raccolta ha il grande vantaggio di essere completamente gratuita.
+Il ASP.NET MVC Design Gallery dispone di una buona selezione di diversi stili di progettazione. La raccolta offre un modo indolore per personalizzare l'aspetto delle applicazioni MVC ASP.NET. E, naturalmente, la Galleria ha il grande vantaggio di essere completamente gratuito.
 
-Tuttavia, potrebbe essere necessario creare una progettazione completamente univoca per il sito Web. In tal caso, è opportuno lavorare con una società di progettazione di siti Web. Ho deciso di adottare questo approccio per la progettazione dell'applicazione Contact Manager.
+Tuttavia, potrebbe essere necessario creare un design completamente unico per il tuo sito web. In tal caso, ha senso lavorare con una società di progettazione di siti web. Ho deciso di adottare questo approccio per la progettazione per l'applicazione Contact Manager.
 
-Il gestore contatti è stato compresso dall'iterazione #1 e il progetto è stato inviato alla società di progettazione. Non sono proprietari di Visual Studio (vergogna), ma questo non ha riscontrato un problema. Sono stati in grado di scaricare gratuitamente Microsoft Visual Web Developer dal sito Web di [https://www.asp.net](https://www.asp.net) e di aprire l'applicazione Contact Manager in Visual Web Developer. In un paio di giorni, ha prodotto la progettazione nella figura 7.
+Ho riempito il Contact Manager da Iteration #1 e ho inviato il progetto alla società di progettazione. Non erano proprietari di Visual Studio (vergogna su di loro!), ma che non ha presentato un problema. Sono stati in grado di scaricare Microsoft [https://www.asp.net](https://www.asp.net) Visual Web Developer gratuitamente dal sito Web e aprire l'applicazione Contact Manager in Visual Web Developer. In un paio di giorni, avevano prodotto il disegno in Figura 7.
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
 
-**Figura 07**: progettazione di Contact Manager di ASP.NET MVC ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image14.png))
+**Figura 07**: il ASP.NET Progettazione di MVC Contact Manager ([Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image14.png)a dimensioni intere )
 
-Il nuovo progetto era costituito da due file principali: un nuovo file di foglio di stile CSS e un nuovo file di pagina master di visualizzazione. Una pagina master di visualizzazione contiene il layout e il contenuto condiviso per le visualizzazioni in un'applicazione MVC ASP.NET. Ad esempio, la pagina master di visualizzazione include l'intestazione, le schede di navigazione e il piè di pagina visualizzati nella figura 7. Ho sovrascritto la pagina master della visualizzazione site. master esistente nella cartella Views\Shared con il nuovo file site. master dell'azienda di progettazione,
+Il nuovo progetto consisteva in due file principali: un nuovo file di foglio di stile CSS e un nuovo file di pagina master di visualizzazione. Una pagina master di visualizzazione contiene il layout e il contenuto condiviso per le visualizzazioni in un'applicazione MVC ASP.NET. Ad esempio, la pagina master di visualizzazione include l'intestazione, le schede di spostamento e il piè di pagina visualizzati nella Figura 7. Ho sovrascritto la pagina master della visualizzazione Site.Master esistente nella cartella Views/Shared con il nuovo file Site.Master della società di progettazione,
 
-La società di progettazione ha inoltre creato un nuovo foglio di stile CSS e un set di immagini. Ho inserito questi nuovi file nella cartella Content e ho sovrascritto il file site. CSS esistente. È necessario inserire tutto il contenuto statico nella cartella contenuto.
+L'azienda di progettazione ha inoltre creato un nuovo foglio di stile CSS e un set di immagini. Ho inserito questi nuovi file nella cartella Content e ho sovrascritto il file Site.css esistente. È necessario inserire tutto il contenuto statico nella cartella Content.
 
-Si noti che la nuova progettazione per Contact Manager include immagini per la modifica e l'eliminazione di contatti. Accanto a ogni contatto della tabella dei contatti HTML verrà visualizzata un'immagine di modifica ed eliminazione.
+Si noti che il nuovo progetto per Contact Manager include immagini per la modifica e l'eliminazione dei contatti. Accanto a ogni contatto nella tabella HTML dei contatti viene visualizzata un'immagine Modifica ed Elimina.
 
-Originariamente, i collegamenti di cui veniva eseguito il rendering con il codice HTML. Helper ActionLink () simile al seguente:
+Originariamente, questi collegamenti che sono stati renderizzati con il codice HTML. Helper ActionLink() come questo:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample1.aspx)]
 
-Il metodo HTML. ActionLink () non supporta le immagini (il metodo HTML codifica il testo del collegamento per motivi di sicurezza). Quindi, ho sostituito le chiamate a HTML. ActionLink () con le chiamate a URL. Action () come segue:
+Il metodo Html.ActionLink() non supporta le immagini (il codice HTML del metodo codifica il testo del collegamento per motivi di sicurezza). Pertanto, ho sostituito le chiamate a Html.ActionLink() con chiamate a Url.Action() in questo modo:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample2.aspx)]
 
-Il metodo HTML. ActionLink () esegue il rendering di un intero collegamento ipertestuale HTML. Il metodo URL. Action (), invece, esegue il rendering solo dell'URL senza il &lt;un tag di&gt;.
+Il metodo Html.ActionLink() esegue il rendering di un intero collegamento ipertestuale HTML. Il metodo Url.Action(), d'altra parte, esegue &lt;&gt; il rendering solo dell'URL senza il tag a.
 
-Si noti inoltre che nella nuova progettazione sono incluse sia le schede selezionate che quelle deselezionate. Nella figura 8, ad esempio, è selezionata la scheda **Crea nuovo contatto** e la scheda **contatti personali** non è selezionata.
+Si noti, inoltre, che il nuovo design include schede selezionate e non selezionate. Ad esempio, nella figura 8, la scheda **Crea nuovo contatto** è selezionata e la scheda Contatti **personali** non è selezionata.
 
-[![finestra di dialogo nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image8.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image15.png)
+[![Finestra di dialogo relativa al nuovo progetto](iteration-2-make-the-application-look-nice-vb/_static/image8.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image15.png)
 
-**Figura 08**: schede selezionate e deselezionate ([fare clic per visualizzare l'immagine con dimensioni complete](iteration-2-make-the-application-look-nice-vb/_static/image16.png))
+**Figura 08**: Schede selezionate e non selezionate ([Fare clic per visualizzare l'immagine](iteration-2-make-the-application-look-nice-vb/_static/image16.png)a dimensioni intere)
 
-Per supportare il rendering delle schede selezionate e deselezionate, ho creato un helper HTML personalizzato denominato MenuItemHelper. Questo metodo helper esegue il rendering di un tag di &lt;li&gt; o di un &lt;li class = "Selected"&gt; tag a seconda che il controller e l'azione correnti corrispondano al nome del controller e dell'azione passato all'helper. Il codice per MenuItemHelper è contenuto nel listato 1.
+Per supportare il rendering di schede selezionate e non selezionate, ho creato un helper HTML personalizzato denominato MenuItemHelper.To support rendering both selected and unselected tabs, I created a custom HTML helper named the MenuItemHelper. Questo metodo helper &lt;esegue&gt; il &lt;rendering di un&gt; tag li o di un tag li class, ovvero "selected" a seconda che il controller e l'azione correnti corrispondano al controller e al nome dell'azione passati all'helper. Il codice per il MenuItemHelper è contenuto nel listato 1.The code for the MenuItemHelper is contained in Listing 1.
 
-**Listato 1 – Helpers\MenuItemHelper.vb**
+**Listato 1 – Helpers-MenuItemHelper.vb**
 
 [!code-vb[Main](iteration-2-make-the-application-look-nice-vb/samples/sample3.vb)]
 
-Il MenuItemHelper usa internamente la classe TagBuilder per compilare il tag HTML &lt;li&gt;. La classe TagBuilder è una classe di utilità molto utile che è possibile usare ogni volta che è necessario creare un nuovo tag HTML. Include metodi per l'aggiunta di attributi, l'aggiunta di classi CSS, la generazione di ID e la modifica del codice HTML interno del tag.
+Il MenuItemHelper utilizza il TagBuilder classe &lt;&gt; internamente per compilare il tag html li. La classe TagBuilder è una classe di utilità molto utile che è possibile utilizzare ogni volta che è necessario creare un nuovo tag HTML. Include metodi per l'aggiunta di attributi, l'aggiunta di classi CSS, la generazione di ID e la modifica del tag s HTML interno.
 
 ## <a name="summary"></a>Riepilogo
 
-In questa iterazione è stata migliorata la progettazione visiva dell'applicazione ASP.NET MVC. In primo luogo, è stata introdotta la raccolta di progetti MVC ASP.NET. Si è appreso come scaricare modelli di progettazione gratuiti dalla raccolta di progetti MVC ASP.NET che è possibile usare nelle applicazioni ASP.NET MVC.
+In questa iterazione, è stata migliorata la progettazione visiva dell'applicazione ASP.NET MVC. In primo luogo, è stato introdotto al ASP.NET MVC Design Gallery. È stato illustrato come scaricare modelli di progettazione gratuiti dalla raccolta di progettazione MVC ASP.NET che è possibile utilizzare nelle applicazioni MVC ASP.NET.
 
-Successivamente, è stato descritto come creare una progettazione personalizzata modificando il file del foglio di stile CSS e il file di pagina della visualizzazione master predefiniti. Per supportare la nuova progettazione, è necessario apportare alcune modifiche minime all'applicazione Contact Manager. Ad esempio, è stato aggiunto un nuovo helper HTML denominato MenuItemHelper che visualizza le schede selezionate e deselezionate.
+Successivamente, è stato illustrato come creare un progetto personalizzato modificando il file dei fogli di stile CSS predefiniti e il file della pagina di visualizzazione master. Per supportare il nuovo design, abbiamo dovuto apportare alcune modifiche minori alla nostra applicazione Contact Manager. Ad esempio, è stato aggiunto un nuovo helper HTML denominato MenuItemHelper che visualizza le schede selezionate e deselezionate.
 
-Nell'iterazione successiva si affronterà l'argomento molto importante della convalida. Il codice di convalida viene aggiunto all'applicazione in modo che un utente non possa creare un nuovo contatto senza specificare i valori richiesti, ad esempio il nome e il cognome di una persona.
+Nella prossima iterazione, affrontiamo il tema molto importante della convalida. Aggiungiamo il codice di convalida all'applicazione in modo che un utente non possa creare un nuovo contatto senza fornire i valori richiesti, ad esempio un nome e cognome di una persona.
 
 > [!div class="step-by-step"]
-> [Precedente](iteration-1-create-the-application-vb.md)
-> [Successivo](iteration-3-add-form-validation-vb.md)
+> [Successivo](iteration-1-create-the-application-vb.md)
+> [precedente](iteration-3-add-form-validation-vb.md)

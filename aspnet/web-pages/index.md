@@ -1,28 +1,28 @@
 ---
 uid: web-pages/index
-title: Pagine Web ASP.NET | Microsoft Docs
+title: ASP.NET pagine Web Documenti Microsoft
 author: rick-anderson
-description: Scarica WebMatrix & Scopri come creare rapidamente pagine Web in modo semplice per combinare il codice server con HTML.
+description: Scarica WebMatrix & scopri come creare rapidamente pagine web in modo semplice per combinare il codice server con HTML.
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
-ms.openlocfilehash: 56bf82e22b3562893ef842a90d42aa7b6ff5858f
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: d767325a376e5daa0ea4236f67c88e6b97ae71a7
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78640952"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543522"
 ---
 # <a name="aspnet-web-pages"></a>Pagine Web ASP.NET
 
 > [!NOTE] 
-> WebMatrix non è più consigliato come Integrated Development Environment per Pagine Web ASP.NET. Usare [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) o [Visual Studio Code](https://code.visualstudio.com/).
+> WebMatrix non è più consigliato come ambiente di sviluppo integrato per ASP.NET pagine Web. Utilizzare [Visual Studio](xref:web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) o Visual Studio [Code](https://code.visualstudio.com/).
 
-- [Linee guida](overview/index.md)
+- [Materiale sussidiario](overview/index.md)
 
-    - [Introduzione](overview/getting-started/index.md)
+    - [Guida introduttiva](overview/getting-started/index.md)
 
         - [Programmare pagine Web ASP.NET in Visual Studio](overview/getting-started/program-asp-net-web-pages-in-visual-studio.md)
         - [Introduzione alla sintassi Razor per la programmazione Web ASP.NET](overview/getting-started/introducing-razor-syntax-c.md)
@@ -32,7 +32,7 @@ ms.locfileid: "78640952"
         - [Aggiunta di social networking al sito Web](overview/getting-started/13-adding-social-networking-to-your-web-site.md)
         - [Introduzione alle pagine Web ASP.NET](overview/getting-started/introducing-aspnet-web-pages-2/index.md)
 
-            - [Introduzione](overview/getting-started/introducing-aspnet-web-pages-2/getting-started.md)
+            - [Guida introduttiva](overview/getting-started/introducing-aspnet-web-pages-2/getting-started.md)
             - [Nozioni fondamentali di programmazione](overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
             - [Visualizzazione di dati](overview/getting-started/introducing-aspnet-web-pages-2/displaying-data.md)
             - [Nozioni fondamentali sui moduli HTML](overview/getting-started/introducing-aspnet-web-pages-2/form-basics.md)
@@ -46,22 +46,22 @@ ms.locfileid: "78640952"
         - [Creazione di URL leggibili nei siti con pagine Web ASP.NET](overview/routing/creating-readable-urls-in-aspnet-web-pages-sites.md)
     - [Interfaccia utente, layout e temi](overview/ui-layouts-and-themes/index.md)
 
-        - [Utilizzo dei moduli](overview/ui-layouts-and-themes/4-working-with-forms.md)
+        - [Uso dei moduli](overview/ui-layouts-and-themes/4-working-with-forms.md)
         - [Convalida dell'input utente nelle pagine Web ASP.NET](overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites.md)
         - [Creazione di un aspetto coerente](overview/ui-layouts-and-themes/3-creating-a-consistent-look.md)
         - [Personalizzazione del comportamento a livello di sito](overview/ui-layouts-and-themes/18-customizing-site-wide-behavior.md)
-        - [Uso delle immagini](overview/ui-layouts-and-themes/9-working-with-images.md)
+        - [Utilizzo delle immagini](overview/ui-layouts-and-themes/9-working-with-images.md)
         - [Uso dei video](overview/ui-layouts-and-themes/10-working-with-video.md)
         - [Creazione e uso di un helper in un sito con pagine Web ASP.NET](overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site.md)
         - [Installazione di un helper](overview/ui-layouts-and-themes/installing-helpers.md)
         - [Helper di Twitter con pagine Web ASP.NET](overview/ui-layouts-and-themes/twitter-helper.md)
         - [Visualizzazione di mappe in un sito con pagine Web ASP.NET](overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site.md)
-    - [Dispositivi mobili](overview/mobile/index.md)
+    - [mobili](overview/mobile/index.md)
 
         - [Rendering dei siti con pagine Web ASP.NET per i dispositivi mobili](overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices.md)
-    - [Uso di dati](overview/data/index.md)
+    - [Utilizzo dei dati](overview/data/index.md)
 
-        - [Uso di dati](overview/data/5-working-with-data.md)
+        - [Utilizzo dei dati](overview/data/5-working-with-data.md)
         - [Visualizzazione dei dati in un grafico](overview/data/7-displaying-data-in-a-chart.md)
         - [Uso dei file](overview/data/working-with-files.md)
     - [Test e debug](overview/testing-and-debugging/index.md)
@@ -77,11 +77,11 @@ ms.locfileid: "78640952"
 
         - [Memorizzazione nella cache per migliorare le prestazioni del sito Web](overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website.md)
         - [Analisi del traffico](overview/performance-and-traffic/14-analyzing-traffic.md)
-        - [Creazione di bundle e minimizzazione di risorse nelle pagine Web ASP.NET (Razor)](overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
+        - [Creazione di bundle e minimizzazione degli asset nelle pagine Web ASP.NET (Razor)](overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
     - [Riferimento API](overview/api-reference/index.md)
 
         - [Riferimento rapido sulle API ASP.NET](overview/api-reference/asp-net-web-pages-api-reference.md)
-    - [Versioni](overview/releases/index.md)
+    - [Rilasci](overview/releases/index.md)
 
         - [Novità delle pagine Web ASP.NET 3.2](overview/releases/whats-new-in-aspnet-web-pages-32.md)
         - [Novità delle pagine Web ASP.NET 3.1](overview/releases/whats-new-aspnet-web-pages-31.md)
@@ -102,7 +102,7 @@ ms.locfileid: "78640952"
         - [Creare una pagina di modifica dei dati in WebMatrix](videos/introduction/create-an-edit-data-page-in-webmatrix.md)
         - [Creare una pagina di eliminazione dei dati in WebMatrix](videos/introduction/create-a-delete-data-page-in-webmatrix.md)
         - [Pubblicare un sito Web su Internet tramite WebMatrix](videos/introduction/publish-a-website-to-the-internet-using-webmatrix.md)
-    - [Razor Pages ASP.NET](videos/aspnet-razor-pages/index.md)
+    - [ASP.NET pagine Razor](videos/aspnet-razor-pages/index.md)
 
         - [Introduzione a WebMatrix e pagine Web ASP.NET](videos/aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
         - [Introduzione alla sintassi Razor per la programmazione Web ASP.NET](videos/aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
@@ -116,7 +116,7 @@ ms.locfileid: "78640952"
         - [Visualizzazione dei dati in un grafico (parte 1)](videos/aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
         - [Visualizzazione dei dati in un grafico (parte 2)](videos/aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
         - [Uso dei file](videos/aspnet-razor-pages/working-with-files.md)
-        - [Uso delle immagini](videos/aspnet-razor-pages/working-with-images.md)
+        - [Utilizzo delle immagini](videos/aspnet-razor-pages/working-with-images.md)
         - [Uso dei video](videos/aspnet-razor-pages/working-with-video.md)
         - [Aggiunta di posta elettronica al sito Web](videos/aspnet-razor-pages/adding-email-to-your-web-site.md)
         - [Aggiunta di funzionalità di ricerca al sito Web](videos/aspnet-razor-pages/adding-search-to-your-web-site.md)

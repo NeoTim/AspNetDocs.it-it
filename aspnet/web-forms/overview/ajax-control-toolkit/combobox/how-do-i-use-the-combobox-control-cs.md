@@ -1,155 +1,155 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-cs
-title: Ricerca per categorie usare il controllo ComboBox? (C#) | Microsoft Docs
-author: microsoft
-description: ComboBox è un controllo AJAX ASP.NET che combina la flessibilità di una casella di testo con un elenco di opzioni da cui gli utenti possono scegliere.
+title: Come si usa il controllo ComboBox? (C'è) Documenti Microsoft
+author: rick-anderson
+description: ComboBox è un ASP.NET controllo AJAX che combina la flessibilità di un controllo TextBox con un elenco di opzioni tra cui gli utenti possono scegliere.
 ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 0bbf4134-04df-4226-8930-d5bb99e27128
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c5fc61300441303b39e348d3eee83b6ee6847b4
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 2adb9663cb7bdc38f28a127f7932f45a3447d1de
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78554453"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543805"
 ---
-# <a name="how-do-i-use-the-combobox-control-c"></a>Ricerca per categorie usare il controllo ComboBox? (C#)
+# <a name="how-do-i-use-the-combobox-control-c"></a>Come si usa il controllo ComboBox? (C#)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-> ComboBox è un controllo AJAX ASP.NET che combina la flessibilità di una casella di testo con un elenco di opzioni da cui gli utenti possono scegliere.
+> ComboBox è un ASP.NET controllo AJAX che combina la flessibilità di un controllo TextBox con un elenco di opzioni tra cui gli utenti possono scegliere.
 
-L'obiettivo di questa esercitazione è spiegare il controllo ComboBox di AJAX Control Toolkit. ComboBox funziona come una combinazione tra un controllo DropDownList ASP.NET standard e un controllo TextBox. È possibile effettuare una selezione da un elenco preesistente di elementi o immettere un nuovo elemento.
+L'obiettivo di questa esercitazione è spiegare il controllo ComboBox di AJAX Control Toolkit. Il controllo ComboBox funziona come una combinazione tra un controllo DropDownList standard ASP.NET e un controllo TextBox. È possibile selezionare da un elenco di elementi preesistente o immettere un nuovo elemento.
 
-ComboBox è simile all'Extender del controllo di completamento automatico, ma i controlli vengono usati in scenari diversi. Il dispositivo Extender AutoComplete esegue una query su un servizio Web per ottenere le voci corrispondenti. Il controllo ComboBox, al contrario, viene inizializzato con un set di elementi. L'uso del dispositivo Extender AutoComplete è utile quando si lavora con un set di dati di grandi dimensioni (milioni di parti dell'auto) quando si usa il controllo ComboBox, quando si lavora con un piccolo set di dati (dozzine di parti dell'auto).
+Il controllo ComboBox è simile all'estensione del controllo AutoComplete, ma i controlli vengono utilizzati in scenari diversi. L'estensione Completamento automatico esegue una query su un servizio Web per ottenere voci corrispondenti. Il controllo ComboBox, al contrario, viene inizializzato con un set di elementi. L'utilizzo dell'estensione AutoComplete ha senso quando si lavora con un ampio set di dati (milioni di parti di auto) durante l'utilizzo del controllo ComboBox ha senso quando si lavora con un piccolo set di dati (decine di parti di auto).
 
 ## <a name="selecting-from-a-static-list-of-items"></a>Selezione da un elenco statico di elementi
 
-Inizia con un semplice esempio di utilizzo del controllo ComboBox. Si supponga di voler visualizzare un elenco statico di elementi in un elenco a discesa. Tuttavia, si desidera lasciare aperto il rischio che l'elenco non sia completo. Si desidera consentire a un utente di immettere un valore personalizzato nell'elenco.
+Iniziate s con un semplice esempio di utilizzo del controllo ComboBox. Si supponga di voler visualizzare un elenco statico di elementi in un elenco a discesa. Tuttavia, si desidera lasciare aperta la possibilità che l'elenco non sia completo. Si desidera consentire a un utente di immettere un valore personalizzato nell'elenco.
 
-Viene creata una nuova pagina Web Form ASP.NET e viene utilizzato il controllo ComboBox nella pagina. Aggiungere la nuova pagina ASP.NET al progetto e passare alla visualizzazione progettazione.
+Verrà creata una nuova pagina ASP.NET Web Form e verrà utilizzato il controllo ComboBox nella pagina. Aggiungere la nuova pagina ASP.NET al progetto e passare alla visualizzazione Progettazione.
 
-Se si desidera utilizzare il controllo ComboBox nella pagina, è necessario aggiungere un controllo ScriptManager alla pagina. Trascinare il controllo ScriptManager da sotto la scheda Estensioni AJAX nell'area di progettazione. È necessario aggiungere il controllo ScriptManager nella parte superiore della pagina; è possibile aggiungerlo immediatamente sotto il modulo di apertura &lt;lato server&gt; tag.
+Se si desidera utilizzare il controllo ComboBox nella pagina, è necessario aggiungere un controllo ScriptManager alla pagina. Trascinare il controllo ScriptManager dalla sotto la scheda Estensioni AJAX nell'area di progettazione. È necessario aggiungere il controllo ScriptManager nella parte superiore della pagina; è possibile aggiungerlo immediatamente sotto &lt;il&gt; tag del modulo lato server di apertura.
 
-Trascinare quindi il controllo ComboBox nella pagina. È possibile trovare il controllo ComboBox nella casella degli strumenti con gli altri controlli e Extender di controllo AJAX Control Toolkit (vedere Figura 1).
+Successivamente, trascinare il controllo ComboBox nella pagina. È possibile trovare il controllo ComboBox nella casella degli strumenti con gli altri controlli AJAX Control Toolkit ed estensioni di controllo (vedere figura1).
 
-[![forma semplice per la creazione di un biglietto da lavoro](how-do-i-use-the-combobox-control-cs/_static/image1.jpg)](how-do-i-use-the-combobox-control-cs/_static/image1.png)
+[![Modulo semplice per la creazione di un biglietto da visita](how-do-i-use-the-combobox-control-cs/_static/image1.jpg)](how-do-i-use-the-combobox-control-cs/_static/image1.png)
 
-**Figura 01**: selezione del controllo ComboBox dalla casella degli strumenti ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image2.png))
+**Figura 01**: Selezione del controllo ComboBox dalla casella degli strumenti ([Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image2.png)a dimensioni intere)
 
-Si userà il controllo ComboBox per visualizzare un elenco statico di opzioni. L'utente può selezionare un particolare livello di piccante per il proprio cibo da un elenco di tre opzioni: lieve, media e attiva (vedere la figura 2).
+Utilizzeremo il controllo ComboBox per visualizzare un elenco statico di scelte. L'utente può selezionare un particolare livello di piccantezza per il proprio cibo da un elenco di tre opzioni: Mild, Medium e Hot (vedere Figura 2).
 
-[![la selezione da un elenco statico di elementi](how-do-i-use-the-combobox-control-cs/_static/image2.jpg)](how-do-i-use-the-combobox-control-cs/_static/image3.png)
+[![Selezione da un elenco statico di elementi](how-do-i-use-the-combobox-control-cs/_static/image2.jpg)](how-do-i-use-the-combobox-control-cs/_static/image3.png)
 
-**Figura 02**: selezione da un elenco statico di elementi ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image4.png))
+**Figura 02**: Selezione da un elenco statico di elementi([Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image4.png)a dimensioni intere)
 
-È possibile aggiungere queste opzioni al controllo ComboBox in due modi. In primo luogo, si seleziona l'opzione modifica opzioni attività quando si posiziona il puntatore del mouse sul controllo nella visualizzazione progettazione e si apre l'editor di elementi (vedere la figura 3).
+Esistono due modi per aggiungere queste scelte al controllo ComboBox. In primo luogo, si seleziona l'opzione di attività Modifica opzioni quando si passa il mouse sul controllo in visualizzazione Progettazione e si apre l'Editor di elementi (vedere Figura 3).
 
-[![modifica elementi ComboBox](how-do-i-use-the-combobox-control-cs/_static/image3.jpg)](how-do-i-use-the-combobox-control-cs/_static/image5.png)
+[![Modifica degli elementi comboBox](how-do-i-use-the-combobox-control-cs/_static/image3.jpg)](how-do-i-use-the-combobox-control-cs/_static/image5.png)
 
-**Figura 03**: modifica di elementi ComboBox ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image6.png))
+**Figura 03**: Modifica degli elementi comboBox([Fare clic per visualizzare l'immagine a dimensioni intere)](how-do-i-use-the-combobox-control-cs/_static/image6.png)
 
-La seconda opzione consiste nell'aggiungere l'elenco di elementi tra i tag di apertura e chiusura &lt;ASP: ComboBox&gt; nella visualizzazione origine. La pagina nel listato 1 contiene la casella combinata aggiornata che include l'elenco di elementi.
+La seconda opzione consiste nell'aggiungere l'elenco &lt;di elementi&gt; tra i tag asp:ComboBox di apertura e chiusura nella visualizzazione Origine. La pagina nel listato 1 contiene il controllo ComboBox aggiornato con l'elenco di elementi.
 
-**Listato 1-static. aspx**
+**Listato 1 - Static.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-combobox-control-cs/samples/sample1.aspx)]
 
-Quando si apre la pagina nel listato 1, è possibile selezionare una delle opzioni preesistenti dalla casella combinata. In altre parole, la ComboBox funziona esattamente come un controllo DropDownList.
+Quando si apre la pagina nel listato 1, è possibile selezionare una delle opzioni preesistenti dal ComboBox. In altre parole, il ComboBox funziona come un controllo DropDownList.
 
-Tuttavia, è anche possibile immettere una nuova scelta, ad esempio Super piccante, che non è presente nell'elenco esistente. Quindi, la ComboBox funziona anche come un controllo TextBox.
+Tuttavia, hai anche la possibilità di inserire una nuova scelta (ad esempio, Super Spicy) che non è nell'elenco esistente. Così, il ComboBox funziona anche come un TextBox controllo.
 
-Indipendentemente dal fatto che si scelga un elemento preesistente o si immetta un elemento personalizzato, quando si invia il modulo, la scelta verrà visualizzata nel controllo etichetta. Quando si invia il modulo, il btnSubmit\_fare clic su gestore esegue e aggiorna l'etichetta (vedere la figura 4).
+Indipendentemente dal fatto che si seleziona un elemento preesistente o si immette un elemento personalizzato, quando si invia il modulo, la scelta viene visualizzata nel controllo etichetta. Quando si invia il modulo,\_il btnSubmit Click gestore esegue e aggiorna l'etichetta (vedere Figura 4).
 
-[![la visualizzazione dell'elemento selezionato](how-do-i-use-the-combobox-control-cs/_static/image4.jpg)](how-do-i-use-the-combobox-control-cs/_static/image7.png)
+[![Visualizzazione dell'elemento selezionato](how-do-i-use-the-combobox-control-cs/_static/image4.jpg)](how-do-i-use-the-combobox-control-cs/_static/image7.png)
 
-**Figura 04**: visualizzazione dell'elemento selezionato ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image8.png))
+**Figura 04**: Visualizzazione dell'elemento[selezionato(Fare clic per visualizzare l'immagine a dimensioni intere)](how-do-i-use-the-combobox-control-cs/_static/image8.png)
 
-ComboBox supporta le stesse proprietà del controllo DropDownList per il recupero dell'elemento selezionato dopo l'invio di un modulo:
+Il controllo ComboBox supporta le stesse proprietà del controllo DropDownList per il recupero dell'elemento selezionato dopo l'invio di un form:
 
-- SelectedItem. Text-Visualizza il valore della proprietà Text dell'elemento selezionato.
-- SelectedItem. Value: Visualizza il valore della proprietà Value dell'elemento selezionato oppure Visualizza il testo digitato nella casella combinata.
-- SelectedValue: uguale a SelectedItem. Value con la differenza che questa proprietà consente di specificare l'elemento selezionato predefinito (iniziale).
+- SelectedItem.Text - Visualizza il valore della proprietà Text dell'elemento selezionato.
+- SelectedItem.Value - Visualizza il valore della proprietà Value dell'elemento selezionato o visualizza il testo digitato nel controllo ComboBox.
+- SelectedValue - Uguale a SelectedItem.Value, ad eccezione del fatto che questa proprietà consente di specificare l'elemento selezionato predefinito (iniziale).
 
-Se si digita una scelta personalizzata nella casella combinata, la scelta personalizzata viene assegnata alle proprietà SelectedItem. Text e SelectedItem. Value.
+Se si digita una scelta personalizzata nel controllo ComboBox, la scelta personalizzata viene assegnata a entrambe le proprietà SelectedItem.Text e SelectedItem.Value.
 
 ## <a name="selecting-the-list-of-items-from-the-database"></a>Selezione dell'elenco di elementi dal database
 
-È possibile recuperare l'elenco di elementi visualizzati dalla casella combinata da un database. Ad esempio, è possibile associare ComboBox a un controllo SqlDataSource, un controllo ObjectDataSource, un LinqDataSource o un oggetto EntityDataSource.
+È possibile recuperare l'elenco di elementi visualizzati da ComboBox da un database. Ad esempio, è possibile associare il controllo ComboBox a un controllo SqlDataSource, un controllo ObjectDataSource, LinqDataSource o un oggetto EntityDataSource.For example, you can bind the ComboBox to a SqlDataSource control, an ObjectDataSource control, a LinqDataSource, or an EntityDataSource.
 
-Si supponga di voler visualizzare un elenco di filmati in una casella combinata. Si desidera recuperare l'elenco dei film dalla tabella del database Movies. Attenersi ai passaggi riportati di seguito.
+Si supponga di voler visualizzare un elenco di filmati in un controllo ComboBox.Immaginate che si desidera visualizzare un elenco di film in un ComboBox.Imagine that you want to display a list of movies in a ComboBox. Si desidera recuperare l'elenco dei film dalla tabella di database Movies. A tale scopo, seguire questa procedura:
 
-1. Creare una pagina denominata Movies. aspx
-2. Aggiungere un controllo ScriptManager alla pagina trascinando ScriptManager dalla scheda Estensioni AJAX della casella degli strumenti nella pagina.
-3. Aggiungere un controllo ComboBox alla pagina trascinando la casella combinata nella pagina.
-4. Nella visualizzazione della struttura posizionare il puntatore del mouse sul controllo ComboBox e selezionare l'opzione per l'attività **Scegli origine dati** (vedere la figura 5). Viene avviata la configurazione guidata origine dati.
-5. Nel passaggio **Scegli un'origine dati** selezionare l'opzione &lt;nuova origine dati&gt;.
-6. Nel passaggio **scegliere un tipo di origine dati** selezionare database.
-7. Nel passaggio **scegliere la connessione dati** selezionare il database, ad esempio MoviesDB. MDF.
-8. Nel passaggio **Salva la stringa di connessione nel file di configurazione dell'applicazione** selezionare l'opzione per salvare la stringa di connessione.
-9. Nel passaggio **Configura istruzione SELECT** selezionare la tabella del database Movies e selezionare tutte le colonne.
-10. Nel passaggio **Test query** fare clic sul pulsante fine.
-11. Tornare al passaggio **Scegli origine dati** , selezionare la colonna titolo per il campo da visualizzare e la colonna ID per il campo dati (vedere la figura).
+1. Creare una pagina denominata Movies.aspxCreate a page named Movies.aspx
+2. Aggiungere un controllo ScriptManager alla pagina trascinando ScriptManager dalla scheda Estensioni AJAX della Casella degli strumenti nella pagina.
+3. Aggiungere un controllo ComboBox alla pagina trascinando il controllo ComboBox nella pagina.
+4. In visualizzazione Progettazione passare il mouse sul controllo ComboBox e selezionare l'opzione di attività **Scegli origine dati** (vedere la Figura 5). Viene avviata la Configurazione guidata origine dati.
+5. Nel passaggio **Scegliere un'origine dati** selezionare l'opzione &lt;Nuova origine&gt; dati.
+6. Nel passaggio Scegliere un tipo di origine dati selezionare Database.In the Choose a **Data Source Type step,** select Database.
+7. Nel passaggio Scegliere la **connessione dati** selezionare il database, ad esempio MoviesDB.mdf.
+8. Nel passaggio Salva la stringa di connessione nel file di **configurazione dell'applicazione** selezionare l'opzione per salvare la stringa di connessione.
+9. Nel passaggio **Configura istruzione Select** selezionare la tabella di database Movies e tutte le colonne.
+10. Nel passaggio **Test query** fare clic sul pulsante Fine.
+11. Nel passaggio **Scegli origine dati** selezionare la colonna Titolo per il campo da visualizzare e la colonna Id per il campo dati (vedere la figura).
 12. Fare clic sul pulsante OK per chiudere la procedura guidata.
 
-[![la scelta di un'origine dati](how-do-i-use-the-combobox-control-cs/_static/image5.jpg)](how-do-i-use-the-combobox-control-cs/_static/image9.png)
+[![Scelta di un'origine datiChoosing a data source](how-do-i-use-the-combobox-control-cs/_static/image5.jpg)](how-do-i-use-the-combobox-control-cs/_static/image9.png)
 
-**Figura 05**: scelta di un'origine dati ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image10.png))
+**Figura 05**: Scelta di un'origine[dati(Fare clic per visualizzare l'immagine a dimensioni intere)](how-do-i-use-the-combobox-control-cs/_static/image10.png)
 
-[![la scelta dei campi del valore e del testo dei dati](how-do-i-use-the-combobox-control-cs/_static/image6.jpg)](how-do-i-use-the-combobox-control-cs/_static/image11.png)
+[![Scelta del testo dei dati e dei campi valore](how-do-i-use-the-combobox-control-cs/_static/image6.jpg)](how-do-i-use-the-combobox-control-cs/_static/image11.png)
 
-**Figura 06**: scelta dei campi del valore e del testo dei dati ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image12.png))
+**Figura 06**: Scelta del testo dei dati e dei campi[valore(Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image12.png)a dimensioni intere)
 
-Dopo aver completato i passaggi precedenti, la ComboBox viene associata a un controllo SqlDataSource che rappresenta i film della tabella del database Movies. L'origine della pagina è simile all'elenco 2 (la formattazione è stata rimossa un po').
+Dopo aver completato i passaggi precedenti, il controllo ComboBox viene associato a un controllo SqlDataSource che rappresenta i filmati dalla tabella di database Movies. L'origine della pagina è simile al listato 2 (ho pulito un po' la formattazione).
 
-**Listato 2-Movies. aspx**
+**Listato 2 - Movies.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-combobox-control-cs/samples/sample2.aspx)]
 
-Si noti che il controllo ComboBox ha una proprietà DataSourceID che punta al controllo SqlDataSource. Quando si apre la pagina in un browser, viene visualizzato l'elenco di filmati dal database (vedere la figura 7). È possibile selezionare un film dall'elenco o immettere un nuovo film digitando il filmato nella casella combinata.
+Si noti che il controllo ComboBox dispone di una proprietà DataSourceID che punta al controllo SqlDataSource. Quando si apre la pagina in un browser, viene visualizzato l'elenco dei filmati dal database (vedere Figura 7). È possibile selezionare un filmato dall'elenco o immettere un nuovo filmato digitando il filmato nel controllo ComboBox.
 
-[![visualizzazione di un elenco di filmati](how-do-i-use-the-combobox-control-cs/_static/image7.jpg)](how-do-i-use-the-combobox-control-cs/_static/image13.png)
+[![Visualizzazione di un elenco di filmati](how-do-i-use-the-combobox-control-cs/_static/image7.jpg)](how-do-i-use-the-combobox-control-cs/_static/image13.png)
 
-**Figura 07**: visualizzazione di un elenco di filmati ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image14.png))
+**Figura 07**: Visualizzazione di un elenco di[filmati(Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image14.png)a dimensioni intere)
 
 ## <a name="setting-the-dropdownstyle"></a>Impostazione di DropDownStyle
 
-È possibile utilizzare la proprietà ComboBox DropDownStyle per modificare il comportamento della casella combinata. Questa proprietà accetta i valori possibili:
+È possibile utilizzare il ComboBox DropDownStyle proprietà per modificare il comportamento del ComboBox. Questa proprietà accetta i valori possibili:This property accepts there possible values:
 
-- Elenco a discesa: (valore predefinito) la casella combinata Visualizza un elenco a discesa quando si fa clic sulla freccia ed è possibile immettere un valore personalizzato.
-- Semplice: la casella combinata Visualizza automaticamente un elenco a discesa ed è possibile immettere un valore personalizzato.
-- DropDownList: la casella combinata funziona esattamente come un controllo DropDownList.
+- DropDown - (valore predefinito) Il controllo ComboBox visualizza un elenco a discesa quando si fa clic sulla freccia ed è possibile immettere un valore personalizzato.
+- Semplice - Il controllo ComboBox visualizza automaticamente un elenco a discesa ed è possibile immettere un valore personalizzato.
+- DropDownList - Il controllo ComboBox funziona come un controllo DropDownList.
 
-Il diverso elenco a discesa tra e semplice è quando viene visualizzato l'elenco degli elementi. Nel caso di Simple, l'elenco viene visualizzato immediatamente quando si sposta lo stato attivo sulla casella combinata. Nel caso dell'elenco a discesa, è necessario fare clic sulla freccia per visualizzare l'elenco di elementi.
+Il diverso tra DropDown e Simple è quando viene visualizzato l'elenco di elementi. Nel caso di Simple, l'elenco viene visualizzato immediatamente quando si sposta lo stato attivo sul controllo ComboBox. Nel caso di DropDown, è necessario fare clic sulla freccia per visualizzare l'elenco degli elementi.
 
-Il valore DropDownList fa sì che il controllo ComboBox funzioni esattamente come un controllo DropDownList standard. Tuttavia, c'è una differenza importante. Nelle versioni precedenti di Internet Explorer viene visualizzato un controllo DropDownList con un indice z infinito, in modo che il controllo venga visualizzato davanti a qualsiasi controllo inserito davanti a esso. Poiché ComboBox esegue il rendering di un tag HTML &lt;div&gt; invece di un HTML &lt;selezionare&gt; tag, la ComboBox rispetta correttamente l'ordinamento z.
+Il valore DropDownList fa sì che il controllo ComboBox funzioni come un controllo DropDownList standard. Tuttavia, c'è una differenza importante qui. Nelle versioni precedenti di Internet Explorer viene visualizzato un controllo DropDownList con un indice z infinito in modo che il controllo venga visualizzato davanti a qualsiasi controllo posizionato davanti a esso. Poiché il controllo &lt;ComboBox&gt; esegue il &lt;rendering&gt; di un tag div HTML anziché di un tag di selezione HTML, il controllo ComboBox rispetta correttamente l'ordinamento z.
 
 ## <a name="setting-the-autocompletemode"></a>Impostazione di AutoCompleteMode
 
-Usare la proprietà ComboBox AutoCompleteMode per specificare cosa accade quando un utente digita il testo nella casella combinata. Questa proprietà accetta i valori possibili seguenti:
+Utilizzare il ComboBox AutoCompleteMode proprietà per specificare cosa accade quando qualcuno digita testo nel comboBox. Questa proprietà accetta i seguenti valori possibili:
 
-- None: (valore predefinito) ComboBox non fornisce alcun comportamento di completamento automatico.
-- Suggerisci: la casella combinata Visualizza l'elenco ed evidenzia l'elemento corrispondente nell'elenco (vedere la figura 8).
-- Append: ComboBox non Visualizza l'elenco e aggiunge l'elemento corrispondente dall'elenco a quello digitato (vedere la figura 9).
-- SuggestAppend-ComboBox Visualizza l'elenco e aggiunge l'elemento corrispondente dall'elenco a quello digitato (vedere la figura 10).
+- Nessuno - (valore predefinito) Il controllo ComboBox non fornisce alcun comportamento di completamento automatico.
+- Suggerimento - Il controllo ComboBox visualizza l'elenco ed evidenzia l'elemento corrispondente nell'elenco (vedere Figura 8).
+- Append - Il controllo ComboBox non visualizza l'elenco e aggiunge l'elemento corrispondente dall'elenco a quello che è stato digitato (vedere la figura 9).
+- SuggestAppend - Il comboBox visualizza l'elenco e aggiunge l'elemento corrispondente dall'elenco a quello che è stato digitato (vedere Figura 10).
 
-[![ComboBox emette un suggerimento](how-do-i-use-the-combobox-control-cs/_static/image8.jpg)](how-do-i-use-the-combobox-control-cs/_static/image15.png)
+[![Il ComboBox fa un suggerimento](how-do-i-use-the-combobox-control-cs/_static/image8.jpg)](how-do-i-use-the-combobox-control-cs/_static/image15.png)
 
-**Figura 08**: ComboBox esegue un suggerimento ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image16.png))
+**Figura 08**: il controllo ComboBox crea un suggerimento([Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image16.png)a dimensioni intere )
 
-[ComboBox ![aggiunge il testo corrispondente](how-do-i-use-the-combobox-control-cs/_static/image9.jpg)](how-do-i-use-the-combobox-control-cs/_static/image17.png)
+[![ComboBox aggiunge il testo corrispondente](how-do-i-use-the-combobox-control-cs/_static/image9.jpg)](how-do-i-use-the-combobox-control-cs/_static/image17.png)
 
-**Figura 09**: ComboBox aggiunge il testo corrispondente ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image18.png))
+**Figura 09**: ComboBox aggiunge il testo corrispondente([Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image18.png)a dimensioni intere )
 
-[![ComboBox suggerisce e aggiunge](how-do-i-use-the-combobox-control-cs/_static/image10.jpg)](how-do-i-use-the-combobox-control-cs/_static/image19.png)
+[![Il comboBox suggerisce e aggiunge](how-do-i-use-the-combobox-control-cs/_static/image10.jpg)](how-do-i-use-the-combobox-control-cs/_static/image19.png)
 
-**Figura 10**: la casella combinata suggerisce e accoda ([fare clic per visualizzare l'immagine con dimensioni complete](how-do-i-use-the-combobox-control-cs/_static/image20.png))
+**Figura 10**: Il controllo ComboBox suggerisce e aggiunge([Fare clic per visualizzare l'immagine](how-do-i-use-the-combobox-control-cs/_static/image20.png)a dimensioni intere )
 
 ## <a name="summary"></a>Riepilogo
 
-In questa esercitazione si è appreso come usare il controllo ComboBox per visualizzare un set fisso di elementi. Il controllo ComboBox è stato associato a un set statico di elementi e a una tabella di database. Infine, si è appreso come modificare il comportamento della casella combinata impostando le relative proprietà DropDownStyle e AutoCompleteMode.
+In questa esercitazione è stato illustrato come utilizzare il controllo ComboBox per visualizzare un set fisso di elementi. Il controllo ComboBox è stato associato sia a un set statico di elementi che a una tabella di database. Infine, è stato illustrato come modificare il comportamento del controllo ComboBox impostandone le proprietà DropDownStyle e AutoCompleteMode.
 
 > [!div class="step-by-step"]
-> [avanti](how-do-i-use-the-combobox-control-vb.md)
+> [Avanti](how-do-i-use-the-combobox-control-vb.md)

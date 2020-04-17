@@ -1,6 +1,6 @@
 ---
 uid: web-pages/videos/index
-title: Video | Microsoft Docs
+title: Proprietà Videos . Documenti Microsoft
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -8,17 +8,17 @@ ms.date: 05/18/2012
 ms.assetid: febf2824-4e3d-4dc6-84c5-f99777ec6144
 msc.legacyurl: /web-pages/videos
 msc.type: book
-ms.openlocfilehash: 4c22b024240740d971740e9f043231ccbcdc47fb
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 8c24a01b592bead86369a0a9cebeca05f566de53
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78631747"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543041"
 ---
 # <a name="videos"></a>Video
 
 > [!NOTE] 
-> WebMatrix non è più consigliato come Integrated Development Environment per Pagine Web ASP.NET. Usare [Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) o [Visual Studio Code](https://code.visualstudio.com/).
+> WebMatrix non è più consigliato come ambiente di sviluppo integrato per ASP.NET pagine Web. Utilizzare [Visual Studio](xref:web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio) o Visual Studio [Code](https://code.visualstudio.com/).
 
 - [Introduzione](introduction/index.md)
 
@@ -32,7 +32,7 @@ ms.locfileid: "78631747"
     - [Creare una pagina di modifica dei dati in WebMatrix](introduction/create-an-edit-data-page-in-webmatrix.md)
     - [Creare una pagina di eliminazione dei dati in WebMatrix](introduction/create-a-delete-data-page-in-webmatrix.md)
     - [Pubblicare un sito Web su Internet tramite WebMatrix](introduction/publish-a-website-to-the-internet-using-webmatrix.md)
-- [Razor Pages ASP.NET](aspnet-razor-pages/index.md)
+- [ASP.NET pagine Razor](aspnet-razor-pages/index.md)
 
     - [Introduzione a WebMatrix e pagine Web ASP.NET](aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
     - [Introduzione alla sintassi Razor per la programmazione Web ASP.NET](aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
@@ -46,7 +46,7 @@ ms.locfileid: "78631747"
     - [Visualizzazione dei dati in un grafico (parte 1)](aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
     - [Visualizzazione dei dati in un grafico (parte 2)](aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
     - [Uso dei file](aspnet-razor-pages/working-with-files.md)
-    - [Uso delle immagini](aspnet-razor-pages/working-with-images.md)
+    - [Utilizzo delle immagini](aspnet-razor-pages/working-with-images.md)
     - [Uso dei video](aspnet-razor-pages/working-with-video.md)
     - [Aggiunta di posta elettronica al sito Web](aspnet-razor-pages/adding-email-to-your-web-site.md)
     - [Aggiunta di funzionalità di ricerca al sito Web](aspnet-razor-pages/adding-search-to-your-web-site.md)

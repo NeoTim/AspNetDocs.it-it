@@ -1,112 +1,112 @@
 ---
 uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
-title: Passaggio di dati a pagine master diC#visualizzazione () | Microsoft Docs
-author: microsoft
-description: L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Vengono esaminate due strategie per il passaggio dei dati a una vista m...
+title: Passaggio di dati per la visualizzazione di pagine master (c'è) Documenti Microsoft
+author: rick-anderson
+description: L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Esaminiamo due strategie per il passaggio di dati a una vista m...
 ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1492175812b0a092cd1594a770e348efe9b4122b
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 7a934f93d89e6530becc114fe455c8b3ab2968de
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78600142"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542482"
 ---
 # <a name="passing-data-to-view-master-pages-c"></a>Passaggio di dati a pagine master di visualizzazione (C#)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-[Scaricare PDF](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_CS.pdf)
+[Scarica il PDF](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_CS.pdf)
 
-> L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Vengono esaminate due strategie per il passaggio dei dati a una pagina master di visualizzazione. In primo luogo, viene illustrata una soluzione semplice che consente di ottenere un'applicazione difficile da gestire. Viene quindi esaminata una soluzione molto migliore che richiede un lavoro iniziale più semplice, ma comporta un'applicazione molto più gestibile.
+> L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Esaminiamo due strategie per il passaggio di dati a una pagina master di visualizzazione. In primo luogo, discutiamo di una soluzione semplice che si traduce in un'applicazione che è difficile da gestire. Successivamente, esaminiamo una soluzione molto migliore che richiede un po 'più di lavoro iniziale, ma si traduce in un'applicazione molto più gestibile.
 
-## <a name="passing-data-to-view-master-pages"></a>Passaggio di dati a pagine master di visualizzazione
+## <a name="passing-data-to-view-master-pages"></a>Passaggio di dati per visualizzare le pagine masterPassing Data to View Master Pages
 
-L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Vengono esaminate due strategie per il passaggio dei dati a una pagina master di visualizzazione. In primo luogo, viene illustrata una soluzione semplice che consente di ottenere un'applicazione difficile da gestire. Viene quindi esaminata una soluzione molto migliore che richiede un lavoro iniziale più semplice, ma comporta un'applicazione molto più gestibile.
+L'obiettivo di questa esercitazione è spiegare come è possibile passare i dati da un controller a una pagina master di visualizzazione. Esaminiamo due strategie per il passaggio di dati a una pagina master di visualizzazione. In primo luogo, discutiamo di una soluzione semplice che si traduce in un'applicazione che è difficile da gestire. Successivamente, esaminiamo una soluzione molto migliore che richiede un po 'più di lavoro iniziale, ma si traduce in un'applicazione molto più gestibile.
 
 ### <a name="the-problem"></a>Problema
 
-Si supponga di creare un'applicazione di database di film e di voler visualizzare l'elenco delle categorie di film in ogni pagina dell'applicazione (vedere la figura 1). Si supponga inoltre che l'elenco di categorie di film sia archiviato in una tabella di database. In tal caso, sarebbe opportuno recuperare le categorie dal database ed eseguire il rendering dell'elenco di categorie di film all'interno di una pagina di visualizzazione master.
+Si supponga che si sta creando un'applicazione di database di film e si desidera visualizzare l'elenco delle categorie di film in ogni pagina dell'applicazione (vedere Figura 1). Si supponga, inoltre, che l'elenco delle categorie di film viene memorizzato in una tabella di database. In tal caso, sarebbe opportuno recuperare le categorie dal database ed eseguire il rendering dell'elenco delle categorie di film all'interno di una pagina master di visualizzazione.
 
-[![la visualizzazione delle categorie di film in una pagina di visualizzazione Master](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
+[![Visualizzazione delle categorie di film in una pagina master di visualizzazione](passing-data-to-view-master-pages-cs/_static/image2.png)](passing-data-to-view-master-pages-cs/_static/image1.png)
 
-**Figura 01**: visualizzazione delle categorie di film in una pagina di visualizzazione Master ([fare clic per visualizzare l'immagine con dimensioni complete](passing-data-to-view-master-pages-cs/_static/image3.png))
+**Figura 01**: Visualizzazione delle categorie di film in una pagina master di visualizzazione ([Fare clic per visualizzare l'immagine](passing-data-to-view-master-pages-cs/_static/image3.png)a dimensioni intere )
 
-Ecco il problema. Come si recupera l'elenco di categorie di film nella pagina master? Si tenta di chiamare direttamente i metodi delle classi del modello nella pagina master. In altre parole, si sta tentando di includere il codice per il recupero dei dati dal database direttamente nella pagina master. Tuttavia, ignorare i controller MVC per accedere al database violerebbe la netta separazione dei problemi che rappresenta uno dei principali vantaggi della creazione di un'applicazione MVC.
+Ecco il problema. Come si recupera l'elenco delle categorie di film nella pagina master? Si è tentati di chiamare direttamente i metodi delle classi del modello nella pagina master. In altre parole, si è tentati di includere il codice per il recupero dei dati dal database direttamente nella pagina master. Tuttavia, ignorando i controller MVC per accedere al database violerebbe la netta separazione dei problemi che è uno dei vantaggi principali della creazione di un'applicazione MVC.
 
-In un'applicazione MVC è necessario che tutte le interazioni tra le visualizzazioni MVC e il modello MVC siano gestite dai controller MVC. Questa separazione dei problemi comporta un'applicazione più gestibile, adattabile e testabile.
+In un'applicazione MVC, si desidera che tutte le interazioni tra le visualizzazioni MVC e il modello MVC vengano gestite dai controller MVC. Questa separazione dei problemi si traduce in un'applicazione più gestibile, adattabile e tesa.
 
-In un'applicazione MVC tutti i dati passati a una vista, inclusa una pagina master di visualizzazione, devono essere passati a una vista da un'azione del controller. Inoltre, i dati devono essere passati sfruttando i dati di visualizzazione. Nella parte restante di questa esercitazione vengono esaminati due metodi per passare i dati della visualizzazione a una pagina master di visualizzazione.
+In un'applicazione MVC, tutti i dati passati a una visualizzazione, inclusa una pagina master di visualizzazione, devono essere passati a una visualizzazione da un'azione del controller. Inoltre, i dati devono essere passati sfruttando i dati di visualizzazione. Nella parte restante di questa esercitazione, esaminare due metodi di passaggio dei dati di visualizzazione a una pagina master di visualizzazione.
 
-### <a name="the-simple-solution"></a>Soluzione semplice
+### <a name="the-simple-solution"></a>La soluzione semplice
 
 Iniziamo con la soluzione più semplice per passare i dati di visualizzazione da un controller a una pagina master di visualizzazione. La soluzione più semplice consiste nel passare i dati di visualizzazione per la pagina master in ogni azione del controller.
 
-Si consideri il controller nel listato 1. Espone due azioni denominate `Index()` e `Details()`. Il metodo di azione `Index()` restituisce ogni film della tabella del database Movies. Il metodo di azione `Details()` restituisce ogni film in una particolare categoria di film.
+Si consideri il controller nel listato 1.Consider the controller in Listing 1. Espone due azioni `Index()` denominate e . `Details()` Il `Index()` metodo di azione restituisce tutti i filmati nella tabella di database Movies. Il `Details()` metodo di azione restituisce tutti i filmati in una particolare categoria di filmato.
 
-**Listato 1-`Controllers\HomeController.cs`**
+**Lista torto 1 –`Controllers\HomeController.cs`**
 
 [!code-csharp[Main](passing-data-to-view-master-pages-cs/samples/sample1.cs)]
 
-Si noti che le azioni index () e Details () aggiungono due elementi per visualizzare i dati. L'azione index () aggiunge due chiavi: categorie e filmati. La chiave Categories rappresenta l'elenco di categorie di film visualizzate dalla pagina master di visualizzazione. La chiave Movies rappresenta l'elenco dei film visualizzati dalla pagina di visualizzazione dell'indice.
+Si noti che entrambe le azioni Index() e Details() aggiungono due elementi per visualizzare i dati. L'azione Indice() aggiunge due chiavi: categorie e filmati. La chiave categories rappresenta l'elenco delle categorie di film visualizzati dalla pagina master di visualizzazione. Il tasto filmati rappresenta l'elenco dei filmati visualizzati dalla pagina di visualizzazione dell'indice.
 
-L'azione dettagli () aggiunge anche due chiavi denominate categorie e filmati. Il tasto Categories, ancora una volta, rappresenta l'elenco delle categorie di film visualizzate dalla pagina master di visualizzazione. La chiave Movies rappresenta l'elenco dei film in una categoria specifica visualizzata dalla pagina di visualizzazione dettagli (vedere la figura 2).
+L'azione Details() aggiunge anche due chiavi denominate categorie e filmati. La chiave categories, ancora una volta, rappresenta l'elenco delle categorie di film visualizzati dalla pagina master di visualizzazione. Il tasto movies rappresenta l'elenco dei filmati in una particolare categoria visualizzata dalla pagina di visualizzazione Dettagli (vedere Figura 2).
 
-[![la visualizzazione dettagli](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
+[![Visualizzazione Dettagli](passing-data-to-view-master-pages-cs/_static/image5.png)](passing-data-to-view-master-pages-cs/_static/image4.png)
 
-**Figura 02**: visualizzazione dettagli ([fare clic per visualizzare l'immagine con dimensioni complete](passing-data-to-view-master-pages-cs/_static/image6.png))
+**Figura 02**: Visualizzazione Dettagli ([Fare clic per visualizzare l'immagine a dimensioni intere)](passing-data-to-view-master-pages-cs/_static/image6.png)
 
-La vista index è inclusa nell'elenco 2. Scorre semplicemente l'elenco dei film rappresentati dall'elemento Movies in View Data.
+La vista Indice è contenuta nel listato 2. Scorre semplicemente l'elenco dei filmati rappresentati dall'elemento movies nei dati di visualizzazione.
 
-**Listato 2: `Views\Home\Index.aspx`**
+**Listato 2 –`Views\Home\Index.aspx`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-cs/samples/sample2.aspx)]
 
-La pagina di visualizzazione Master è inclusa nell'elenco 3. La pagina master di visualizzazione scorre ed esegue il rendering di tutte le categorie di film rappresentate dall'elemento categorie dai dati della visualizzazione.
+La pagina master di visualizzazione è contenuta nel listato 3. La pagina master di visualizzazione scorre ed esegue il rendering di tutte le categorie di film rappresentate dall'elemento categories dai dati di visualizzazione.
 
-**Listato 3-`Views\Shared\Site.master`**
+**Lista 3 –`Views\Shared\Site.master`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-cs/samples/sample3.aspx)]
 
-Tutti i dati vengono passati alla visualizzazione e alla pagina master di visualizzazione tramite i dati della visualizzazione. Questo è il modo corretto per passare i dati alla pagina master.
+Tutti i dati vengono passati alla visualizzazione e alla pagina master della visualizzazione tramite i dati della visualizzazione. Questo è il modo corretto per passare i dati alla pagina master.
 
-Qual è il problema di questa soluzione? Il problema è che questa soluzione viola il principio secco (Don't Repeat Yourself). Ogni azione del controller deve aggiungere lo stesso elenco di categorie di film per visualizzare i dati. Il codice duplicato nell'applicazione rende l'applicazione molto più difficile da gestire, adattare e modificare.
+Allora, cosa c'è di sbagliato in questa soluzione? Il problema è che questa soluzione viola il principio DRY (Don't Repeat Yourself). Ogni azione del controller deve aggiungere lo stesso elenco di categorie di film per visualizzare i dati. La presenza di codice duplicato nell'applicazione rende l'applicazione molto più difficile da gestire, adattare e modificare.
 
-### <a name="the-good-solution"></a>La soluzione migliore
+### <a name="the-good-solution"></a>La buona soluzione
 
-In questa sezione viene esaminata una soluzione alternativa e migliore per passare i dati da un'azione del controller a una pagina master di visualizzazione. Anziché aggiungere le categorie di film per la pagina master in ogni azione del controller, le categorie di film vengono aggiunte ai dati di visualizzazione una sola volta. Tutti i dati della visualizzazione utilizzati dalla pagina master di visualizzazione vengono aggiunti in un controller dell'applicazione.
+In questa sezione viene esaminata una soluzione alternativa e migliore per passare i dati da un'azione del controller a una pagina master di visualizzazione. Invece di aggiungere le categorie di film per la pagina master in ogni azione del controller, aggiungiamo le categorie di film ai dati di visualizzazione una sola volta. Tutti i dati di visualizzazione utilizzati dalla pagina master di visualizzazione vengono aggiunti in un controller dell'applicazione.
 
 La classe ApplicationController è contenuta nel listato 4.
 
-**Listato 4-`Controllers\ApplicationController.cs`**
+**Lista 4 –`Controllers\ApplicationController.cs`**
 
 [!code-csharp[Main](passing-data-to-view-master-pages-cs/samples/sample4.cs)]
 
-Sono disponibili tre elementi che è necessario notare sul controller dell'applicazione nel listato 4. Si noti prima di tutto che la classe eredita dalla classe di base System. Web. Mvc. controller. Il controller dell'applicazione è una classe controller.
+Ci sono tre cose che si dovrebbe notare circa il controller dell'applicazione nel listato 4. In primo luogo, si noti che la classe eredita dalla classe System.Web.Mvc.Controller di base. Il controller dell'applicazione è una classe controller.
 
-In secondo luogo, si noti che la classe del controller dell'applicazione è una classe astratta. Una classe astratta è una classe che deve essere implementata da una classe concreta. Poiché il controller dell'applicazione è una classe astratta, non è possibile richiamare direttamente i metodi definiti nella classe. Se si tenta di richiamare direttamente la classe dell'applicazione, si otterrà un messaggio di errore di risorsa non trovato.
+In secondo luogo, si noti che la classe controller dell'applicazione è una classe astratta. Una classe astratta è una classe che deve essere implementata da una classe concreta. Poiché il controller dell'applicazione è una classe astratta, non è possibile richiamare direttamente i metodi definiti nella classe. Se si tenta di richiamare direttamente la classe Application, verrà visualizzato un messaggio di errore Risorsa non trovata.
 
-Infine, si noti che il controller dell'applicazione contiene un costruttore che aggiunge l'elenco di categorie di film per visualizzare i dati. Ogni classe controller che eredita dal controller dell'applicazione chiama automaticamente il costruttore del controller dell'applicazione. Ogni volta che si chiama qualsiasi azione su qualsiasi controller che eredita dal controller dell'applicazione, le categorie di film vengono incluse automaticamente nella visualizzazione dati.
+In terzo luogo, si noti che il controller dell'applicazione contiene un costruttore che aggiunge l'elenco di categorie di film per visualizzare i dati. Ogni classe controller che eredita dal controller dell'applicazione chiama automaticamente il costruttore del controller dell'applicazione. Ogni volta che si chiama qualsiasi azione su qualsiasi controller che eredita dal controller dell'applicazione, le categorie di film vengono incluse automaticamente nei dati di visualizzazione.
 
-Il controller di film nel listato 5 eredita dal controller dell'applicazione.
+Il controller Movies nel listato 5 eredita dal controller dell'applicazione.
 
-**Elenco 5-`Controllers\MoviesController.cs`**
+**Lista 5 –`Controllers\MoviesController.cs`**
 
 [!code-csharp[Main](passing-data-to-view-master-pages-cs/samples/sample5.cs)]
 
-Il controller di film, proprio come il controller Home illustrato nella sezione precedente, espone due metodi di azione denominati `Index()` e `Details()`. Si noti che l'elenco di categorie di film visualizzato nella pagina di visualizzazione master non è stato aggiunto per visualizzare i dati nel metodo `Index()` o `Details()`. Poiché il controller di film eredita dal controller dell'applicazione, viene aggiunto l'elenco di categorie di film per visualizzare automaticamente i dati.
+Il controller Movies, proprio come il controller Home descritto nella `Index()` sezione `Details()`precedente, espone due metodi di azione denominati e . Si noti che l'elenco delle categorie di film visualizzati dalla `Index()` `Details()` pagina master di visualizzazione non viene aggiunto per visualizzare i dati nel metodo o . Poiché il controller Film eredita dal controller dell'applicazione, l'elenco delle categorie di film viene aggiunto per visualizzare automaticamente i dati.
 
-Si noti che questa soluzione per aggiungere dati di visualizzazione per una pagina master di visualizzazione non viola il principio secco (Don't Repeat Yourself). Il codice per l'aggiunta dell'elenco di categorie di film per la visualizzazione dei dati è contenuto in una sola posizione: il costruttore per il controller dell'applicazione.
+Si noti che questa soluzione per l'aggiunta di dati di visualizzazione per una pagina master di visualizzazione non viola il principio DRY (Don't Repeat Yourself). Il codice per l'aggiunta dell'elenco di categorie di film per visualizzare i dati è contenuto in una sola posizione: il costruttore per il controller dell'applicazione.
 
 ### <a name="summary"></a>Riepilogo
 
-In questa esercitazione sono stati descritti due approcci per passare i dati di visualizzazione da un controller a una pagina master di visualizzazione. Per prima cosa, abbiamo esaminato un approccio semplice, ma difficile da gestire. Nella prima sezione è stato illustrato come è possibile aggiungere i dati di visualizzazione per una pagina master di visualizzazione in ogni azione del controller nell'applicazione. Si è concluso che questo approccio non è valido perché viola il principio secco (Don't Repeat Yourself).
+In questa esercitazione sono stati illustrati due approcci per passare i dati di visualizzazione da un controller a una pagina master di visualizzazione. In primo luogo, abbiamo esaminato un approccio semplice, ma difficile da mantenere. Nella prima sezione, è stato illustrato come è possibile aggiungere i dati di visualizzazione per una pagina master di visualizzazione in ogni azione del controller nell'applicazione. Abbiamo concluso che questo è stato un cattivo approccio perché viola il principio DRY (Don't Repeat Yourself).
 
-Successivamente, è stata esaminata una strategia molto migliore per l'aggiunta di dati richiesti da una pagina master di visualizzazione per visualizzare i dati. Anziché aggiungere i dati della visualizzazione in ogni azione del controller, i dati di visualizzazione sono stati aggiunti solo una volta all'interno di un controller dell'applicazione. In questo modo, è possibile evitare codice duplicato quando si passano dati a una pagina master di visualizzazione in un'applicazione MVC ASP.NET.
+Successivamente, è stata esaminata una strategia molto migliore per l'aggiunta di dati richiesti da una pagina master di visualizzazione per visualizzare i dati. Anziché aggiungere i dati di visualizzazione in ogni azione del controller, i dati di visualizzazione sono stati aggiunti una sola volta all'interno di un controller dell'applicazione. In questo modo, è possibile evitare codice duplicato quando si passano dati a una pagina master di visualizzazione in un'applicazione MVC ASP.NET.
 
 > [!div class="step-by-step"]
-> [Precedente](creating-page-layouts-with-view-master-pages-cs.md)
-> [Successivo](asp-net-mvc-views-overview-vb.md)
+> [Successivo](creating-page-layouts-with-view-master-pages-cs.md)
+> [precedente](asp-net-mvc-views-overview-vb.md)

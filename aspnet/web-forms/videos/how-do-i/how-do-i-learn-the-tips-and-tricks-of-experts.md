@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-learn-the-tips-and-tricks-of-experts
-title: '[Procedura:] Scopri i suggerimenti e i trucchi degli esperti? | Microsoft Docs'
-author: microsoft
-description: Visualizzare suggerimenti e consigli, inclusa la crittografia delle informazioni riservate archiviate nel file Web. config, la pubblicazione di contenuto in una pagina diversa, la semplificazione degli URL complessi...
+title: '[Come faccio a :] Scopri i consigli e i trucchi degli esperti? | Microsoft Docs'
+author: rick-anderson
+description: Visualizza suggerimenti e trucchi tra cui la crittografia delle informazioni sensibili archiviate nel file web.config, la pubblicazione di contenuti in una pagina diversa, la semplificazione di URL complessi...
 ms.author: riande
 ms.date: 01/16/2006
 ms.assetid: 77526e53-524b-4cae-9025-3e493f2895d0
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-learn-the-tips-and-tricks-of-experts
 msc.type: video
-ms.openlocfilehash: a4988acd4bfd2835d8e1cef61916b59ec6481a7e
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: eadd17c8f38275976aba5a093f14280f23e9500e
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78523401"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81543860"
 ---
-# <a name="how-do-i-learn-the-tips-and-tricks-of-experts"></a>[Procedura:] Scopri i suggerimenti e i trucchi degli esperti?
+# <a name="how-do-i-learn-the-tips-and-tricks-of-experts"></a>[Come faccio a :] Scopri i consigli e i trucchi degli esperti?
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-Suggerimenti e consigli per la crittografia delle informazioni riservate archiviate nel file Web. config, la pubblicazione di contenuto in una pagina diversa, la semplificazione di URL complessi mediante la modifica del mapping degli URL e molto altro ancora.
+Visualizza suggerimenti e trucchi, tra cui la crittografia delle informazioni sensibili archiviate nel file web.config, la pubblicazione di contenuto in una pagina diversa, la semplificazione di URL complessi mediante la rimappatura degli URL e molto altro ancora.
 
-[&#9654;Guarda il video (18 minuti)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-learn-the-tips-and-tricks-of-experts)
+[&#9654; Guarda il video (18 minuti)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-learn-the-tips-and-tricks-of-experts)
