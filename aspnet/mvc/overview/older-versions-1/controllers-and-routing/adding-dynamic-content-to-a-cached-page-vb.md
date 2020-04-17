@@ -1,96 +1,96 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
-title: Aggiunta di contenuto dinamico a una pagina memorizzata nella cache (VB) | Microsoft Docs
-author: microsoft
-description: Informazioni su come combinare contenuti dinamici e memorizzati nella cache nella stessa pagina. La sostituzione post-cache consente di visualizzare contenuto dinamico, ad esempio annunci banner o...
+title: Aggiunta di contenuto dinamico a una pagina memorizzata nella cache (VB) Documenti Microsoft
+author: rick-anderson
+description: Scopri come combinare contenuti dinamici e memorizzati nella cache nella stessa pagina. La sostituzione post-cache consente di visualizzare contenuto dinamico, ad esempio banner pubblicitari o...
 ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2f4372498e5a38bbfcb96d6e9f6338b0ef4df1f
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 1ed022fc560becbd21722b94f2428cf7b32f2635
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78601612"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542261"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-vb"></a>Aggiunta di contenuto dinamico a una pagina memorizzata nella cache (VB)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-> Informazioni su come combinare contenuti dinamici e memorizzati nella cache nella stessa pagina. La sostituzione post-cache consente di visualizzare contenuto dinamico, ad esempio annunci di banner o elementi di notizie, all'interno di una pagina che è stata restituita nella cache.
+> Scopri come combinare contenuti dinamici e memorizzati nella cache nella stessa pagina. La sostituzione post-cache consente di visualizzare contenuto dinamico, ad esempio banner pubblicitari o notizie, all'interno di una pagina memorizzata nella cache di output.
 
-Sfruttando la memorizzazione nella cache di output, è possibile migliorare significativamente le prestazioni di un'applicazione MVC ASP.NET. Anziché rigenerare ogni pagina ogni volta che viene richiesta la pagina, la pagina può essere generata una volta e memorizzata nella cache per più utenti.
+Sfruttando la memorizzazione nella cache di output, è possibile migliorare notevolmente le prestazioni di un'applicazione MVC ASP.NET. Anziché rigenerare una pagina ogni volta che viene richiesta, la pagina può essere generata una sola volta e memorizzata nella cache per più utenti.
 
-Si è verificato un problema. Cosa accade se è necessario visualizzare contenuto dinamico nella pagina? Si supponga, ad esempio, di voler visualizzare un annuncio banner nella pagina. Non si vuole che l'annuncio banner venga memorizzato nella cache in modo che ogni utente veda lo stesso annuncio. Non si farà alcun denaro in questo modo.
+Ma c'è un problema. Cosa succede se è necessario visualizzare contenuto dinamico nella pagina? Ad esempio, si supponga di voler visualizzare un banner pubblicitario nella pagina. Non vuoi che l'annuncio banner venga memorizzato nella cache in modo che ogni utente veda lo stesso annuncio. Non faresti soldi in quel modo!
 
-Fortunatamente, esiste una soluzione semplice. È possibile trarre vantaggio da una funzionalità del framework ASP.NET denominato *sostituzione post-cache*. La sostituzione post-cache consente di sostituire il contenuto dinamico in una pagina memorizzata nella cache in memoria.
+Fortunatamente, c'è una soluzione facile. È possibile sfruttare una funzionalità del framework di ASP.NET denominata *post-cache substitution*. La sostituzione post-cache consente di sostituire il contenuto dinamico in una pagina memorizzata nella cache.
 
-In genere, quando si esegue l'output nella cache di una pagina usando l'attributo &lt;OutputCache&gt;, la pagina viene memorizzata nella cache sia nel server che nel client (il Web browser). Quando si utilizza la sostituzione post-cache, una pagina viene memorizzata nella cache solo sul server.
+In genere, quando si esegue &lt;l'output della cache di una pagina utilizzando l'attributo OutputCache&gt; , la pagina viene memorizzata nella cache sia sul server che sul client (browser Web). Quando si utilizza la sostituzione post-cache, una pagina viene memorizzata nella cache solo sul server.
 
-#### <a name="using-post-cache-substitution"></a>Uso della sostituzione post-cache
+#### <a name="using-post-cache-substitution"></a>Utilizzo della sostituzione post-CacheUsing Post-Cache Substitution
 
-Per usare la sostituzione post-cache sono necessari due passaggi. In primo luogo, è necessario definire un metodo che restituisca una stringa che rappresenta il contenuto dinamico che si desidera visualizzare nella pagina memorizzata nella cache. Chiamare quindi il metodo HttpResponse. WriteSubstitution () per inserire il contenuto dinamico nella pagina.
+L'utilizzo della sostituzione post-cache richiede due passaggi. In primo luogo, è necessario definire un metodo che restituisce una stringa che rappresenta il contenuto dinamico che si desidera visualizzare nella pagina memorizzata nella cache. Successivamente, chiamare il metodo HttpResponse.WriteSubstitution() per inserire il contenuto dinamico nella pagina.
 
-Si supponga, ad esempio, di voler visualizzare in modo casuale elementi di notizie diverse in una pagina memorizzata nella cache. La classe nel listato 1 espone un solo metodo, denominato RenderNews (), che restituisce in modo casuale un elemento di notizie da un elenco di tre elementi di notizie.
+Si supponga, ad esempio, che si desidera visualizzare in modo casuale diversi elementi di notizie in una pagina memorizzata nella cache. La classe nel listato 1 espone un singolo metodo, denominato RenderNews(), che restituisce in modo casuale una notizia da un elenco di tre notizie.
 
-**Listato 1 – Models\News.vb**
+**Listato 1 – Modelli- Notizie.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample1.vb)]
 
-Per sfruttare i vantaggi della sostituzione post-cache, chiamare il metodo HttpResponse. WriteSubstitution (). Il metodo WriteSubstitution () configura il codice per sostituire un'area della pagina memorizzata nella cache con contenuto dinamico. Il metodo WriteSubstitution () viene usato per visualizzare l'elemento di notizie casuali nella visualizzazione del listato 2.
+Per sfruttare i vantaggi della sostituzione post-cache, chiamate il metodo HttpResponse.WriteSubstitution(). Il metodo WriteSubstitution() imposta il codice per sostituire un'area della pagina memorizzata nella cache con contenuto dinamico. Il metodo WriteSubstitution() viene utilizzato per visualizzare la notizia casuale nella visualizzazione nel listato 2.
 
-**Listato 2 – Views\Home\Index.aspx**
+**Listato 2 – Visualizzazioni, Home, Indice.aspx**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample2.aspx)]
 
-Il metodo RenderNews viene passato al metodo WriteSubstitution (). Si noti che il metodo RenderNews non viene chiamato. Un riferimento al metodo viene invece passato a WriteSubstitution () con la guida dell'operatore AddressOf.
+Il metodo RenderNews viene passato al metodo WriteSubstitution(). Si noti che il RenderNews metodo non viene chiamato. Al contrario, un riferimento al metodo viene passato a WriteSubstitution() con l'aiuto dell'operatore AddressOf.
 
-La vista index è memorizzata nella cache. La vista viene restituita dal controller nel listato 3. Si noti che l'azione index () è decorata con un &lt;OutputCache&gt; attributo che determina la memorizzazione nella cache della vista index per 60 secondi.
+La vista Indice viene memorizzata nella cache. La visualizzazione viene restituita dal controller nel listato 3. Si noti che l'azione &lt;Index() è decorata con un attributo OutputCache&gt; che causa la memorizzazione nella cache della visualizzazione Index per 60 secondi.
 
-**Listato 3 – Controllers\HomeController.vb**
+**Listato 3 – Controller-HomeController.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample3.vb)]
 
-Anche se la visualizzazione dell'indice è memorizzata nella cache, quando si richiede la pagina di indice vengono visualizzati elementi di notizie casuali diversi. Quando si richiede la pagina di indice, l'ora visualizzata dalla pagina non cambia per 60 secondi (vedere la figura 1). Il fatto che l'ora non cambi dimostri che la pagina è memorizzata nella cache. Tuttavia, il contenuto inserito dal metodo WriteSubstitution (), ovvero l'elemento di notizie casuali, cambia con ogni richiesta.
+Anche se la visualizzazione Indice è memorizzata nella cache, diverse notizie casuali vengono visualizzate quando si richiede la pagina Indice. Quando si richiede la pagina di indice, il tempo visualizzato dalla pagina non cambia per 60 secondi (vedere Figura 1). Il fatto che l'ora non cambia dimostra che la pagina è memorizzata nella cache. Tuttavia, il contenuto inserito dal metodo WriteSubstitution() – la notizia casuale – cambia ad ogni richiesta.
 
-**Figura 1: inserimento di elementi di notizie dinamiche in una pagina memorizzata nella cache**
+**Figura 1 – Inserimento di notizie dinamiche in una pagina memorizzata nella cacheFigure 1 – Injecting dynamic news items in a cached page**
 
 ![clip_image002](adding-dynamic-content-to-a-cached-page-vb/_static/image1.jpg)
 
-#### <a name="using-post-cache-substitution-in-helper-methods"></a>Uso della sostituzione post-cache nei metodi helper
+#### <a name="using-post-cache-substitution-in-helper-methods"></a>Utilizzo della sostituzione post-Cache nei metodi di supportoUsing Post-Cache Substitution in Helper Methods
 
-Un modo più semplice per sfruttare i vantaggi della sostituzione post-cache è quello di incapsulare la chiamata al metodo WriteSubstitution () all'interno di un metodo helper personalizzato. Questo approccio è illustrato dal metodo helper nel listato 4.
+Un modo più semplice per sfruttare i vantaggi della sostituzione post-cache consiste nell'incapsulare la chiamata al metodo WriteSubstitution() all'interno di un metodo helper personalizzato. Questo approccio è illustrato dal metodo helper nel listato 4.This approach is illustrated by the helper method in Listing 4.
 
-**Listato 4-Helpers\AdHelper.vb**
+**Listato 4 – Helpers-AdHelper.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample4.vb)]
 
-Il listato 4 contiene un modulo Visual Basic che espone due metodi: RenderBanner () e RenderBannerInternal (). Il metodo RenderBanner () rappresenta il metodo helper effettivo. Questo metodo estende la classe standard HtmlHelper di ASP.NET MVC, in modo che sia possibile chiamare HTML. RenderBanner () in una visualizzazione come qualsiasi altro metodo di supporto.
+Il listato 4 contiene un modulo di Visual Basic che espone due metodi: RenderBanner() e RenderBannerInternal(). Il metodo RenderBanner() rappresenta il metodo helper effettivo. Questo metodo estende la classe HtmlHelper MVC standard ASP.NET in modo che sia possibile chiamare Html.RenderBanner() in una visualizzazione come qualsiasi altro metodo helper.
 
-Il metodo RenderBanner () chiama il metodo HttpResponse. WriteSubstitution () passando il metodo RenderBannerInternal () al metodo WriteSubstitution ().
+Il metodo RenderBanner() chiama il metodo HttpResponse.WriteSubstitution() passando il metodo RenderBannerInternal() al metodo WriteSubstitution().
 
-Il metodo RenderBannerInternal () è un metodo privato. Questo metodo non verrà esposto come metodo helper. Il metodo RenderBannerInternal () restituisce in modo casuale un'immagine di annuncio banner da un elenco di tre immagini pubblicitarie del banner.
+Il metodo RenderBannerInternal() è un metodo privato. Questo metodo non verrà esposto come metodo di supporto. Il metodo RenderBannerInternal() restituisce in modo casuale un'immagine pubblicitaria banner da un elenco di tre immagini pubblicitarie banner.
 
-La vista index modificata nel listato 5 illustra come è possibile usare il metodo helper RenderBanner (). Si noti che per importare lo spazio dei nomi MvcApplication1. Helpers viene inclusa una direttiva &lt;% @ Import%&gt; aggiuntiva nella parte superiore della vista. Se si trascura di importare questo spazio dei nomi, il metodo RenderBanner () non verrà visualizzato come metodo nella proprietà HTML.
+La vista Index modificata nel listato 5 illustra come utilizzare il metodo helper RenderBanner(). Si noti &lt;che nella&gt; parte superiore della visualizzazione per importare lo spazio dei nomi MvcApplication1.Helpers è inclusa una direttiva % . Se si trascura di importare questo spazio dei nomi, il metodo RenderBanner() non verrà visualizzato come metodo nella proprietà Html.
 
-**Listato 5 – Views\Home\Index.aspx (con il metodo RenderBanner ())**
+**Listato 5 – Views, Home, Index.aspx (con il metodo RenderBanner())**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample5.aspx)]
 
-Quando si richiede il rendering della pagina tramite la visualizzazione nel listato 5, viene visualizzato un annuncio banner diverso con ogni richiesta (vedere la figura 2). La pagina viene memorizzata nella cache, ma l'annuncio del banner viene inserito dinamicamente dal metodo helper RenderBanner ().
+Quando si richiede la pagina visualizzata dalla visualizzazione nel listato 5, viene visualizzato un banner diverso con ogni richiesta (vedere Figura 2). La pagina viene memorizzata nella cache, ma l'annuncio banner viene inserito dinamicamente dal metodo helper RenderBanner().
 
-**Figura 2: visualizzazione dell'indice che mostra un annuncio di banner casuale**
+**Figura 2 – La vista indice che visualizza un banner pubblicitario casuale**
 
 ![clip_image004](adding-dynamic-content-to-a-cached-page-vb/_static/image2.jpg)
 
 #### <a name="summary"></a>Riepilogo
 
-In questa esercitazione è stato illustrato come è possibile aggiornare dinamicamente il contenuto in una pagina memorizzata nella cache. Si è appreso come usare il metodo HttpResponse. WriteSubstitution () per abilitare il contenuto dinamico da inserire in una pagina memorizzata nella cache. Si è inoltre appreso come incapsulare la chiamata al metodo WriteSubstitution () all'interno di un metodo helper HTML.
+In questa esercitazione è stato illustrato come aggiornare dinamicamente il contenuto in una pagina memorizzata nella cache. Si è appreso come utilizzare il metodo HttpResponse.WriteSubstitution() per consentire l'invio di contenuto dinamico in una pagina memorizzata nella cache. Si è inoltre appreso come incapsulare la chiamata al metodo WriteSubstitution() all'interno di un metodo helper HTML.
 
-Quando possibile, sfruttare i vantaggi della memorizzazione nella cache, che può avere un impatto significativo sulle prestazioni delle applicazioni Web. Come illustrato in questa esercitazione, è possibile sfruttare i vantaggi della memorizzazione nella cache anche quando è necessario visualizzare contenuto dinamico nelle pagine.
+Sfruttare la memorizzazione nella cache ogni volta che è possibile, può avere un impatto significativo sulle prestazioni delle applicazioni Web. Come spiegato in questa esercitazione, è possibile sfruttare la memorizzazione nella cache anche quando è necessario visualizzare contenuto dinamico nelle pagine.
 
 > [!div class="step-by-step"]
-> [Precedente](improving-performance-with-output-caching-vb.md)
-> [Successivo](creating-a-controller-vb.md)
+> [Successivo](improving-performance-with-output-caching-vb.md)
+> [precedente](creating-a-controller-vb.md)

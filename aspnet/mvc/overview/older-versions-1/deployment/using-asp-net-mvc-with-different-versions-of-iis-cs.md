@@ -1,212 +1,212 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
-title: Uso di ASP.NET MVC con versioni diverse di IISC#() | Microsoft Docs
-author: microsoft
-description: Questa esercitazione illustra come usare ASP.NET MVC e il routing degli URL con diverse versioni di Internet Information Services. Si imparano diverse strategie...
+title: Utilizzo di ASP.NET MVC con versioni diverse di IIS (C Documenti Microsoft
+author: rick-anderson
+description: In questa esercitazione si apprenderà come usare ASP.NET MVC e Routing URL con versioni diverse di Internet Information Services. Impari diverse strategie...
 ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: b0cf4a34-2c1d-4717-bb54-ff029e722990
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3b0a9509c0600f3598fd1218a7b383430548d4c0
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 8c239c3c7cbbaae5d9c5e4dd91dc66ff4e98bcfb
+ms.sourcegitcommit: 022f79dbc1350e0c6ffaa1e7e7c6e850cdabf9af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78601101"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81542079"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>Uso di ASP.NET MVC con versioni diverse di IIS (C#)
 
-[Microsoft](https://github.com/microsoft)
+da parte [di Microsoft](https://github.com/microsoft)
 
-> Questa esercitazione illustra come usare ASP.NET MVC e il routing degli URL con diverse versioni di Internet Information Services. Si apprenderanno diverse strategie per l'uso di ASP.NET MVC con IIS 7,0 (modalità classica), IIS 6,0 e le versioni precedenti di IIS.
+> In questa esercitazione si apprenderà come usare ASP.NET MVC e Routing URL con versioni diverse di Internet Information Services. Vengono illustrato diverse strategie per l'utilizzo di ASP.NET MVC con IIS 7.0 (modalità classica), IIS 6.0 e versioni precedenti di IIS.
 
-Il framework MVC ASP.NET dipende dal routing ASP.NET per instradare le richieste del browser alle azioni del controller. Per sfruttare i vantaggi del routing ASP.NET, potrebbe essere necessario eseguire ulteriori passaggi di configurazione sul server Web. Tutto dipende dalla versione di Internet Information Services (IIS) e dalla modalità di elaborazione delle richieste per l'applicazione.
+Il framework di ASP.NET MVC dipende da ASP.NET Routing per instradare le richieste del browser alle azioni del controller. Per sfruttare ASP.NET Routing, potrebbe essere necessario eseguire ulteriori passaggi di configurazione sul server Web. Tutto dipende dalla versione di Internet Information Services (IIS) e dalla modalità di elaborazione delle richieste per l'applicazione.
 
 Di seguito è riportato un riepilogo delle diverse versioni di IIS:
 
-- IIS 7,0 (modalità integrata): nessuna configurazione speciale necessaria per usare il routing ASP.NET.
-- IIS 7,0 (modalità classica): è necessario eseguire una configurazione speciale per usare il routing ASP.NET.
-- IIS 6,0 o versioni precedenti: è necessario eseguire una configurazione speciale per usare il routing ASP.NET.
+- IIS 7.0 (modalità integrata) - Nessuna configurazione speciale necessaria per utilizzare ASP.NET routing.
+- IIS 7.0 (modalità classica) - È necessario eseguire una configurazione speciale per utilizzare ASP.NET Routing.
+- IIS 6.0 o versione inferiore: è necessario eseguire una configurazione speciale per utilizzare ASP.NET routing.
 
-La versione più recente di IIS è la versione 7,5 (in Win7). IIS 7 di IIS è incluso in Windows Server 2008 e VISTA/SP1 e versioni successive. È anche possibile installare IIS 7,0 in qualsiasi versione del sistema operativo Vista, eccetto Home Basic (vedere [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
+La versione più recente di IIS è la versione 7.5 (su Win7). IIS 7 di IIS è incluso in Windows Server 2008 E VISTA/SP1 e versioni successive. È inoltre possibile installare IIS 7.0 in qualsiasi versione del [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)sistema operativo Vista, ad eccezione di Home Basic (vedere ).
 
-IIS 7,0 supporta due modalità per l'elaborazione delle richieste. È possibile usare la modalità integrata o la modalità classica. Non è necessario eseguire passaggi di configurazione speciali quando si usa IIS 7,0 in modalità integrata. Tuttavia, è necessario eseguire una configurazione aggiuntiva quando si usa IIS 7,0 in modalità classica.
+IIS 7.0 supporta due modalità per l'elaborazione delle richieste. È possibile utilizzare la modalità integrata o la modalità classica. Non è necessario eseguire alcuna procedura di configurazione speciale quando si utilizza IIS 7.0 in modalità integrata. Tuttavia, è necessario eseguire una configurazione aggiuntiva quando si utilizza IIS 7.0 in modalità classica.
 
-Microsoft Windows Server 2003 include IIS 6,0. Non è possibile aggiornare IIS 6,0 a IIS 7,0 quando si usa il sistema operativo Windows Server 2003. Quando si usa IIS 6,0, è necessario eseguire passaggi di configurazione aggiuntivi.
+Microsoft Windows Server 2003 include IIS 6.0. Non è possibile aggiornare IIS 6.0 a IIS 7.0 quando si utilizza il sistema operativo Windows Server 2003. È necessario eseguire ulteriori passaggi di configurazione quando si utilizza IIS 6.0.
 
-Microsoft Windows XP Professional include IIS 5,1. Quando si usa IIS 5,1, è necessario eseguire passaggi di configurazione aggiuntivi.
+Microsoft Windows XP Professional include IIS 5.1. È necessario eseguire ulteriori passaggi di configurazione quando si utilizza IIS 5.1.
 
-Infine, Microsoft Windows 2000 e Microsoft Windows 2000 Professional includono IIS 5,0. Quando si usa IIS 5,0, è necessario eseguire passaggi di configurazione aggiuntivi.
+Infine, Microsoft Windows 2000 e Microsoft Windows 2000 Professional include IIS 5.0. È necessario eseguire ulteriori passaggi di configurazione quando si utilizza IIS 5.0.
 
-## <a name="integrated-versus-classic-mode"></a>Modalità integrata rispetto alla modalità classica
+## <a name="integrated-versus-classic-mode"></a>Modalità integrata e classica
 
-IIS 7,0 è in grado di elaborare le richieste utilizzando due diverse modalità di elaborazione delle richieste: integrata e classica. La modalità integrata fornisce prestazioni migliori e altre funzionalità. La modalità classica è inclusa per la compatibilità con le versioni precedenti di IIS.
+IIS 7.0 può elaborare le richieste utilizzando due diverse modalità di elaborazione delle richieste: integrate e classiche. La modalità integrata offre prestazioni migliori e più funzionalità. La modalità classica è inclusa per garantire la compatibilità con le versioni precedenti di IIS.
 
-La modalità di elaborazione delle richieste è determinata dal pool di applicazioni. È possibile determinare la modalità di elaborazione utilizzata da un'applicazione Web specifica determinando il pool di applicazioni associato all'applicazione. Attenersi ai passaggi riportati di seguito.
+La modalità di elaborazione della richiesta è determinata dal pool di applicazioni. È possibile determinare quale modalità di elaborazione viene utilizzata da una determinata applicazione Web determinando il pool di applicazioni associato all'applicazione. A tale scopo, seguire questa procedura:
 
 1. Avviare Gestione Internet Information Services
-2. Nella finestra connessioni selezionare un'applicazione
-3. Nella finestra azioni fare clic sul collegamento **impostazioni di base** per aprire la finestra di dialogo Modifica applicazione (vedere la figura 1).
+2. Nella finestra Connessioni, selezionare un'applicazione
+3. Nella finestra Azioni, fare clic sul collegamento **Impostazioni di base** per aprire la finestra di dialogo Modifica applicazione (vedere la Figura 1)
 4. Prendere nota del pool di applicazioni selezionato.
 
-Per impostazione predefinita, IIS è configurato per supportare due pool di applicazioni: **DefaultAppPool** e **AppPool .NET classico**. Se è selezionata l'opzione DefaultAppPool, l'applicazione è in esecuzione in modalità di elaborazione della richiesta integrata. Se è selezionata la versione classica di .NET AppPool, l'applicazione è in esecuzione in modalità di elaborazione delle richieste classiche.
+Per impostazione predefinita, IIS è configurato per supportare due pool di applicazioni: **DefaultAppPool** e **Classic .NET AppPool**. Se DefaultAppPool è selezionato, l'applicazione viene eseguita in modalità di elaborazione delle richieste integrata. Se è selezionata l'opzione Classic .NET AppPool, l'applicazione viene eseguita in modalità di elaborazione delle richieste classica.
 
-[![finestra di dialogo nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
+[![Finestra di dialogo relativa al nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image1.png)
 
-**Figura 1**: rilevamento della modalità di elaborazione delle richieste ([fare clic per visualizzare l'immagine con dimensioni complete](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.png))
+**Figura 1:** Rilevamento della modalità di elaborazione richiesta([Fare clic per visualizzare l'immagine](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.png)a dimensioni intere)
 
-Si noti che è possibile modificare la modalità di elaborazione delle richieste nella finestra di dialogo Modifica applicazione. Fare clic sul pulsante Seleziona e modificare il pool di applicazioni associato all'applicazione. Tenere presente che si verificano problemi di compatibilità quando si modifica un'applicazione ASP.NET dalla modalità classica alla modalità integrata. Per altre informazioni, vedere i seguenti articoli:
+Si noti che è possibile modificare la modalità di elaborazione delle richieste nella finestra di dialogo Modifica applicazione. Fare clic sul pulsante Seleziona e modificare il pool di applicazioni associato all'applicazione. Tenere presente che esistono problemi di compatibilità quando si modifica un'applicazione ASP.NET dalla modalità classica alla modalità integrata. Per altre informazioni, vedere gli articoli seguenti:
 
-- Aggiornamento di ASP.NET 1,1 a IIS 7,0 in Windows Vista e Windows Server 2008-- [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
-- Integrazione di ASP.NET con IIS 7,0- [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
+- Aggiornamento di ASP.NET 1.1 a IIS 7.0 in Windows Vista e Windows Server 2008 --[https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
+- ASP.NET integrazione con IIS 7.0 -[https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 
-Se un'applicazione ASP.NET usa il DefaultAppPool, non è necessario eseguire alcuna operazione aggiuntiva per ottenere il routing del ASP.NET (e quindi ASP.NET MVC). Tuttavia, se l'applicazione ASP.NET è configurata in modo da usare il AppPool .NET classico, proseguire con la lettura.
+Se un'applicazione ASP.NET utilizza DefaultAppPool, non è necessario eseguire ulteriori passaggi per ottenere ASP.NET Routing (e pertanto ASP.NET MVC) per funzionare. Tuttavia, se l'applicazione ASP.NET è configurata per utilizzare l'appPool .NET classico quindi continuare a leggere, è necessario eseguire altre operazioni.
 
-## <a name="using-aspnet-mvc-with-older-versions-of-iis"></a>Uso di ASP.NET MVC con le versioni precedenti di IIS
+## <a name="using-aspnet-mvc-with-older-versions-of-iis"></a>Utilizzo di ASP.NET MVC con versioni precedenti di IIS
 
-Se è necessario usare ASP.NET MVC con una versione precedente di IIS rispetto a IIS 7,0 o è necessario usare IIS 7,0 in modalità classica, sono disponibili due opzioni. In primo luogo, è possibile modificare la tabella di route per usare le estensioni di file. Ad esempio, anziché richiedere un URL come/Store/Details, è necessario richiedere un URL come/Store.aspx/Details.
+Se è necessario utilizzare ASP.NET MVC con una versione precedente di IIS 7.0 o è necessario utilizzare IIS 7.0 in modalità classica, sono disponibili due opzioni. In primo luogo, è possibile modificare la tabella di route per utilizzare le estensioni di file. Ad esempio, anziché richiedere un URL come /Store/Details, è necessario richiedere un URL come /Store.aspx/Details.For example, instead of requesting a URL like /Store/Details, you would request a URL like /Store.aspx/Details.
 
-La seconda opzione consiste nel creare un elemento denominato *mapping di script con caratteri jolly*. Una mappa di script con caratteri jolly consente di eseguire il mapping di ogni richiesta in ASP.NET Framework.
+La seconda opzione consiste nel creare un elemento denominato mapping di *script con caratteri jolly*. Una mappa di script con caratteri jolly consente di eseguire il mapping di ogni richiesta nel framework di ASP.NET.
 
-Se non si ha accesso al server Web (ad esempio, l'applicazione ASP.NET MVC è ospitata da un provider di servizi Internet), è necessario usare la prima opzione. Se non si vuole modificare l'aspetto degli URL e si ha accesso al server Web, è possibile usare la seconda opzione.
+Se non si ha accesso al server Web (ad esempio, l'applicazione MVC ASP.NET è ospitata da un provider di servizi Internet), sarà necessario utilizzare la prima opzione. Se non si desidera modificare l'aspetto degli URL e si ha accesso al server Web, è possibile utilizzare la seconda opzione.
 
-Le singole opzioni vengono esaminate in dettaglio nelle sezioni seguenti.
+Esaminiamo ogni opzione in dettaglio nelle sezioni seguenti.
 
 ## <a name="adding-extensions-to-the-route-table"></a>Aggiunta di estensioni alla tabella di route
 
-Il modo più semplice per usare il routing ASP.NET con le versioni precedenti di IIS consiste nel modificare la tabella di route nel file Global. asax. Il file Global. asax predefinito e non modificato nel listato 1 configura una route denominata route predefinita.
+Il modo più semplice per ottenere ASP.NET Routing per lavorare con le versioni precedenti di IIS consiste nel modificare la tabella di route nel file Global.asax. Il file Global.asax predefinito e non modificato nel listato 1 configura una route denominata Route predefinita.
 
-**Listato 1-Global. asax (non modificato)**
+**Lista 1 - Global.asax (non modificato)**
 
 [!code-csharp[Main](using-asp-net-mvc-with-different-versions-of-iis-cs/samples/sample1.cs)]
 
-La route predefinita configurata nel listato 1 consente di instradare URL simili ai seguenti:
+La route predefinita configurata nel listato 1 consente di instradare GLI URL simili ai seguente:
 
-/Home/Index
+/Home/Indice
 
-/Product/Details/3
+/Prodotto/Dettagli/3
 
-/Product
+/Prodotto
 
-Sfortunatamente, le versioni precedenti di IIS non passano queste richieste a ASP.NET Framework. Pertanto, queste richieste non vengono indirizzate a un controller. Ad esempio, se si effettua una richiesta del browser per l'URL/Home/Index, si otterrà la pagina di errore nella figura 2.
+Sfortunatamente, le versioni precedenti di IIS non passerà queste richieste al framework di ASP.NET. Pertanto, queste richieste non verranno instradate a un controller. Ad esempio, se si effettua una richiesta del browser per l'URL /Home/Index, verrà visualizzata la pagina di errore in Figura 2.
 
-[![finestra di dialogo nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
+[![Finestra di dialogo relativa al nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.png)
 
-**Figura 2**: ricezione di un errore 404 non trovato ([fare clic per visualizzare l'immagine con dimensioni complete](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.png))
+**Figura 2**: Ricezione di un errore 404 Non trovato([Fare clic per visualizzare l'immagine a dimensioni intere](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.png))
 
-Le versioni precedenti di IIS mappano solo determinate richieste a ASP.NET Framework. La richiesta deve essere per un URL con l'estensione di file corretta. Ad esempio, viene eseguito il mapping di una richiesta per/SomePage.aspx al framework ASP.NET. Tuttavia, non esiste una richiesta di/SomePage.htm.
+Le versioni precedenti di IIS eseguono solo il mapping di determinate richieste al framework di ASP.NET. La richiesta deve essere per un URL con l'estensione di file corretta. Ad esempio, una richiesta per /SomePage.aspx viene mappata al framework di ASP.NET. Tuttavia, una richiesta per /SomePage.htm non lo fa.
 
-Pertanto, per il corretto funzionamento del routing ASP.NET, è necessario modificare la route predefinita in modo da includere un'estensione di file mappata al framework ASP.NET.
+Pertanto, per fare ASP.NET Routing al funzionamento, è necessario modificare la route predefinita in modo che includa un'estensione di file mappata al framework di ASP.NET.
 
-Questa operazione viene eseguita utilizzando uno script denominato `registermvc.wsf`. È stata inclusa con la versione ASP.NET MVC 1 in `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, ma a partire da ASP.NET 2 questo script è stato spostato in ASP.NET Futures, disponibile [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978).
+Questa operazione viene eseguita utilizzando uno script denominato `registermvc.wsf`. È stato incluso nella versione `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`ASP.NET MVC 1 in , ma a partire da [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978)ASP.NET 2 questo script è stato spostato nel ASP.NET Futures, disponibile all'indirizzo .
 
-L'esecuzione di questo script registra una nuova estensione MVC con IIS. Dopo la registrazione dell'estensione MVC, è possibile modificare le route nel file Global. asax in modo che le route usino l'estensione MVC.
+L'esecuzione di questo script registra una nuova estensione MVC con IIS. Dopo aver registrato l'estensione MVC, è possibile modificare le route nel file Global.asax in modo che le route utilizzino l'estensione MVC.
 
-Il file Global. asax modificato nel listato 2 funziona con le versioni precedenti di IIS.
+Il file Global.asax modificato nel listato 2 funziona con le versioni precedenti di IIS.
 
-**Listato 2-Global. asax (modificato con estensioni)**
+**Listato 2 - Global.asax (modificato con estensioni)**
 
 [!code-csharp[Main](using-asp-net-mvc-with-different-versions-of-iis-cs/samples/sample2.cs)]
 
-**Importante**: ricordare di compilare di nuovo l'applicazione ASP.NET MVC dopo aver modificato il file Global. asax.
+**Importante**: ricordarsi di compilare nuovamente l'applicazione MVC ASP.NET dopo aver modificato il file Global.asax.
 
-Nel listato 2 sono presenti due importanti modifiche al file Global. asax. In Global. asax sono ora definite due route. Il modello di URL per la route predefinita, la prima route, ora è simile al seguente:
+Esistono due importanti modifiche al file Global.asax nel listato 2. Ora ci sono due rotte definite nel file Global.asax. Il modello di URL per la route predefinita, la prima route, ora è simile al:
 
-{controller}. Mvc/{azione}/{ID}
+<a0></a0><a1></a1><a2></a2><a3></a3><a4><
 
-L'aggiunta dell'estensione MVC modifica il tipo di file intercettati dal modulo di routing ASP.NET. Con questa modifica, l'applicazione MVC ASP.NET ora instrada le richieste come le seguenti:
+L'aggiunta dell'estensione MVC modifica il tipo di file intercettati dal modulo di routing ASP.NET. Con questa modifica, l'applicazione MVC ASP.NET ora indirizza le richieste come segue:
 
-/Home.mvc/Index/
+/Home.mvc/Indice/
 
-/Product.mvc/Details/3
+/Product.mvc/Dettagli/3
 
 /Product.mvc/
 
-La seconda route, ovvero la route radice, è nuova. Questo modello di URL per la route radice è una stringa vuota. Questa route è necessaria per la corrispondenza delle richieste effettuate con la radice dell'applicazione. Ad esempio, la route radice corrisponderà a una richiesta simile alla seguente:
+Il secondo percorso, il percorso principale, è nuovo. Questo modello di URL per la route radice è una stringa vuota. Questa route è necessaria per la corrispondenza delle richieste effettuate con la radice dell'applicazione. Ad esempio, la route radice corrisponderà a una richiesta simile alla seguente:For example, the Root route will match a request that looks like this:
 
 [http://www.YourApplication.com/](http://www.YourApplication.com/)
 
-Dopo aver apportato queste modifiche alla tabella di route, è necessario assicurarsi che tutti i collegamenti nell'applicazione siano compatibili con questi nuovi modelli di URL. In altre parole, assicurarsi che tutti i collegamenti includano l'estensione MVC. Se si usa il metodo helper HTML. ActionLink () per generare i collegamenti, non è necessario apportare alcuna modifica.
+Dopo aver apportato queste modifiche alla tabella di route, è necessario assicurarsi che tutti i collegamenti nell'applicazione siano compatibili con questi nuovi modelli di URL. In altre parole, assicurarsi che tutti i collegamenti includano l'estensione MVC. Se si utilizza il metodo helper Html.ActionLink() per generare i collegamenti, non è necessario apportare modifiche.
 
-Invece di usare lo script registermvc. WCF, è possibile aggiungere una nuova estensione a IIS di cui è stato eseguito il mapping a ASP.NET Framework manualmente. Quando si aggiunge manualmente una nuova estensione, assicurarsi che la casella di controllo con etichetta **Verifica che file esistente** non sia selezionata.
+Anziché utilizzare lo script registermvc.wcf, è possibile aggiungere una nuova estensione a IIS mappata automaticamente al framework ASP.NET. Quando si aggiunge una nuova estensione, assicurarsi che la casella di controllo **Verifica che il file esista** non sia selezionata.
 
 ## <a name="hosted-server"></a>Server ospitato
 
-Non è sempre possibile accedere al server Web. Se, ad esempio, si ospita l'applicazione ASP.NET MVC utilizzando un provider di hosting Internet, non sarà necessariamente possibile accedere a IIS.
+Non sempre hai accesso al tuo server web. Ad esempio, se si ospita l'applicazione MVC ASP.NET utilizzando un provider di hosting Internet, non sarà necessario accedere a IIS.
 
-In tal caso, è necessario usare una delle estensioni di file esistenti di cui è stato eseguito il mapping a ASP.NET Framework. Esempi di estensioni di file di cui è stato eseguito il mapping a ASP.NET includono le estensioni aspx, AXD e ashx.
+In tal caso, è necessario utilizzare una delle estensioni di file esistenti mappate al framework di ASP.NET. Esempi di estensioni di file mappate a ASP.NET includono le estensioni aspx, axd e ashx.
 
-Il file Global. asax modificato nel listato 3, ad esempio, usa l'estensione aspx anziché l'estensione MVC.
+Ad esempio, il file Global.asax modificato nel listato 3 utilizza l'estensione aspx anziché l'estensione mvc.
 
-**Listato 3-Global. asax (modificato con estensioni. aspx)**
+**Listato 3 - Global.asax (modificato con estensioni aspx)**
 
 [!code-csharp[Main](using-asp-net-mvc-with-different-versions-of-iis-cs/samples/sample3.cs)]
 
-Il file Global. asax nel listato 3 è esattamente uguale al file Global. asax precedente, ad eccezione del fatto che usa l'estensione aspx anziché l'estensione MVC. Non è necessario eseguire alcuna installazione nel server Web remoto per utilizzare l'estensione aspx.
+Il file Global.asax nel listato 3 è esattamente lo stesso del file Global.asax precedente, ad eccezione del fatto che utilizza l'estensione aspx anziché l'estensione MVC. Non è necessario eseguire alcuna installazione sul server Web remoto per utilizzare l'estensione aspx.
 
-## <a name="creating-a-wildcard-script-map"></a>Creazione di una mappa di script con caratteri jolly
+## <a name="creating-a-wildcard-script-map"></a>Creazione di una mappa di script con caratteri jollyCreating a Wildcard Script Map
 
-Se non si vuole modificare gli URL per l'applicazione ASP.NET MVC e si ha accesso al server Web, è possibile usare un'opzione aggiuntiva. È possibile creare una mappa di script con caratteri jolly che esegue il mapping di tutte le richieste al server Web a ASP.NET Framework. In questo modo, è possibile usare la tabella di route ASP.NET MVC predefinita con IIS 7,0 (in modalità classica) o IIS 6,0.
+Se non si desidera modificare gli URL per l'applicazione MVC ASP.NET e si ha accesso al server Web, è disponibile un'opzione aggiuntiva. È possibile creare un mapping di script con caratteri jolly che esegue il mapping di tutte le richieste al server Web al framework di ASP.NET. In questo modo, è possibile utilizzare la tabella di route MVC di ASP.NET predefinita con IIS 7.0 (in modalità classica) o IIS 6.0.
 
-Tenere presente che questa opzione fa sì che IIS intercetta ogni richiesta effettuata sul server Web. Sono incluse le richieste per le immagini, le pagine ASP classiche e le pagine HTML. Pertanto, l'abilitazione di un mapping di script con caratteri jolly a ASP.NET ha implicazioni sulle prestazioni.
+Tenere presente che questa opzione fa sì che IIS intercetti ogni richiesta effettuata sul server web. Sono incluse le richieste di immagini, pagine ASP classiche e pagine HTML. Pertanto, l'abilitazione di un mapping di script con caratteri jolly a ASP.NET ha implicazioni sulle prestazioni.
 
-Di seguito viene illustrato come abilitare un mapping di script con caratteri jolly per IIS 7,0:
+Ecco come abilitare un mapping di script con caratteri jolly per IIS 7.0:
 
-1. Selezionare l'applicazione nella finestra connessioni
-2. Assicurarsi che sia selezionata la visualizzazione **funzionalità**
-3. Fare doppio clic sul pulsante **mapping del gestore**
-4. Fare clic sul collegamento **Aggiungi mapping di script con caratteri jolly** (vedere la figura 3).
-5. Immettere il percorso del file ASPNET\_ISAPI. dll (è possibile copiare questo percorso dalla mappa di script PageHandlerFactory)
+1. Selezionare l'applicazione nella finestra Connessioni
+2. Assicurarsi che la vista **Funzioni** sia selezionata
+3. Fare doppio clic sul pulsante **Mapping gestori**
+4. Fare clic sul collegamento Aggiungi mappa **script caratteri jolly** (vedere la figura 3)
+5. Immettere il percorso\_del file aspnet isapi.dll (è possibile copiare questo percorso dalla mappa dello script PageHandlerFactory)
 6. Immettere il nome MVC
 7. Fare clic sul pulsante **OK**
 
-[![finestra di dialogo nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
+[![Finestra di dialogo relativa al nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.png)
 
-**Figura 3**: creazione di un mapping di script con caratteri jolly con IIS 7,0 ([fare clic per visualizzare l'immagine con dimensioni complete](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image6.png))
+**Figura 3**: Creazione di una mappa di script con caratteri jolly con IIS 7.0(Fare[clic per visualizzare l'immagine a dimensioni intere)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image6.png)
 
-Per creare un mapping di script con caratteri jolly con IIS 6,0, attenersi alla procedura seguente:
+Per creare una mappa di script con caratteri jolly con IIS 6.0, attenersi alla seguente procedura:
 
-1. Fare clic con il pulsante destro del mouse sul sito Web e scegliere Proprietà
+1. Fare clic con il pulsante destro del mouse su un sito Web e selezionare Proprietà
 2. Selezionare la scheda **Home directory**
-3. Fare clic sul pulsante di **configurazione**
-4. Selezionare la scheda **mapping**
-5. Fare clic sul pulsante **Inserisci** (vedere la figura 4).
-6. Incollare il percorso del file ASPNET\_ISAPI. dll nel campo eseguibile. è possibile copiare questo percorso dalla mappa di script per i file aspx.
-7. Deselezionare la casella **di controllo verifica che il file esista**
+3. Fare clic sul pulsante **Configurazione**
+4. Selezionare la scheda **Mapping**
+5. Fare clic sul pulsante **Inserisci** (vedere la figura 4)
+6. Incollare il percorso\_del file aspnet isapi.dll nel campo Executable (è possibile copiare questo percorso dalla mappa di script per i file aspx)
+7. Deselezionare la casella di controllo **Verifica l'presenza di file**
 8. Fare clic sul pulsante **OK**
 
-[![finestra di dialogo nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
+[![Finestra di dialogo relativa al nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image7.png)
 
-**Figura 4**: creazione di un mapping di script con caratteri jolly con IIS 6,0 ([fare clic per visualizzare l'immagine con dimensioni complete](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image8.png))
+**Figura 4**: Creazione di una mappa di script con caratteri jolly con IIS 6.0([Fare clic per visualizzare l'immagine](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image8.png)a dimensioni intere )
 
-Dopo aver abilitato le mappe di script con caratteri jolly, è necessario modificare la tabella di route nel file Global. asax in modo che includa una route radice. In caso contrario, si otterrà la pagina di errore nella figura 5 quando si effettua una richiesta per la pagina radice dell'applicazione. È possibile utilizzare il file Global. asax modificato nel listato 4.
+Dopo aver abilitato i mapping di script con caratteri jolly, è necessario modificare la tabella di route nel file Global.asax in modo che includa una route radice. In caso contrario, si otterrà la pagina di errore in Figura 5 quando si effettua una richiesta per la pagina radice dell'applicazione. È possibile utilizzare il file Global.asax modificato nel listato 4.
 
-[![finestra di dialogo nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
+[![Finestra di dialogo relativa al nuovo progetto](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image9.png)
 
-**Figura 5**: errore della route radice mancante ([fare clic per visualizzare l'immagine con dimensioni complete](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image10.png))
+**Figura 5:** Errore di route radice mancante([Fare clic per visualizzare l'immagine a dimensioni intere)](using-asp-net-mvc-with-different-versions-of-iis-cs/_static/image10.png)
 
-**Listato 4-Global. asax (modificato con route radice)**
+**Listato 4 - Global.asax (modificato con percorso radice)**
 
 [!code-csharp[Main](using-asp-net-mvc-with-different-versions-of-iis-cs/samples/sample4.cs)]
 
-Dopo aver abilitato una mappa di script con caratteri jolly per IIS 7,0 o IIS 6,0, è possibile effettuare richieste che funzionano con la tabella di route predefinita simile alla seguente:
+Dopo aver attivato un mapping di script con caratteri jolly per IIS 7.0 o IIS 6.0, è possibile effettuare richieste che funzionano con la tabella di route predefinita simile alla seguente:
 
 /
 
-/Home/Index
+/Home/Indice
 
-/Product/Details/3
+/Prodotto/Dettagli/3
 
-/Product
+/Prodotto
 
 ## <a name="summary"></a>Riepilogo
 
-L'obiettivo di questa esercitazione è illustrare come è possibile usare ASP.NET MVC quando si usa una versione precedente di IIS (o IIS 7,0 in modalità classica). Sono stati discussi due metodi per ottenere il routing di ASP.NET per l'utilizzo con le versioni precedenti di IIS: modificare la tabella di route predefinita o creare una mappa di script con caratteri jolly.
+L'obiettivo di questa esercitazione era quello di spiegare come è possibile utilizzare ASP.NET MVC quando si utilizza una versione precedente di IIS (o IIS 7.0 in modalità classica). Sono stati illustrati due metodi per fare in modo che ASP.NET Routing funzioni con le versioni precedenti di IIS: modificare la tabella di route predefinita o creare una mappa di script con caratteri jolly.
 
-La prima opzione richiede la modifica degli URL usati nell'applicazione ASP.NET MVC. Uno dei vantaggi molto significativi di questa prima opzione è che non è necessario accedere a un server Web per modificare la tabella di route. Ciò significa che è possibile usare questa prima opzione anche quando si ospita l'applicazione ASP.NET MVC con una società di hosting Internet.
+La prima opzione richiede la modifica degli URL utilizzati nell'applicazione MVC ASP.NET. Un vantaggio molto significativo di questa prima opzione è che non è necessario accedere a un server Web per modificare la tabella di route. Ciò significa che è possibile utilizzare questa prima opzione anche quando si ospita l'applicazione MVC ASP.NET con una società di hosting Internet.
 
-La seconda opzione consiste nel creare una mappa di script con caratteri jolly. Il vantaggio di questa seconda opzione è che non è necessario modificare gli URL. Lo svantaggio di questa seconda opzione è che può influito sulle prestazioni dell'applicazione MVC ASP.NET.
+La seconda opzione consiste nel creare una mappa di script con caratteri jolly. Il vantaggio di questa seconda opzione è che non è necessario modificare gli URL. Lo svantaggio di questa seconda opzione è che può influire sulle prestazioni dell'applicazione MVC ASP.NET.
 
 > [!div class="step-by-step"]
-> [avanti](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [Avanti](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
