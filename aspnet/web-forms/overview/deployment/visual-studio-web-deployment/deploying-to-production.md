@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ec025e757d00cbfbfbcda9408739d2593908bc07
+ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78632783"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85240632"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Distribuzione Web ASP.NET con Visual Studio: distribuzione in produzione
 
@@ -33,7 +33,7 @@ Promemoria: se si riceve un messaggio di errore o un elemento non funziona duran
 
 ## <a name="get-a-microsoft-azure-account"></a>Ottenere un account di Microsoft Azure
 
-Se non si ha già un account Azure, è possibile creare un account di valutazione gratuito in pochi minuti. Per informazioni dettagliate, vedere la pagina relativa alla [versione di valutazione gratuita di Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Se non si ha già un account Azure, è possibile creare un account di valutazione gratuito in pochi minuti. Per informazioni dettagliate, vedere la pagina relativa alla [versione di valutazione gratuita di Azure](https://azure.microsoft.com/free/dotnet/).
 
 ## <a name="create-a-staging-environment"></a>Creazione di un ambiente di gestione temporanea
 
@@ -130,7 +130,7 @@ Ora che è stata creata un'app Web e un database per l'ambiente di gestione temp
 6. Fare clic su **Avanti**.
 
     ![icona connessione riuscita e pulsante Avanti nella scheda connessione](deploying-to-production/_static/image8.png)
-7. Nella scheda **Impostazioni** espandere Opzioni di **pubblicazione file**e quindi selezionare **Escludi file dalla cartella app\_data**.
+7. Nella scheda **Impostazioni** espandere Opzioni di **pubblicazione file**e quindi selezionare **Escludi file dalla \_ cartella dati app**.
 
     Per informazioni sulle altre opzioni in **Opzioni di pubblicazione file**, vedere l'esercitazione [Deploying to IIS](deploying-to-iis.md) . Lo screenshot che mostra il risultato di questo passaggio e i passaggi di configurazione del database seguenti si trova alla fine dei passaggi di configurazione del database.
 8. In **DefaultConnection** nella sezione **database** configurare la distribuzione del database per il database delle appartenenze.
@@ -141,9 +141,9 @@ Ora che è stata creata un'app Web e un database per l'ambiente di gestione temp
       3. Nella finestra di dialogo **Configura aggiornamenti database** fare clic su **Aggiungi script SQL**.
       4. Nella casella **Aggiungi script SQL** passare allo script *ASPNET-data-prod. SQL* salvato in precedenza nella cartella della soluzione, quindi fare clic su **Apri**.
       5. Chiudere la finestra di dialogo **Configura aggiornamenti database** .
-10. In **schoolContext** nella sezione **database** Selezionare **Esegui migrazioni Code First (eseguito all'avvio dell'applicazione)** .
+10. In **schoolContext** nella sezione **database** Selezionare **Esegui migrazioni Code First (eseguito all'avvio dell'applicazione)**.
 
-    In Visual Studio viene visualizzato **esegui migrazioni Code First** anziché **aggiorna database** per `DbContext` classi. Se si desidera utilizzare il provider dbDacFx anziché le migrazioni per distribuire un database a cui si accede tramite una classe `DbContext`, vedere [ricerca per categorie distribuire un database Code First senza migrazioni?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) nelle domande frequenti sulla distribuzione Web per Visual Studio e ASP.NET su MSDN.
+    In Visual Studio viene visualizzato **esegui migrazioni Code First** anziché **Aggiorna database** per `DbContext` le classi. Se si desidera utilizzare il provider dbDacFx anziché le migrazioni per distribuire un database a cui si accede tramite una `DbContext` classe, vedere [ricerca per categorie distribuire un database Code First senza migrazioni?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) nelle domande frequenti sulla distribuzione Web per Visual Studio e ASP.NET su MSDN.
 
     La scheda **Impostazioni** ha ora un aspetto simile all'esempio seguente:
 
@@ -160,22 +160,22 @@ Ora che è stata creata un'app Web e un database per l'ambiente di gestione temp
 ### <a name="configure-a-publish-profile-transform-for-the-environment-indicator"></a>Configurare una trasformazione del profilo di pubblicazione per l'indicatore dell'ambiente
 
 > [!NOTE]
-> In questa sezione viene illustrato come configurare una trasformazione Web. config per l'indicatore dell'ambiente. Poiché l'indicatore si trova nell'elemento `<appSettings>`, è possibile specificare un'altra alternativa per specificare la trasformazione quando si esegue la distribuzione in app Azure servizio. Per altre informazioni, vedere [specifica delle impostazioni di Web. config in Azure](web-config-transformations.md#watransforms).
+> In questa sezione viene illustrato come configurare una trasformazione Web.config per l'indicatore dell'ambiente. Poiché l'indicatore si trova nell' `<appSettings>` elemento, è possibile specificare un'altra alternativa per specificare la trasformazione quando si esegue la distribuzione nel servizio app Azure. Per altre informazioni, vedere [specifica di Web.config impostazioni in Azure](web-config-transformations.md#watransforms).
 
 1. In **Esplora soluzioni**espandere **Proprietà**, quindi espandere **PublishProfiles**.
 2. Fare clic con il pulsante destro del mouse su *staging. pubxml*, quindi scegliere **Aggiungi trasformazione configurazione**.
 
     ![Aggiungi trasformazione configurazione per la gestione temporanea](deploying-to-production/_static/image11.png)
 
-    Visual Studio crea il file di trasformazione *Web. staging. config* e lo apre.
-3. Nel file di trasformazione *Web. staging. config* inserire il codice seguente subito dopo il tag di apertura della `configuration`.
+    Visual Studio crea il file di trasformazione *Web.Staging.config* e lo apre.
+3. Nel file di trasformazione *Web.Staging.config* inserire il codice seguente subito dopo il tag di apertura `configuration` .
 
     [!code-xml[Main](deploying-to-production/samples/sample1.xml)]
 
     Quando si usa il profilo di pubblicazione di gestione temporanea, questa trasformazione imposta l'indicatore dell'ambiente su "prod". Nell'app Web distribuita non verrà visualizzato alcun suffisso, ad esempio "(dev)" o "(test)" dopo l'intestazione "Contoso University" H1.
-4. Fare clic con il pulsante destro del mouse sul file *Web. staging. config* e fare clic su **Anteprima trasformazione** per assicurarsi che la trasformazione codificata produca le modifiche previste.
+4. Fare clic con il pulsante destro del mouse sul file di *Web.Staging.config* e fare clic su **Anteprima trasformazione** per assicurarsi che la trasformazione codificata produca le modifiche previste.
 
-    Nella finestra di **Anteprima di Web. config** viene visualizzato il risultato dell'applicazione delle trasformazioni *Web. Release. config* e delle trasformazioni di *Web. staging. config* .
+    La finestra di **anteprimaWeb.config** Mostra il risultato dell'applicazione delle trasformazioni *Web.Release.config* e delle trasformazioni di *Web.Staging.config* .
 
 ### <a name="prevent-public-use-of-the-test-app"></a>Impedisci l'uso pubblico dell'app di test
 
@@ -183,18 +183,18 @@ Una considerazione importante per l'app di staging è che sarà disponibile su I
 
 - Impostare le regole del firewall che consentono l'accesso all'app di staging solo da indirizzi IP usati per testare la gestione temporanea.
 - Usare un URL offuscato che sarebbe impossibile indovinare.
-- Creare un file *robots. txt* per assicurarsi che i motori di ricerca non effettueranno la ricerca per indicizzazione nell'app di test e i collegamenti ai report nei risultati della ricerca.
+- Creare un file di *robots.txt* per assicurarsi che i motori di ricerca non effettueranno la ricerca per indicizzazione nell'app di test e i collegamenti ai report nei risultati della ricerca.
 
 Il primo di questi metodi è il più efficace, ma non viene trattato in questa esercitazione, perché richiede la distribuzione in un servizio cloud di Azure anziché app Azure servizio. Per altre informazioni sui servizi cloud e sulle restrizioni IP in Azure, vedere [Opzioni di hosting di calcolo fornite da Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) e [bloccare l'accesso a un ruolo Web da parte di indirizzi IP specifici](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx). Se si esegue la distribuzione in un provider di hosting di terze parti, contattare il provider per scoprire come implementare le restrizioni IP.
 
-Per questa esercitazione verrà creato un file *robots. txt* .
+Per questa esercitazione verrà creato un file di *robots.txt* .
 
 1. In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul progetto ContosoUniversity e scegliere **Aggiungi nuovo elemento**.
-2. Creare un nuovo **file di testo** denominato *robots. txt*e inserire il testo seguente:
+2. Creare un nuovo **file di testo** denominato *robots.txt*e inserire il testo seguente:
 
     [!code-console[Main](deploying-to-production/samples/sample2.cmd)]
 
-    La riga `User-agent` indica ai motori di ricerca che le regole del file si applicano a tutti i crawler web (robot) del motore di ricerca e la riga `Disallow` specifica che non deve essere eseguita la ricerca per indicizzazione nelle pagine del sito.
+    La `User-agent` riga indica ai motori di ricerca che le regole del file si applicano a tutti i crawler web del motore di ricerca e la `Disallow` riga specifica che non deve essere eseguita la ricerca per indicizzazione nelle pagine del sito.
 
     Si vuole che i motori di ricerca cataloghino l'app di produzione, quindi è necessario escludere questo file dalla distribuzione di produzione. A tale scopo, è necessario configurare un'impostazione nel profilo di pubblicazione di produzione al momento della creazione.
 
@@ -208,7 +208,7 @@ Per questa esercitazione verrà creato un file *robots. txt* .
 
 ## <a name="test-in-the-staging-environment"></a>Test nell'ambiente di gestione temporanea
 
-Si noti che l'indicatore di ambiente è assente (non è presente alcun "(test)" o "(dev)" dopo l'intestazione H1, che indica che la trasformazione *Web. config* per l'indicatore di ambiente ha avuto esito positivo.
+Si noti che l'indicatore di ambiente è assente (non è presente alcun "(test)" o "(dev)" dopo l'intestazione H1, che indica che la trasformazione *Web.config* per l'indicatore di ambiente ha avuto esito positivo.
 
 ![Gestione temporanea della Home page](deploying-to-production/_static/image12.png)
 
@@ -224,9 +224,9 @@ Richiedere un URL non valido per generare un errore che verrà rilevato da ELMAH
 
 L'applicazione creata viene ora eseguita nel cloud in un'app Web simile a quella che verrà usata per la produzione. Poiché tutto funziona correttamente, il passaggio successivo consiste nella distribuzione in produzione.
 
-## <a name="deploy-to-production"></a>Distribuzione nell'ambiente di produzione
+## <a name="deploy-to-production"></a>Distribuire nell'ambiente di produzione
 
-Il processo per la creazione di un'app Web di produzione e la distribuzione nell'ambiente di produzione è identico a quello per la gestione temporanea, tranne per il fatto che è necessario escludere la distribuzione di *robots. txt* . A tale scopo, verrà modificato il file del profilo di pubblicazione.
+Il processo per la creazione di un'app Web di produzione e la distribuzione nell'ambiente di produzione è identico a quello per la gestione temporanea, tranne per il fatto che è necessario escludere il *robots.txt* dalla distribuzione. A tale scopo, verrà modificato il file del profilo di pubblicazione.
 
 ### <a name="create-the-production-environment-and-the-production-publish-profile"></a>Creare l'ambiente di produzione e il profilo di pubblicazione di produzione
 
@@ -240,9 +240,9 @@ Il processo per la creazione di un'app Web di produzione e la distribuzione nell
 4. Rinominare il profilo di pubblicazione in *produzione*.
 5. Configurare una trasformazione del profilo di pubblicazione per l'indicatore dell'ambiente, seguendo la stessa procedura usata per la gestione temporanea.
 
-### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>Modificare il file con estensione pubxml per escludere robots. txt
+### <a name="edit-the-pubxml-file-to-exclude-robotstxt"></a>Modificare il file con estensione pubxml per escludere robots.txt
 
-I file del profilo di pubblicazione sono denominati &lt;ProfileName&gt; *. pubxml* e si trovano nella cartella *PublishProfiles* . La *cartella PublishProfiles* si trova nella cartella *Proprietà* di un C# progetto di applicazione Web, nella cartella *progetto* in un progetto di applicazione Web VB o nella cartella *app\_data* in un progetto di app Web. Ogni file *. pubxml* contiene impostazioni che si applicano a un solo profilo di pubblicazione. I valori immessi nella procedura guidata Pubblica sito Web vengono archiviati in questi file ed è possibile modificarli per creare o modificare le impostazioni che non sono rese disponibili nell'interfaccia utente di Visual Studio.
+I file del profilo di pubblicazione sono denominati &lt; ProfileName &gt; *. pubxml* e si trovano nella cartella *PublishProfiles* . La cartella *PublishProfiles* si trova nella cartella *Proprietà* di un progetto di applicazione Web C#, nella cartella *progetto* in un progetto di applicazione Web VB o nella cartella *app \_ Data* in un progetto di applicazione Web. Ogni file *. pubxml* contiene impostazioni che si applicano a un solo profilo di pubblicazione. I valori immessi nella procedura guidata Pubblica sito Web vengono archiviati in questi file ed è possibile modificarli per creare o modificare le impostazioni che non sono rese disponibili nell'interfaccia utente di Visual Studio.
 
 Per impostazione predefinita, i file con *estensione pubxml* sono inclusi nel progetto quando si crea un profilo di pubblicazione, ma è possibile escluderli dal progetto e verranno comunque usati da Visual Studio. Visual Studio cerca i file con *estensione pubxml* nella cartella *PublishProfiles* , indipendentemente dal fatto che siano inclusi nel progetto.
 
@@ -255,7 +255,7 @@ Un file *. pubxml* contiene le impostazioni relative a un profilo di pubblicazio
 
     ![Aprire il file con estensione pubxml](deploying-to-production/_static/image13.png)
 3. Fare clic con il pulsante destro del mouse su *Production. pubxml* e scegliere **Apri**.
-4. Aggiungere le righe seguenti immediatamente prima dell'elemento di chiusura `PropertyGroup`:
+4. Aggiungere le righe seguenti immediatamente prima dell'elemento di chiusura `PropertyGroup` :
 
     [!code-xml[Main](deploying-to-production/samples/sample3.xml)]
 
@@ -265,20 +265,20 @@ Un file *. pubxml* contiene le impostazioni relative a un profilo di pubblicazio
 
     Per ulteriori informazioni su come escludere file e cartelle, vedere è [possibile escludere specifici file o cartelle dalla distribuzione?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) nelle **domande frequenti sulla distribuzione Web per Visual Studio e ASP.NET** su MSDN.
 
-### <a name="deploy-to-production"></a>Distribuzione nell'ambiente di produzione
+### <a name="deploy-to-production"></a>Distribuire nell'ambiente di produzione
 
-1. Aprire la procedura guidata **Pubblica sito Web** assicurarsi che sia selezionato il profilo di pubblicazione di **produzione** , quindi fare clic su **Avvia anteprima** nella scheda **Anteprima** per verificare che il file *robots. txt* non venga copiato nell'app di produzione.
+1. Aprire la procedura guidata **Pubblica sito Web** assicurarsi che sia selezionato il profilo di pubblicazione di **produzione** , quindi fare clic su **Avvia anteprima** nella scheda **anteprima** per verificare che il file di *robots.txt* non verrà copiato nell'app di produzione.
 
     ![Anteprima dei file da pubblicare in produzione](deploying-to-production/_static/image14.png)
 
-    Esaminare l'elenco dei file che verranno copiati. Si noterà che tutti i file con estensione *CS* , inclusi i file con *estensione aspx.cs*, *aspx.designer.cs*, *master.cs*e *master.designer.cs* , vengono omessi. Tutto questo codice è stato compilato nei file *ContosoUniversity. dll* e *ContosoUniversity. pdb* disponibili nella cartella *bin* . Poiché è necessaria solo la *dll* per eseguire l'applicazione ed è stato specificato in precedenza che devono essere distribuiti solo i file necessari per eseguire l'applicazione, nessun file con *estensione cs* è stato copiato nell'ambiente di destinazione. La cartella *obj* e i file *ContosoUniversity. csproj* e *. csproj. User* vengono omessi per lo stesso motivo.
+    Esaminare l'elenco dei file che verranno copiati. Si noterà che tutti i file con estensione *CS* , inclusi i file con *estensione aspx.cs*, *aspx.designer.cs*, *master.cs*e *master.designer.cs* , vengono omessi. Tutto questo codice è stato compilato nei file *ContosoUniversity.dll* e *ContosoUniversity. pdb* disponibili nella cartella *bin* . Poiché è necessaria solo la *dll* per eseguire l'applicazione ed è stato specificato in precedenza che devono essere distribuiti solo i file necessari per eseguire l'applicazione, nessun file con *estensione cs* è stato copiato nell'ambiente di destinazione. La cartella *obj* e i file *ContosoUniversity. csproj* e *. csproj. User* vengono omessi per lo stesso motivo.
 
     Fare clic su **pubblica** per eseguire la distribuzione nell'ambiente di produzione.
 2. Eseguire il test nell'ambiente di produzione, seguendo la stessa procedura usata per la gestione temporanea.
 
-    Tutto è identico alla gestione temporanea, ad eccezione dell'URL e dell'assenza del file *robots. txt* .
+    Tutto è identico alla gestione temporanea, ad eccezione dell'URL e dell'assenza del file *robots.txt* .
 
-## <a name="summary"></a>Riepilogo
+## <a name="summary"></a>Summary
 
 L'app Web è stata distribuita e testata correttamente ed è disponibile pubblicamente su Internet.
 
@@ -287,12 +287,12 @@ L'app Web è stata distribuita e testata correttamente ed è disponibile pubblic
 Nell'esercitazione successiva si aggiornerà il codice dell'applicazione e si distribuirà la modifica negli ambienti di test, gestione temporanea e produzione.
 
 > [!NOTE]
-> Mentre l'applicazione è in uso nell'ambiente di produzione, è necessario implementare un piano di ripristino. Ovvero, è necessario eseguire periodicamente il backup dei database dall'app di produzione in una posizione di archiviazione sicura ed è necessario mantenere diverse generazioni di tali backup. Quando si aggiorna il database, è consigliabile eseguire una copia di backup immediatamente prima della modifica. Quindi, se si commette un errore e non lo si rileva fino a quando non viene distribuito nell'ambiente di produzione, sarà comunque possibile ripristinare il database allo stato in cui si trovava prima che venisse danneggiato. Per ulteriori informazioni, vedere [Backup e ripristino del database SQL di Azure](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
+> Mentre l'applicazione è in uso nell'ambiente di produzione, è necessario implementare un piano di ripristino. Ovvero, è necessario eseguire periodicamente il backup dei database dall'app di produzione in una posizione di archiviazione sicura ed è necessario mantenere diverse generazioni di tali backup. Quando si aggiorna il database, è consigliabile eseguire una copia di backup immediatamente prima della modifica. Quindi, se si commette un errore e non lo si rileva fino a quando non viene distribuito nell'ambiente di produzione, sarà comunque possibile ripristinare il database allo stato in cui si trovava prima che venisse danneggiato. Per altre informazioni, vedere [backup e ripristino del database SQL di Azure](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
 > 
 > 
 > [!NOTE]
 > In questa esercitazione l'edizione SQL Server in cui si esegue la distribuzione è il database SQL di Azure. Anche se il processo di distribuzione è simile ad altre edizioni di SQL Server, un'applicazione di produzione reale potrebbe richiedere codice speciale per il database SQL di Azure in alcuni scenari. Per altre informazioni, vedere [uso del database SQL di Azure](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb) e [scelta tra SQL Server e il database SQL di Azure](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing).
 > 
 > [!div class="step-by-step"]
-> [Precedente](setting-folder-permissions.md)
-> [Successivo](deploying-a-code-update.md)
+> [Precedente](setting-folder-permissions.md) 
+>  [Avanti](deploying-a-code-update.md)

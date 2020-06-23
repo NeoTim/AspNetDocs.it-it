@@ -8,12 +8,12 @@ ms.date: 02/20/2013
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: ce98effe18dd739504fb0d5453bae8a46c3ba102
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ab75218cbe3817c14a064e9816388aebc7e431f7
+ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78557862"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85240566"
 ---
 # <a name="windows-azure-authentication"></a>Autenticazione di Windows Azure
 
@@ -25,7 +25,7 @@ di [Rick Anderson](https://twitter.com/RickAndMSFT)
 >
 > Per informazioni dettagliate su come configurare la sincronizzazione tra il Active Directory locale e il tenant di Windows Azure Active Directory, vedere [usare AD FS 2,0 per implementare e gestire Single Sign-on](https://technet.microsoft.com/library/jj205462.aspx).
 >
-> Windows Azure Active Directory è attualmente disponibile come [servizio in anteprima gratuita](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+> Windows Azure Active Directory è attualmente disponibile come [servizio in anteprima gratuita](https://azure.microsoft.com/free/dotnet/).
 
 ## <a name="requirements"></a>Requisiti:
 
@@ -65,7 +65,7 @@ Se non si dispone dei privilegi di amministratore globale per il tenant di Windo
 ![](windows-azure-authentication/_static/image6.png)
 
 Nella finestra di dialogo verranno visualizzati il **dominio**, l' **ID dell'entità applicazione** e l' **URL di risposta** necessari per il provisioning dell'applicazione con un Azure Active Directory principio. È necessario fornire queste informazioni a un utente che dispone di privilegi sufficienti per eseguire il provisioning dell'applicazione. Per informazioni dettagliate su come usare il cmdlet per creare manualmente l'entità servizio, vedere[come implementare Single Sign-on con l'applicazione Windows Azure Active Directory-ASP.NET](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) .
-Una volta eseguito correttamente il provisioning dell'applicazione, è possibile fare clic su **continua per aggiornare il file Web. config con le impostazioni selezionate**. Se si desidera continuare a sviluppare l'applicazione in attesa del provisioning, è possibile fare clic su **Chiudi per ricordare le impostazioni nel file di progetto**. La volta successiva che si richiama Abilita autenticazione di Microsoft Azure e si deseleziona la casella di controllo provisioning, verranno visualizzate le stesse impostazioni ed è possibile fare clic su **continua**, quindi su **Applica queste impostazioni in Web. config**.
+Una volta eseguito correttamente il provisioning dell'applicazione, è possibile fare clic su **continua per aggiornare web.config con le impostazioni selezionate**. Se si desidera continuare a sviluppare l'applicazione in attesa del provisioning, è possibile fare clic su **Chiudi per ricordare le impostazioni nel file di progetto**. La volta successiva che si richiama Abilita autenticazione di Microsoft Azure e si deseleziona la casella di controllo provisioning, verranno visualizzate le stesse impostazioni ed è possibile fare clic su **continua**, quindi su **Applica queste impostazioni in web.config**.
 
 1. Attendere che l'applicazione sia configurata per l'autenticazione di Windows Azure ed eseguito il provisioning con Windows Azure Active Directory.
 2. Una volta abilitata l'autenticazione di Windows Azure per l'applicazione, fare clic su **Chiudi:**
@@ -85,9 +85,9 @@ Una volta eseguito correttamente il provisioning dell'applicazione, è possibile
 
 L'abilitazione dell'autenticazione di Windows Azure apporta le seguenti modifiche all'applicazione:
 
-- Al progetto viene aggiunta una classe anti-cross-site request falsificazione ([CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))) ( *app\_Start\AntiXsrfConfig.cs* ).
-- Il `System.IdentityModel.Tokens.ValidatingIssuerNameRegistry` pacchetti NuGet viene aggiunto al progetto.
-- Le impostazioni di Windows Identity Foundation nell'applicazione verranno configurate in modo da accettare i token di sicurezza dal tenant di Windows Azure Active Directory. Fare clic sull'immagine seguente per visualizzare una visualizzazione espansa delle modifiche apportate al file *Web. config* .
+- Al progetto viene aggiunta una classe anti-cross-site request falsificazione ([CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))) ( *app \_ Start\AntiXsrfConfig.cs* ).
+- I pacchetti NuGet `System.IdentityModel.Tokens.ValidatingIssuerNameRegistry` vengono aggiunti al progetto.
+- Le impostazioni di Windows Identity Foundation nell'applicazione verranno configurate in modo da accettare i token di sicurezza dal tenant di Windows Azure Active Directory. Fare clic sull'immagine seguente per visualizzare una visualizzazione espansa delle modifiche apportate al file *Web.config* .
 
      ![](windows-azure-authentication/_static/image9.png)
 - Verrà eseguito il provisioning di un'entità servizio per l'applicazione nel tenant di Windows Azure Active Directory.
