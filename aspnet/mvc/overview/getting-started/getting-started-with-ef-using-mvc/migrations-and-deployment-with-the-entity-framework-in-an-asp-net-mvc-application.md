@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 21a3efa865e5b5498dfb0f2adec199800fc70c58
-ms.sourcegitcommit: a4c3c7e04e5f53cf8cd334f036d324976b78d154
+ms.openlocfilehash: 2f3a6d57a7963eb7aafde62e344ae6b970af87e2
+ms.sourcegitcommit: 8d34fb54e790cfba2d64097afc8276da5b22283e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84172971"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85484230"
 ---
 # <a name="tutorial-use-ef-migrations-in-an-aspnet-mvc-app-and-deploy-to-azure"></a>Esercitazione: usare migrazioni di EF in un'app MVC ASP.NET e distribuirle in Azure
 
@@ -41,10 +41,10 @@ Quando si sviluppa una nuova applicazione, il modello di dati cambia di frequent
 
 Questo metodo che consiste nel mantenere il database sincronizzato con il modello di dati funziona bene fino a quando non si distribuisce l'applicazione nell'ambiente di produzione. Quando l'applicazione è in esecuzione nell'ambiente di produzione, in genere archivia i dati che si desidera mantenere e non si desidera perdere tutto ogni volta che viene apportata una modifica, ad esempio l'aggiunta di una nuova colonna. La funzionalità [migrazioni Code First](https://msdn.microsoft.com/data/jj591621) risolve questo problema abilitando Code First per aggiornare lo schema del database anziché eliminare e ricreare il database. In questa esercitazione l'applicazione verrà distribuita e verrà preparata per consentire le migrazioni.
 
-1. Disabilitare l'inizializzatore configurato in precedenza impostando come commento o eliminando l' `contexts` elemento aggiunto al file Web. config dell'applicazione.
+1. Disabilitare l'inizializzatore configurato in precedenza impostando come commento o eliminando l' `contexts` elemento aggiunto al file di Web.config dell'applicazione.
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.xml?highlight=2,6)]
-2. Inoltre, nel file *Web. config* dell'applicazione, modificare il nome del database nella stringa di connessione in ContosoUniversity2.
+2. Inoltre, nel file di *Web.config* dell'applicazione, modificare il nome del database nella stringa di connessione in ContosoUniversity2.
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.xml?highlight=2)]
 
@@ -129,7 +129,7 @@ Fino a questo punto l'applicazione è stata eseguita localmente in IIS Express n
 
 ### <a name="use-code-first-migrations-to-deploy-the-database"></a>Usare migrazioni di Code First per distribuire il database
 
-Per distribuire il database, si utilizzerà Migrazioni Code First. Quando si crea il profilo di pubblicazione usato per configurare le impostazioni per la distribuzione da Visual Studio, selezionare una casella di controllo con l'etichetta **Aggiorna database**. Questa impostazione fa in modo che il processo di distribuzione configuri automaticamente il file *Web. config* dell'applicazione nel server di destinazione in modo che Code First usi la `MigrateDatabaseToLatestVersion` classe inizializzatore.
+Per distribuire il database, si utilizzerà Migrazioni Code First. Quando si crea il profilo di pubblicazione usato per configurare le impostazioni per la distribuzione da Visual Studio, selezionare una casella di controllo con l'etichetta **Aggiorna database**. Questa impostazione fa in modo che il processo di distribuzione configuri automaticamente il file dell'applicazione *Web.config* nel server di destinazione in modo che Code First utilizzi la `MigrateDatabaseToLatestVersion` classe inizializzatore.
 
 Visual Studio non esegue alcuna operazione con il database durante il processo di distribuzione durante la copia del progetto nel server di destinazione. Quando si esegue l'applicazione distribuita e si accede al database per la prima volta dopo la distribuzione, Code First controlla se il database corrisponde al modello di dati. In caso di mancata corrispondenza, Code First crea automaticamente il database (se non esiste già) o aggiorna lo schema del database alla versione più recente (se esiste un database ma non corrisponde al modello). Se l'applicazione implementa un metodo Migrations `Seed` , il metodo viene eseguito dopo la creazione del database o l'aggiornamento dello schema.
 
@@ -138,7 +138,7 @@ Il metodo Migrations `Seed` inserisce i dati di test. Se si esegue la distribuzi
 ### <a name="get-an-azure-account"></a>Ottenere un account Azure
 
 È necessario un account Azure. Se non si dispone già di una sottoscrizione di Visual Studio, è possibile [attivare i vantaggi della sottoscrizione](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/
-). In caso contrario, è possibile creare un account di valutazione gratuito in pochi minuti. Per informazioni dettagliate, vedere [versione di valutazione gratuita di Azure](https://azure.microsoft.com/free/).
+). In caso contrario, è possibile creare un account di valutazione gratuito in pochi minuti. Per informazioni dettagliate, vedere la pagina relativa alla [versione di valutazione gratuita di Azure](https://azure.microsoft.com/free/dotnet/).
 
 ### <a name="create-a-web-site-and-a-sql-database-in-azure"></a>Creare un sito Web e un database SQL in Azure
 
@@ -196,15 +196,15 @@ Il database verrà distribuito nel database SQL di Azure. Il database SQL è un 
 
     L'app è ora in esecuzione nel cloud.
 
-A questo punto, il database *schoolContext* è stato creato nel database SQL di Azure perché è stata selezionata l'opzione **Esegui migrazioni Code First (esecuzione all'avvio dell'app)**. Il file *Web. config* nel sito Web distribuito è stato modificato in modo che l'inizializzatore [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) venga eseguito la prima volta che il codice legge o scrive i dati nel database, che si è verificato quando è stata selezionata la scheda **students (studenti** ):
+A questo punto, il database *schoolContext* è stato creato nel database SQL di Azure perché è stata selezionata l'opzione **Esegui migrazioni Code First (esecuzione all'avvio dell'app)**. Il file *Web.config* nel sito Web distribuito è stato modificato in modo che l'inizializzatore [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) venga eseguito la prima volta che il codice legge o scrive i dati nel database, che si è verificato quando è stata selezionata la scheda **students (studenti** ):
 
-![Estratto del file Web. config](https://asp.net/media/4367421/mig.png)
+![Estratto del file di Web.config](https://asp.net/media/4367421/mig.png)
 
 Il processo di distribuzione ha creato anche una nuova stringa di connessione *(schoolContext \_ DatabasePublish*) per migrazioni Code First da usare per l'aggiornamento dello schema del database e il seeding del database.
 
-![Stringa di connessione nel file Web. config](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image26.png)
+![Stringa di connessione nel file di Web.config](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image26.png)
 
-È possibile trovare la versione distribuita del file Web. config nel computer in uso in *ContosoUniversity\obj\Release\Package\PackageTmp\Web.config*. È possibile accedere al file *Web. config* distribuito utilizzando FTP. Per istruzioni, vedere [distribuzione Web ASP.NET con Visual Studio: distribuzione di un aggiornamento del codice](xref:web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update). Seguire le istruzioni che iniziano con "per usare uno strumento FTP, sono necessari tre elementi: l'URL FTP, il nome utente e la password".
+È possibile trovare la versione distribuita del file di Web.config nel computer in uso *ContosoUniversity\obj\Release\Package\PackageTmp\Web.config*. È possibile accedere al file di *Web.config* distribuito utilizzando FTP. Per istruzioni, vedere [distribuzione Web ASP.NET con Visual Studio: distribuzione di un aggiornamento del codice](xref:web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update). Seguire le istruzioni che iniziano con "per usare uno strumento FTP, sono necessari tre elementi: l'URL FTP, il nome utente e la password".
 
 > [!NOTE]
 > L'app Web non implementa la sicurezza, pertanto chiunque trovi l'URL può modificare i dati. Per istruzioni su come proteggere il sito Web, vedere [distribuire un'app ASP.NET MVC sicura con appartenenza, OAuth e database SQL in Azure](/aspnet/core/security/authorization/secure-data). È possibile impedire ad altri utenti di usare il sito arrestando il servizio usando il portale di gestione o **Esplora server** di Azure in Visual Studio.
@@ -213,7 +213,7 @@ Il processo di distribuzione ha creato anche una nuova stringa di connessione *(
 
 ## <a name="advanced-migrations-scenarios"></a>Scenari di migrazioni avanzate
 
-Se si distribuisce un database eseguendo automaticamente le migrazioni come illustrato in questa esercitazione e si distribuisce in un sito Web in esecuzione su più server, è possibile ottenere più server che tentano di eseguire le migrazioni nello stesso momento. Poiché le migrazioni sono atomiche, se due server tentano di eseguire la stessa migrazione, ne verrà eseguita una e l'altra avrà esito negativo (presupponendo che le operazioni non possano essere eseguite due volte). In questo scenario, se si desidera evitare questi problemi, è possibile chiamare le migrazioni manualmente e configurare il proprio codice in modo che venga eseguito una sola volta. Per ulteriori informazioni, vedere [esecuzione e creazione di script delle migrazioni dal codice](http://romiller.com/2012/02/09/running-scripting-migrations-from-code/) nel Blog di Rowan Miller ed eseguire la migrazione di [. exe](/ef/ef6/modeling/code-first/migrations/migrate-exe) (per l'esecuzione di migrazioni dalla riga di comando).
+Se si distribuisce un database eseguendo automaticamente le migrazioni come illustrato in questa esercitazione e si distribuisce in un sito Web in esecuzione su più server, è possibile ottenere più server che tentano di eseguire le migrazioni nello stesso momento. Poiché le migrazioni sono atomiche, se due server tentano di eseguire la stessa migrazione, ne verrà eseguita una e l'altra avrà esito negativo (presupponendo che le operazioni non possano essere eseguite due volte). In questo scenario, se si desidera evitare questi problemi, è possibile chiamare le migrazioni manualmente e configurare il proprio codice in modo che venga eseguito una sola volta. Per ulteriori informazioni, vedere [esecuzione e creazione di script delle migrazioni dal codice](http://romiller.com/2012/02/09/running-scripting-migrations-from-code/) nel Blog di Rowan Miller e [Migrate.exe](/ef/ef6/modeling/code-first/migrations/migrate-exe) (per l'esecuzione di migrazioni dalla riga di comando).
 
 Per informazioni su altri scenari di migrazione, vedere la [serie di screencast sulle migrazioni](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx).
 
