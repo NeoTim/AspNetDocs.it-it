@@ -130,7 +130,7 @@ Di seguito è riportato un esempio di risposta JSON:
 <a id="limiting_query_options"></a>
 ## <a name="limiting-the-query-options"></a>Limitazione delle opzioni di query
 
-Le opzioni di query offrono al client un elevato controllo sulla query eseguita sul server. In alcuni casi, potrebbe essere necessario limitare le opzioni disponibili per motivi di sicurezza o di prestazioni. L'attributo **[Queryable]** include alcune proprietà predefinite per questo oggetto. Di seguito sono riportati alcuni esempi.
+Le opzioni di query offrono al client un elevato controllo sulla query eseguita sul server. In alcuni casi, potrebbe essere necessario limitare le opzioni disponibili per motivi di sicurezza o di prestazioni. L'attributo **[Queryable]** include alcune proprietà predefinite per questo oggetto. Ecco alcuni esempi.
 
 Consenti solo $skip e $top, per supportare il paging e nient'altro:
 
