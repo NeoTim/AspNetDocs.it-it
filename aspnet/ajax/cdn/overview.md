@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: b66e812f0324be95effdd8d232baa6a59302b9df
-ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
+ms.openlocfilehash: 58e2d62da2181108f34bbf3e1e948977241e1dee
+ms.sourcegitcommit: b3c0e67bb231dbb0db9e8dfccd51cf715481edcc
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85240597"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88161357"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Rete per la distribuzione di contenuti Microsoft Ajax
 
@@ -163,6 +163,14 @@ La rete CDN ospita alcune delle librerie JavaScript più diffuse di terze parti.
 ### <a name="jquery-releases-on-the-cdn"></a>Versioni di jQuery sulla rete CDN
 
 Le versioni seguenti di jQuery sono ospitate nella rete CDN:
+
+#### <a name="jquery-version-351"></a>jQuery versione 3.5.1
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.map
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.min.map
 
 #### <a name="jquery-version-350"></a>versione jQuery 3.5.0
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.js
@@ -686,7 +694,7 @@ Le versioni seguenti del plug-in per i modelli jQuery sono ospitate nella rete C
 
 Nella rete CDN sono ospitate le versioni seguenti del plug-in per il ciclo jQuery. Fare clic su ogni collegamento per visualizzare l'elenco di file effettivo.
 
-- [Ciclo jQuery 2,99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
+- [jQuery Cycle 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
 - [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
 - [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery Cycle 2.88")
 
@@ -1204,7 +1212,7 @@ Nella rete [http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hamme
 Le versioni seguenti di ASP.NET AJAX Library sono ospitate nella rete CDN. Fare clic su ogni collegamento per visualizzare l'elenco di file effettivo.
 
 - [ASP.NET Web Forms e AJAX Version 4.5.2](cdnajax452.md "Web Forms ASP.NET e Ajax 4.5.2")
-- [ASP.NET Web Forms e AJAX versione 4](cdnajax4.md "Web Form ASP.NET e Ajax 4")
+- [ASP.NET Web Forms e AJAX versione 4](cdnajax4.md "Web Forms ASP.NET e Ajax 4")
 - [ASP.NET AJAX versione 3,5](cdnajax35.md "ASP.NET Ajax 3.5")
 
 <a id="ASPNET_MVC_Releases_on_the_CDN_16"></a>
