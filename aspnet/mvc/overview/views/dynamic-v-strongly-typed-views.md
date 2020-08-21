@@ -8,12 +8,12 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: 3e81c6381b1e280e3b74cb7eb6ea6e6c3224e655
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 30b84c71c86e455f15a659abf566750f1c6eea90
+ms.sourcegitcommit: feb88edfb01b32f6fc9488f0f0ddb3c5b34e6ff0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78538157"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702946"
 ---
 # <a name="dynamic-v-strongly-typed-views"></a>Confronto tra visualizzazioni dinamiche e fortemente tipizzate
 
@@ -22,7 +22,7 @@ di [Rick Anderson](https://twitter.com/RickAndMSFT)
 Esistono tre modi per passare le informazioni da un controller a una visualizzazione in ASP.NET MVC 3:
 
 1. Come oggetto modello fortemente tipizzato.
-2. Come tipo dinamico (usando @model dinamico)
+2. Come tipo dinamico (tramite @model Dynamic)
 3. Uso di ViewBag
 
 Ho scritto una semplice applicazione di Blog MVC 3 top per confrontare e contrapporre le visualizzazioni dinamiche e fortemente tipizzate. Il controller inizia con un semplice elenco di Blog:
@@ -56,5 +56,3 @@ Si noti che si tratta esattamente della stessa visualizzazione restituita (Blogs
 All'interno del nuovo modello di vista si ottiene il supporto IntelliSense.
 
 [![7002. IntelliSense [1]](dynamic-v-strongly-typed-views/_static/image8.png)](dynamic-v-strongly-typed-views/_static/image7.png)
-
-Il progetto c# può essere scaricato [qui](https://blogs.msdn.com/cfs-file.ashx/__key/CommunityServer-Blogs-Components-WeblogFiles/00-00-01-11-73-SSMS/1817.Mvc3ViewDemo.zip).
