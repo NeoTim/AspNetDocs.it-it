@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc7988e0c9802e8cd376396eb5da15b5393d6088
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: e11487cbb863bae230ccb9dfdaf7172c65ec4d43
+ms.sourcegitcommit: ffd0f59ef9b7d221a5b2010c32aa61c89c14f406
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78600450"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89042092"
 ---
 # <a name="understanding-models-views-and-controllers-vb"></a>Informazioni su modelli, visualizzazioni e controller (VB)
 
@@ -29,15 +29,15 @@ Dopo aver letto questa esercitazione, è necessario comprendere in che modo le d
 
 Il modello predefinito di Visual Studio per la creazione di applicazioni Web MVC ASP.NET include un'applicazione di esempio estremamente semplice che può essere usata per comprendere le diverse parti di un'applicazione MVC ASP.NET. Questa semplice applicazione verrà sfruttata in questa esercitazione.
 
-Per creare una nuova applicazione MVC ASP.NET con il modello MVC, avviare Visual Studio 2008 e selezionare il file dell'opzione di menu nuovo progetto (vedere la figura 1). Nella finestra di dialogo nuovo progetto selezionare il linguaggio di programmazione preferito in tipi di progetto ( C#Visual Basic o) e selezionare **applicazione Web MVC ASP.NET** in modelli. Fare clic sul pulsante OK.
+Per creare una nuova applicazione MVC ASP.NET con il modello MVC, avviare Visual Studio 2008 e selezionare il file dell'opzione di menu nuovo progetto (vedere la figura 1). Nella finestra di dialogo nuovo progetto selezionare il linguaggio di programmazione preferito in tipi di progetto (Visual Basic o C#) e selezionare **applicazione Web MVC ASP.NET** in modelli. Fare clic sul pulsante OK.
 
-[![finestra di dialogo nuovo progetto](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
+[![Finestra di dialogo nuovo progetto](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
 
 **Figura 01**: finestra di dialogo nuovo progetto ([fare clic per visualizzare l'immagine con dimensioni complete](understanding-models-views-and-controllers-vb/_static/image2.png))
 
 Quando si crea una nuova applicazione MVC ASP.NET, viene visualizzata la finestra di dialogo **Crea progetto di unit test** (vedere la figura 2). Questa finestra di dialogo consente di creare un progetto separato nella soluzione per il test dell'applicazione ASP.NET MVC. Selezionare l'opzione **No, non creare un progetto unit test** e fare clic sul pulsante **OK** .
 
-[Finestra di dialogo ![Crea unit test](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
+[![Finestra di dialogo Crea unit test](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
 
 **Figura 02**: finestra di dialogo Crea unit test ([fare clic per visualizzare l'immagine con dimensioni complete](understanding-models-views-and-controllers-vb/_static/image4.png))
 
@@ -45,7 +45,7 @@ Dopo la creazione della nuova applicazione MVC ASP.NET. Nella finestra Esplora s
 
 Se si espande la cartella controller, verrà visualizzato un file denominato AccountController. vb e un file denominato HomeController. vb. Se si espande la cartella Views, verranno visualizzate tre sottocartelle denominate account, Home e Shared. Se si espande la cartella Home, verranno visualizzati due file aggiuntivi denominati about. aspx e index. aspx (vedere la figura 3). Questi file costituiscono l'applicazione di esempio inclusa nel modello MVC ASP.NET predefinito.
 
-[![finestra Esplora soluzioni](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
+[![Finestra Esplora soluzioni](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
 
 **Figura 03**: finestra Esplora soluzioni ([fare clic per visualizzare l'immagine con dimensioni complete](understanding-models-views-and-controllers-vb/_static/image6.png))
 
@@ -53,13 +53,13 @@ Se si espande la cartella controller, verrà visualizzato un file denominato Acc
 
 Quando si esegue un'applicazione ASP.NET per la prima volta, viene visualizzata la finestra di dialogo nella figura 4 che consiglia di abilitare la modalità di debug. Fare clic sul pulsante OK. l'applicazione viene eseguita.
 
-[![finestra di dialogo debug non abilitato](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
+[![Finestra di dialogo debug non abilitato](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
 
 **Figura 04**: finestra di dialogo debug non abilitato ([fare clic per visualizzare l'immagine con dimensioni complete](understanding-models-views-and-controllers-vb/_static/image8.png))
 
 Quando si esegue un'applicazione MVC ASP.NET, Visual Studio avvia l'applicazione nel Web browser. L'applicazione di esempio è costituita solo da due pagine: la pagina di indice e la pagina informazioni su. Quando l'applicazione viene avviata per la prima volta, viene visualizzata la pagina di indice (vedere la figura 5). È possibile passare alla pagina about facendo clic sul collegamento di menu in alto a destra nell'applicazione.
 
-[![pagina di indice](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
+[![Pagina di indice](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
 
 **Figura 05**: pagina di indice ([fare clic per visualizzare l'immagine con dimensioni complete](understanding-models-views-and-controllers-vb/_static/image10.png))
 
@@ -85,7 +85,7 @@ Il routing ASP.NET usa una tabella di route per gestire le richieste in ingresso
 
 [!code-vb[Main](understanding-models-views-and-controllers-vb/samples/sample1.vb)]
 
-Quando un'applicazione ASP.NET viene avviata per la prima volta, viene chiamato il metodo Start () dell'\_applicazione. Nel listato 1, questo metodo chiama il metodo RegisterRoutes () e il metodo RegisterRoutes () crea la tabella di route predefinita.
+Quando un'applicazione ASP.NET viene avviata per la prima volta, \_ viene chiamato il metodo di avvio dell'applicazione (). Nel listato 1, questo metodo chiama il metodo RegisterRoutes () e il metodo RegisterRoutes () crea la tabella di route predefinita.
 
 La tabella di route predefinita è costituita da una route. Questa route predefinita interrompe tutte le richieste in ingresso in tre segmenti (un segmento URL è qualsiasi elemento tra le barre). Il primo segmento viene mappato a un nome di controller, il secondo segmento viene mappato a un nome di azione e il segmento finale viene mappato a un parametro passato all'azione denominata ID.
 
@@ -111,15 +111,15 @@ Controller = dipendente
 
 Action = indice
 
-ID =
+ID =?
 
-Infine, se si apre un'applicazione MVC ASP.NET senza specificare alcun URL (ad esempio, `http://localhost`), l'URL viene analizzato come segue:
+Infine, se si apre un'applicazione MVC ASP.NET senza specificare alcun URL (ad esempio), `http://localhost` l'URL viene analizzato come segue:
 
-controller = Home
+Controller = Home
 
 Action = indice
 
-ID =
+ID =?
 
 La richiesta viene instradata all'azione index () nella classe HomeController.
 
@@ -127,7 +127,7 @@ La richiesta viene instradata all'azione index () nella classe HomeController.
 
 Un controller è responsabile del controllo del modo in cui un utente interagisce con un'applicazione MVC. Un controller contiene la logica di controllo di flusso per un'applicazione MVC ASP.NET. Un controller determina quale risposta restituire a un utente quando un utente effettua una richiesta del browser.
 
-Un controller è semplicemente una classe (ad esempio, un Visual Basic o C# una classe). L'applicazione ASP.NET MVC di esempio include un controller denominato HomeController. vb che si trova nella cartella Controllers. Il contenuto del file HomeController. vb viene riprodotto nel listato 2.
+Un controller è semplicemente una classe, ad esempio una Visual Basic o una classe C#. L'applicazione ASP.NET MVC di esempio include un controller denominato HomeController. vb che si trova nella cartella Controllers. Il contenuto del file HomeController. vb viene riprodotto nel listato 2.
 
 **Listato 2-HomeController.cs**
 
@@ -159,7 +159,7 @@ Il file nel listato 3 contiene la visualizzazione About. aspx.
 
 Se si ignora la prima riga del listato 3, la maggior parte del resto della vista è costituita da HTML standard. È possibile modificare il contenuto della visualizzazione immettendo il codice HTML desiderato.
 
-Una visualizzazione è molto simile a una pagina in Active Server pagine o Web Form ASP.NET. Una vista può contenere contenuto HTML e script. È possibile scrivere gli script nel linguaggio di programmazione .NET preferito, C# ad esempio o Visual Basic .NET. Usare gli script per visualizzare contenuto dinamico, ad esempio dati del database.
+Una visualizzazione è molto simile a una pagina in Active Server pagine o Web Form ASP.NET. Una vista può contenere contenuto HTML e script. È possibile scrivere gli script nel linguaggio di programmazione .NET preferito, ad esempio C# o Visual Basic .NET. Usare gli script per visualizzare contenuto dinamico, ad esempio dati del database.
 
 ## <a name="understanding-models"></a>Informazioni sui modelli
 

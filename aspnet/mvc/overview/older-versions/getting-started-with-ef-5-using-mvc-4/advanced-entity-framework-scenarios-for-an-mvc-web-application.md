@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f8f079f6d8ea663c6888456be422a2bae93a4b87
-ms.sourcegitcommit: c9d9210e0d16fbb3829b7688cfb832dc263c79cc
+ms.openlocfilehash: 85dd59016d904a9f654c438db977b5ae2c0187d2
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "86163583"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89045052"
 ---
 # <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Scenari di Entity Framework avanzati per un'applicazione Web MVC (10 di 10)
 
@@ -191,7 +191,7 @@ In *Controllers/CourseController*sostituire il `Index` metodo con il codice segu
 
 Impostare ora un punto di interruzione in *GenericRepository.cs* in `return query.ToList();` e le `return orderBy(query).ToList();` istruzioni del `Get` metodo. Eseguire il progetto in modalità di debug e selezionare la pagina relativa all'indice del corso. Quando il codice raggiunge il punto di interruzione, esaminare la `query` variabile. Viene visualizzata la query inviata a SQL Server. Si tratta di una semplice `Select` istruzione:
 
-[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample14.json)]
+[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample14.sql)]
 
 ![](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image12.png)
 
@@ -219,7 +219,7 @@ Con i punti di interruzione ancora impostati nella `GenericRepository` classe, e
 
 Questa volta il primo punto di interruzione sarà per la query Departments per l'elenco a discesa. Ignorarlo e visualizzare la `query` variabile la volta successiva che il codice raggiunge il punto di interruzione per visualizzare l' `Course` aspetto della query. Verrà visualizzata una schermata simile alla seguente:
 
-[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample17.json)]
+[!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample17.sql)]
 
 Si può notare che la query è ora una `JOIN` query che carica i `Department` dati insieme ai `Course` dati e che include una `WHERE` clausola.
 

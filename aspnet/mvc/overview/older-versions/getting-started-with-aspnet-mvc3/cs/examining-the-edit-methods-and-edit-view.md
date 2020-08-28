@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: 1d266bf0-a61e-423b-a3d2-13773d7dafe2
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 0fb3d3cf6c1f4634834aaac1e9170218ca5730bb
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: baa300c66bfae9fe602a8fe597e21b0abbaf3a63
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "86163719"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89044987"
 ---
 # <a name="examining-the-edit-methods-and-edit-view-c"></a>Analisi dei metodi di modifica e della visualizzazione di modifica (C#)
 
@@ -137,7 +137,7 @@ Eseguire l'applicazione e passare a */Movies/SearchIndex*. Accodare una stringa 
 
 Se si modifica la firma del `SearchIndex` metodo in modo che disponga di un parametro denominato `id` , il `id` parametro corrisponderà al `{id}` segnaposto per le route predefinite impostate nel file *Global. asax* .
 
-[!code-json[Main](examining-the-edit-methods-and-edit-view/samples/sample11.json)]
+[!code-json[Main](examining-the-edit-methods-and-edit-view/samples/sample11.txt)]
 
 Il `SearchIndex` metodo modificato avrà un aspetto simile al seguente:
 

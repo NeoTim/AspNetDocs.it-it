@@ -8,12 +8,12 @@ ms.date: 02/16/2008
 ms.assetid: c28ba88d-3a93-47f5-a306-049bd766714d
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f02728ed248f29b09d654e509977ed43889cbb83
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: a07d15cb14e9ef90b62c5a8702dee53f1a0a6032
+ms.sourcegitcommit: 4e6d586faadbe4d9ef27122f86335ec9385134af
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78541307"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89044666"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>Panoramica delle visualizzazioni ASP.NET MVC (VB)
 
@@ -81,9 +81,9 @@ Si noti che il corpo della pagina HTML nel listato 2 contiene lo script seguente
 
 &lt;% Response. Write (DateTime. Now)%&gt;
 
-Per contrassegnare l'inizio e la fine di uno script, è possibile utilizzare i delimitatori di script &lt;% e%&gt;. Questo script è scritto in Visual Basic. Visualizza la data e l'ora correnti chiamando il metodo Response. Write () per eseguire il rendering del contenuto nel browser. È possibile utilizzare i delimitatori di script &lt;% e%&gt; per eseguire una o più istruzioni.
+Usare i delimitatori di script &lt; % e% &gt; per contrassegnare l'inizio e la fine di uno script. Questo script è scritto in Visual Basic. Visualizza la data e l'ora correnti chiamando il metodo Response. Write () per eseguire il rendering del contenuto nel browser. È possibile utilizzare i delimitatori &lt; di script% e% &gt; per eseguire una o più istruzioni.
 
-Poiché si chiama Response. Write () in modo frequente, Microsoft fornisce un collegamento per chiamare il metodo Response. Write (). La vista nel listato 3 USA i delimitatori &lt;% = e%&gt; come collegamento per chiamare Response. Write ().
+Poiché si chiama Response. Write () in modo frequente, Microsoft fornisce un collegamento per chiamare il metodo Response. Write (). La visualizzazione in Listing 3 USA i delimitatori &lt; % = e% &gt; come collegamento per la chiamata di Response. Write ().
 
 **Listato 3-Views\Home\Index2.aspx**
 
@@ -101,13 +101,13 @@ Ad esempio, la vista nel listato 4 sfrutta i vantaggi di tre helper HTML, ovvero
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
-[![finestra di dialogo nuovo progetto](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
+[![Finestra di dialogo relativa al nuovo progetto](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **Figura 01**: form di accesso standard ([fare clic per visualizzare l'immagine con dimensioni complete](asp-net-mvc-views-overview-vb/_static/image2.png))
 
 Tutti i metodi helper HTML vengono chiamati sulla proprietà HTML della vista. Ad esempio, si esegue il rendering di una casella di testo chiamando il metodo HTML. TextBox ().
 
-Si noti che è possibile utilizzare i delimitatori di script &lt;% = e%&gt; quando si chiamano gli helper HTML. TextBox () e HTML. password (). Questi helper restituiscono semplicemente una stringa. È necessario chiamare Response. Write () per eseguire il rendering della stringa nel browser.
+Si noti che si usano i delimitatori di script &lt; % = e% &gt; quando si chiamano gli helper HTML. TextBox () e HTML. password (). Questi helper restituiscono semplicemente una stringa. È necessario chiamare Response. Write () per eseguire il rendering della stringa nel browser.
 
 L'uso di metodi helper HTML è facoltativo. Semplificano la vita riducendo la quantità di codice HTML e script che è necessario scrivere. La visualizzazione nel listato 5 esegue il rendering dello stesso formato della vista nel listato 4 senza usare gli helper HTML.
 
@@ -133,7 +133,7 @@ La vista nel listato 7 recupera il messaggio dai dati della vista e ne esegue il
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample7.aspx)]
 
-Si noti che la vista sfrutta il metodo di supporto HTML HTML. Encode () durante il rendering del messaggio. L'helper HTML HTML. Encode () codifica i caratteri speciali, ad esempio &lt; e &gt; in caratteri che possono essere visualizzati in modo sicuro in una pagina Web. Quando si esegue il rendering del contenuto inviato da un utente a un sito Web, è necessario codificare il contenuto per impedire attacchi intrusivi in JavaScript.
+Si noti che la vista sfrutta il metodo di supporto HTML HTML. Encode () durante il rendering del messaggio. L'helper HTML HTML. Encode () codifica i caratteri speciali, ad esempio &lt; e, &gt; in caratteri che possono essere visualizzati in modo sicuro in una pagina Web. Quando si esegue il rendering del contenuto inviato da un utente a un sito Web, è necessario codificare il contenuto per impedire attacchi intrusivi in JavaScript.
 
 Poiché il messaggio è stato creato in ProductController, non è necessario codificare il messaggio. Tuttavia, è consigliabile chiamare sempre il metodo HTML. Encode () quando viene visualizzato contenuto recuperato dalla vista dati all'interno di una vista.
 
@@ -146,5 +146,5 @@ Nel listato 7 sono stati usati i dati di visualizzazione per passare un semplice
 Questa esercitazione ha fornito una breve introduzione alle viste MVC ASP.NET, alla visualizzazione dei dati e agli helper HTML. Nella prima sezione si è appreso come aggiungere nuove visualizzazioni al progetto. Si è appreso che è necessario aggiungere una visualizzazione alla cartella corretta per poterla chiamare da un particolare controller. Successivamente, è stato illustrato l'argomento degli helper HTML. Si è appreso come gli helper HTML consentono di generare facilmente contenuto HTML standard. Infine, si è appreso come sfruttare i vantaggi dei dati di visualizzazione per passare dati da un controller a una vista.
 
 > [!div class="step-by-step"]
-> [Precedente](passing-data-to-view-master-pages-cs.md)
-> [Successivo](creating-custom-html-helpers-vb.md)
+> [Precedente](passing-data-to-view-master-pages-cs.md) 
+>  [Avanti](creating-custom-html-helpers-vb.md)
