@@ -8,22 +8,24 @@ ms.date: 01/28/2011
 ms.assetid: 1febce65-cdd4-47da-bdb5-1e6022ccd20a
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 769484ee505599eef48ff4a106ddd4f7ec7d99af
-ms.sourcegitcommit: 0cf7d06071a8ff986e6c028ac9daf0c0e7490412
+ms.openlocfilehash: 41cf393f307808e457e0ab2529129ca8ecbc3b5d
+ms.sourcegitcommit: dfd3ce87ffc9e3a7076f8252abb5d5d6b991333b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85240727"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89449704"
 ---
 # <a name="mobile-apps--sites-with-aspnet"></a>App per dispositivi mobili & siti con ASP.NET
 
 ## <a name="develop-mobile-apps"></a>Sviluppare app per dispositivi mobili
 
-### <a name="cloud-connected-mobile-apps---create-a-web-service-with-azure-web-apps-and-webjobspart-1"></a>[App per dispositivi mobili connesse al cloud: creare un servizio Web con app Web e processi Web di Azure](https://msdn.microsoft.com/magazine/mt185572)(parte 1)
+### <a name="cloud-connected-mobile-apps"></a>App per dispositivi mobili connesse al cloud
+
+[Parte 1: creare un servizio Web con app Web e processi Web di Azure](https://msdn.microsoft.com/magazine/mt185572)
 
 Nella prima parte di un articolo in due parti, gli autori esaminano alcuni dei problemi relativi alla creazione di un back-end cloud che aggrega ed elabora i dati e li fornisce ai client mobili.
 
-### <a name="cloud-connected-mobile-apps---build-a-xamarin-app-with-authentication-and-offline-supportpart-2"></a>App [per dispositivi mobili connesse al cloud: creare un'app Novell con autenticazione e supporto offline](https://msdn.microsoft.com/magazine/mt422581.aspx)(parte 2)
+[Parte 2: creare un'app Novell con autenticazione e supporto offline](https://msdn.microsoft.com/magazine/mt422581.aspx)
 
 Nel secondo articolo della serie, gli autori discutono del modo in cui usano Novell per la destinazione di più piattaforme client mobili e illustrano come implementare l'autenticazione e mantenere una cache lato client sincronizzata dei dati.
 
