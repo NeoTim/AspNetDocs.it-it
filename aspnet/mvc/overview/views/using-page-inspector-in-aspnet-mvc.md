@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 5da3e142c52a770f59222c21d9f9a53cbbdbf498
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 42d5683ce75467a159c9d13edf302bd6bf24a11d
+ms.sourcegitcommit: 45754124123403520b9fa2e706a4d1292494159b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78538017"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643689"
 ---
 # <a name="using-page-inspector-in-aspnet-mvc"></a>Utilizzo di Controllo pagina in ASP.NET MVC
 
@@ -53,7 +53,7 @@ Controllo pagina viene fornito con Microsoft Web Developer Tools. La versione pi
 
 ## <a name="create-a-web-application"></a>Creare un'applicazione Web
 
-Per prima cosa, creare un'applicazione Web che si userà Controllo pagina con. In Visual Studio scegliere **File** &gt; **nuovo progetto**. A sinistra espandere **C#Visual**, selezionare **Web**e quindi selezionare **ASP.NET MVC4 Web Application**.
+Per prima cosa, creare un'applicazione Web che si userà Controllo pagina con. In Visual Studio scegliere **File** &gt; **Nuovo progetto**. A sinistra espandere **Visual C#**, selezionare **Web**e quindi selezionare **ASP.NET MVC4 Web Application**.
 
 ![Nuova applicazione MVC ASP.NET](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
@@ -111,23 +111,23 @@ Controllo pagina consente di trovare il markup il cui percorso potrebbe non esse
 
 Per verificarlo, fare clic su **Controlla** , quindi scorrere fino alla fine della pagina nella finestra controllo pagina.
 
-Quando si sposta il puntatore del mouse nell'area del piè di pagina, Controllo pagina apre il file \_layout. cshtml ed evidenzia la sezione della pagina di layout selezionata. Come si può notare, il piè di pagina è definito nel file di layout e non nella vista stessa.
+Quando si sposta il puntatore del mouse nell'area del piè di pagina, Controllo pagina apre il \_ file layout. cshtml ed evidenzia la sezione della pagina di layout selezionata. Come si può notare, l'area del piè di pagina viene definita nel file di layout e non nella vista stessa.
 
 ![Piè di pagina](using-page-inspector-in-aspnet-mvc/_static/image16.png)
 
-Spostare il puntatore del mouse sulla riga con la nota sul <a id="a"> </a>copyright. Nella pagina \_layout. cshtml la riga corrispondente è evidenziata.
+Spostare il puntatore del mouse sulla riga con la nota sul copyright <a id="a"></a> . Nella \_ pagina layout. cshtml viene evidenziata la riga corrispondente.
 
 ![Linea di copyright del piè di pagina evidenziata](using-page-inspector-in-aspnet-mvc/_static/image18.png)
 
-Aggiungere testo alla fine della riga nel file \_layout. cshtml.
+Aggiungere testo alla fine della riga nel \_ file layout. cshtml.
 
-&lt;p&gt;copia &amp;; @DateTime.Now.Year-My ASP.NET MVC Application Rocks!&lt;/p&gt;
+&lt;p &gt; &amp; copy; @DateTime.Now.Year -My ASP.NET MVC Application Rocks! &lt; /p&gt;
 
 A questo punto, premere CTRL + ALT + INVIO oppure fare clic sulla barra di aggiornamento per visualizzare i risultati nella finestra del browser Controllo pagina.
 
 ![My ASP.NET Application Rocks!](using-page-inspector-in-aspnet-mvc/_static/image20.png)
 
-Il piè di pagina è stato definito in index. cshtml, ma si è rivelato che si trovava nel \_layout. cshtml ed è stato individuato da Controllo pagina.
+Si potrebbe pensare che il piè di pagina definito in index. cshtml, ma si è rivelato nel \_ layout. cshtml e controllo pagina trovato per l'utente.
 
 <a id="_inspection_mode_and_1"></a><a id="_6_inspection_mode"></a>
 
@@ -143,7 +143,7 @@ Spostare quindi il puntatore del mouse nella finestra **HTML** . Quando si spost
 
 ![Finestra HTML](using-page-inspector-in-aspnet-mvc/_static/image22.png)
 
-Come in precedenza, Controllo pagina apre il file layout. cshtml di \_in una scheda temporanea. fare clic sulla scheda \_layout. cshtml Temporary e il markup corrispondente verrà evidenziato nella sezione&gt; intestazione &lt;:
+Come prima, Controllo pagina apre il \_ file layout. cshtml in una scheda temporanea. fare clic sulla \_ scheda layout. cshtml Temporary e il markup corrispondente verrà evidenziato nella &lt; &gt; sezione Header:
 
 ![Markup evidenziato](using-page-inspector-in-aspnet-mvc/_static/image24.png)
 
@@ -187,7 +187,7 @@ Nella finestra **stili** vengono visualizzate tutte le regole CSS per questo ele
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image32.png)
 
-Modificare ora il valore di `background-color` in "Red". La modifica viene visualizzata immediatamente nel browser Controllo pagina.
+A questo punto, modificare il valore di `background-color` in "Red". La modifica viene visualizzata immediatamente nel browser Controllo pagina.
 
 ![](using-page-inspector-in-aspnet-mvc/_static/image34.png)
 
@@ -196,7 +196,7 @@ Modificare ora il valore di `background-color` in "Red". La modifica viene visua
 
 L'editor CSS in Visual Studio 2012 dispone di una selezione colori che semplifica la scelta e l'inserimento dei colori. La selezione colori include una tavolozza di colori standard, supporta i nomi di colore standard, i codici hash, i colori RGB, RGBA, HSL e HSLA e mantiene un elenco dei colori usati più di recente nel documento.
 
-Nella sezione precedente è stato modificato il valore della proprietà `background-color`. Per richiamare la selezione colori, posizionare il punto di inserimento dopo il nome della proprietà e digitare **#** o **RGB (** .
+Nella sezione precedente è stato modificato il valore della `background-color` Proprietà. Per richiamare la selezione colori, posizionare il punto di inserimento dopo il nome e il tipo della proprietà **#** oppure **RGB (**.
 
 ![Barra di selezione colori CSS](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 
@@ -236,7 +236,7 @@ Con la versione 1,3, Controllo pagina ora possibile eseguire il mapping degli el
 > [!NOTE]
 > Il modello di SPA richiede l'aggiornamento di [ASP.NET and Web Tools 2012,2](https://go.microsoft.com/fwlink/?LinkId=282650) .
 
-In Visual Studio scegliere **File** &gt; **nuovo progetto**. A sinistra espandere **C#Visual**, selezionare **Web**e quindi selezionare **ASP.NET MVC4 Web Application**. Fare clic su **OK**.
+In Visual Studio scegliere **File** &gt; **Nuovo progetto**. A sinistra espandere **Visual C#**, selezionare **Web**e quindi selezionare **ASP.NET MVC4 Web Application**. Fare clic su **OK**.
 
 Nella finestra di dialogo **nuovo progetto MVC 4 ASP.NET** selezionare **applicazione a pagina singola**.
 
