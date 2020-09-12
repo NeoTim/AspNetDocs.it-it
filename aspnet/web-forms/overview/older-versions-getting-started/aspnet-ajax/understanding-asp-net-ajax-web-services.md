@@ -9,10 +9,10 @@ ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
 ms.openlocfilehash: eac3d53fd871d0cb5a2870488ce752c057cc5b1a
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.sourcegitcommit: 45754124123403520b9fa2e706a4d1292494159b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
+ms.lasthandoff: 09/12/2020
 ms.locfileid: "86162822"
 ---
 # <a name="understanding-aspnet-ajax-web-services"></a>Informazioni sui servizi Web di ASP.NET AJAX
