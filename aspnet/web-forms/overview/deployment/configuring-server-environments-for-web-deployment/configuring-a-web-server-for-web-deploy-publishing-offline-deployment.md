@@ -8,22 +8,22 @@ ms.date: 05/04/2012
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f93cf11085fb19afb97b71aca8f638bd88fe658b
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: ed11720e6ea00df22f58d9afd32ccce95a5d1a60
+ms.sourcegitcommit: 4ed0b65ae32d9f35e42ee6296b877747e063df4d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78547782"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90609658"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>Configurazione di un server Web per la pubblicazione con Distribuzione Web (distribuzione offline)
 
 di [Jason Lee](https://github.com/jrjlee)
 
-[Scaricare PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
+[Scarica il PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > In questo argomento viene descritto come configurare un server Web IIS per supportare la pubblicazione e la distribuzione Web offline.
 > 
-> Quando si utilizza Distribuzione Web lo strumento di distribuzione Web Internet Information Services (IIS) 2,0 o versione successiva, è possibile utilizzare tre approcci principali per ottenere le applicazioni o i siti in un server Web. È possibile:
+> Quando si utilizza Distribuzione Web lo strumento di distribuzione Web Internet Information Services (IIS) 2,0 o versione successiva, è possibile utilizzare tre approcci principali per ottenere le applicazioni o i siti in un server Web. È possibile scegliere:
 > 
 > - Utilizzare il *servizio distribuzione Web agente remoto*. Questo approccio richiede una minore configurazione del server Web, ma è necessario fornire le credenziali di un amministratore del server locale per distribuire qualsiasi elemento al server.
 > - Utilizzare il *gestore distribuzione Web*. Questo approccio è molto più complesso e richiede un impegno iniziale maggiore per la configurazione del server Web. Tuttavia, quando si utilizza questo approccio, è possibile configurare IIS in modo da consentire agli utenti non amministratori di eseguire la distribuzione. Il gestore Distribuzione Web è disponibile solo in IIS 7 o versioni successive.
@@ -66,7 +66,7 @@ In questo caso, è necessario installare questi elementi:
 
 - **Configurazione consigliata di IIS 7**. In questo modo viene abilitato il ruolo **server Web (IIS)** nel server Web e viene installato il set di moduli e componenti di IIS necessari per ospitare un'applicazione ASP.NET.
 - **.NET Framework 4,0**. Questa operazione è necessaria per eseguire le applicazioni compilate in questa versione del .NET Framework.
-- **Strumento di distribuzione Web 2,1 o versione successiva**. Viene installato Distribuzione Web (e il relativo eseguibile sottostante, MSDeploy. exe) nel server. Distribuzione Web si integra con IIS e consente di importare ed esportare pacchetti Web.
+- **Strumento di distribuzione Web 2,1 o versione successiva**. Viene installato Distribuzione Web (e il relativo eseguibile sottostante MSDeploy.exe) nel server. Distribuzione Web si integra con IIS e consente di importare ed esportare pacchetti Web.
 - **ASP.NET MVC 3**. In questo modo vengono installati gli assembly necessari per eseguire le applicazioni MVC 3.
 
 > [!NOTE]
@@ -91,13 +91,13 @@ In questo caso, è necessario installare questi elementi:
 7. Nel riquadro di spostamento fare clic su **Server**.
 8. Nella riga **configurazione consigliata di IIS 7** fare clic su **Aggiungi**.
 9. Nella riga **dello strumento di distribuzione Web 2,1** fare clic su **Aggiungi**.
-10. Fare clic su **Installa**. Nell'installazione guidata piattaforma Web verrà visualizzato un elenco di prodotti&#x2014;insieme alle dipendenze&#x2014;associate da installare e verrà richiesto di accettare le condizioni di licenza.
+10. Fare clic su **Installa**. Nell'installazione guidata piattaforma Web verrà visualizzato un elenco di prodotti&#x2014;insieme a eventuali dipendenze associate&#x2014;da installare e verrà richiesto di accettare le condizioni di licenza.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
 11. Esaminare le condizioni di licenza e, se si accettano le condizioni, fare clic su **Accetto**.
 12. Al termine dell'installazione, fare clic su **fine**e chiudere la finestra **installazione guidata piattaforma Web 3,0** .
 
-Se è stato installato il .NET Framework 4,0 prima di installare IIS, è necessario eseguire lo [strumento di registrazione di ASP.NET IIS](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (ASPNET\_regiis. exe) per registrare la versione più recente di ASP.NET con IIS. Se non si esegue questa operazione, si noterà che IIS fornirà contenuto statico (ad esempio i file HTML) senza problemi, ma restituirà l' **errore HTTP 404,0 – non trovato** quando si tenta di passare al contenuto di ASP.NET. È possibile utilizzare la procedura seguente per assicurarsi che ASP.NET 4,0 sia registrato.
+Se è stato installato il .NET Framework 4,0 prima di installare IIS, è necessario eseguire lo [strumento di registrazione di ASP.NET IIS](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (ASPNET \_regiis.exe) per registrare la versione più recente di ASP.NET con IIS. Se non si esegue questa operazione, si noterà che IIS fornirà contenuto statico (ad esempio i file HTML) senza problemi, ma restituirà l' **errore HTTP 404,0 – non trovato** quando si tenta di passare al contenuto di ASP.NET. È possibile utilizzare la procedura seguente per assicurarsi che ASP.NET 4,0 sia registrato.
 
 **Per registrare ASP.NET 4,0 con IIS**
 
@@ -127,7 +127,7 @@ Sebbene non si stiano impedendo la distribuzione del contenuto nel sito Web pred
 **Per creare e configurare un sito Web IIS**
 
 1. Nella file system locale creare una cartella in cui archiviare il contenuto, ad esempio **C:\DemoSite**.
-2. Dal menu **Start** scegliere **strumenti di amministrazione**, quindi fare clic su **Gestione Internet Information Services (IIS)** .
+2. Dal menu **Start** scegliere **strumenti di amministrazione**, quindi fare clic su **Gestione Internet Information Services (IIS)**.
 3. Nel riquadro **connessioni** di gestione IIS espandere il nodo del server (ad esempio, **PROWEB1**).
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image3.png)
@@ -154,9 +154,9 @@ Sebbene non si stiano impedendo la distribuzione del contenuto nel sito Web pred
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > Il primo binding del sito consente di accedere al sito localmente usando l'indirizzo IP e la porta o `http://localhost:85`. Il secondo binding del sito consente di accedere al sito da altri computer del dominio usando il nome del computer, ad esempio http://proweb1:85).
+    > Il primo binding del sito consente di accedere al sito localmente usando l'indirizzo IP e la porta o `http://localhost:85` . Il secondo binding del sito consente di accedere al sito da altri computer del dominio usando il nome del computer, ad esempio http://proweb1:85) .
 13. Nella finestra di dialogo **Binding sito** fare clic su **Chiudi**.
-14. Nel riquadro **connessioni** fare clic su **pool di applicazioni**.
+14. Nel riquadro **Connessioni** fare clic su **Pool di applicazioni**.
 15. Nel riquadro **pool di applicazioni** fare clic con il pulsante destro del mouse sul nome del pool di applicazioni e quindi scegliere **impostazioni di base**. Per impostazione predefinita, il nome del pool di applicazioni corrisponderà al nome del sito Web (ad esempio, **DemoSite**).
 16. Nell'elenco **.NET Framework versione** selezionare **.NET Framework v 4.0.30319**, quindi fare clic su **OK**.
 
@@ -165,14 +165,14 @@ Sebbene non si stiano impedendo la distribuzione del contenuto nel sito Web pred
     > [!NOTE]
     > Per la soluzione di esempio è necessario .NET Framework 4,0. Questo non è un requisito per Distribuzione Web in generale.
 
-Per consentire al sito Web di gestire il contenuto, l'identità del pool di applicazioni deve disporre delle autorizzazioni di lettura per la cartella locale in cui è archiviato il contenuto. In IIS 7,5, i pool di applicazioni vengono eseguiti con un'identità del pool di applicazioni univoca per impostazione predefinita, a differenza delle versioni precedenti di IIS, in cui i pool di applicazioni vengono in genere eseguiti utilizzando l'account servizio di rete. L'identità del pool di applicazioni non è un account utente reale e non viene invece visualizzata in alcun elenco di utenti&#x2014;o gruppi, viene creata dinamicamente all'avvio del pool di applicazioni. Ogni identità del pool di applicazioni viene aggiunta al gruppo di sicurezza **IIS\_IUSRS** locale come elemento nascosto.
+Per consentire al sito Web di gestire il contenuto, l'identità del pool di applicazioni deve disporre delle autorizzazioni di lettura per la cartella locale in cui è archiviato il contenuto. In IIS 7,5, i pool di applicazioni vengono eseguiti con un'identità del pool di applicazioni univoca per impostazione predefinita, a differenza delle versioni precedenti di IIS, in cui i pool di applicazioni vengono in genere eseguiti utilizzando l'account servizio di rete. L'identità del pool di applicazioni non è un account utente reale e non viene visualizzata in alcun elenco di utenti o gruppi&#x2014;viene invece creata dinamicamente all'avvio del pool di applicazioni. Ogni identità del pool di applicazioni viene aggiunta al gruppo di sicurezza **IIS \_ IUSRS** locale come elemento nascosto.
 
 Per concedere autorizzazioni a un'identità del pool di applicazioni in un file o una cartella, sono disponibili due opzioni:
 
-- Assegnare direttamente le autorizzazioni all'identità del pool di applicazioni utilizzando il formato <strong>IIS AppPool\</strong ><em>[nome pool di applicazioni]</em>(ad esempio, <strong>IIS AppPool\DemoSite</strong>).
-- Assegnare le autorizzazioni al gruppo **IUSRS di IIS\_** .
+- Assegnare direttamente le autorizzazioni all'identità del pool di applicazioni, utilizzando il formato **IIS AppPool \( nome pool di applicazioni)** (ad esempio, **IIS AppPool\DemoSite**).
+- Assegnare le autorizzazioni al gruppo **IIS \_ IUSRS** .
 
-L'approccio più comune consiste nell'assegnare autorizzazioni al gruppo **IIS\_IUSRS** locale, poiché questo approccio consente di modificare i pool di applicazioni senza riconfigurare le autorizzazioni di file System. Nella procedura successiva viene utilizzato questo approccio basato sui gruppi.
+L'approccio più comune consiste nell'assegnare autorizzazioni al gruppo **IIS \_ IUSRS** locale, poiché questo approccio consente di modificare i pool di applicazioni senza riconfigurare le autorizzazioni file System. Nella procedura successiva viene utilizzato questo approccio basato sui gruppi.
 
 > [!NOTE]
 > Per altre informazioni sulle identità del pool di applicazioni in IIS 7,5, vedere [identità del pool di applicazioni](https://go.microsoft.com/?linkid=9805123).
@@ -180,14 +180,14 @@ L'approccio più comune consiste nell'assegnare autorizzazioni al gruppo **IIS\_
 **Per configurare le autorizzazioni delle cartelle per un sito Web IIS**
 
 1. In Esplora risorse passare al percorso della cartella locale.
-2. Fare clic con il pulsante destro del mouse sulla cartella, quindi scegliere **Proprietà**.
+2. Fare clic con il pulsante destro del mouse sulla cartella e scegliere **Proprietà**.
 3. Nella scheda **Security** fare clic su **Edit** e quindi su **Add**.
 4. Fare clic su **Località**. Nella finestra di dialogo **percorsi** selezionare il server locale e quindi fare clic su **OK**.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
-5. Nella finestra di dialogo **Seleziona utenti o gruppi** digitare **IIS\_IUSRS**, fare clic su **Controlla nomi**, quindi fare clic su **OK**.
-6. Nella finestra di dialogo <strong>autorizzazioni per</strong><em>[nome cartella]</em> si noti che al nuovo gruppo sono state assegnate le autorizzazioni <strong>lettura &amp; Esegui</strong>, <strong>Elenca contenuto cartella</strong>e <strong>lettura</strong> per impostazione predefinita. Lasciare invariato e fare clic su <strong>OK</strong>.
-7. Fare clic su <strong>OK</strong> per chiudere la finestra di dialogo<strong>proprietà</strong> <em>[nome cartella]</em>.
+5. Nella finestra di dialogo **Seleziona utenti o gruppi** digitare **IIS \_ IUSRS**, fare clic su **Controlla nomi**, quindi fare clic su **OK**.
+6. Nella finestra di dialogo **autorizzazioni per (nome cartella)** , si noti che al nuovo gruppo sono state assegnate le autorizzazioni **lettura & esecuzione**, **visualizzazione contenuto cartella**e **lettura** per impostazione predefinita. Lasciare invariato e fare clic su **OK**.
+7. Fare clic su **OK** per chiudere la finestra di dialogo **Proprietà (nome cartella)** .
 
 ## <a name="disable-the-remote-agent-service"></a>Disabilitare il servizio agente remoto
 
@@ -210,7 +210,7 @@ Quando si installa Distribuzione Web, il servizio Deployment Agent Web viene ins
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image10.png)
 
-## <a name="conclusion"></a>Conclusione
+## <a name="conclusion"></a>Conclusioni
 
 A questo punto, il server Web è pronto per la distribuzione di pacchetti Web offline. Prima di provare a importare i pacchetti Web in un sito Web IIS, è consigliabile controllare questi punti chiave:
 
@@ -219,5 +219,5 @@ A questo punto, il server Web è pronto per la distribuzione di pacchetti Web of
 - Il servizio Web Deployment Agent è stato arrestato?
 
 > [!div class="step-by-step"]
-> [Precedente](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-> [Successivo](configuring-a-database-server-for-web-deploy-publishing.md)
+> [Precedente](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md) 
+>  [Avanti](configuring-a-database-server-for-web-deploy-publishing.md)
