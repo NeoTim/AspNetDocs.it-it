@@ -10,10 +10,10 @@ ms.assetid: 50e6e62b-e72e-4a29-8293-4b67377bd21f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/supporting-odata-query-options
 msc.type: authoredcontent
 ms.openlocfilehash: 96820fab7ac89885058962f44ded86cb0184ee97
-ms.sourcegitcommit: ce28244209db8615bc9bdd576a2e2c88174d318d
+ms.sourcegitcommit: 4ed0b65ae32d9f35e42ee6296b877747e063df4d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 10/05/2020
 ms.locfileid: "86188625"
 ---
 # <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>Supporto delle opzioni di query OData in API Web ASP.NET 2
@@ -81,12 +81,12 @@ L'opzione $top indica il numero massimo di voci da restituire e l'opzione $skip 
 
 L'opzione $filter consente a un client di filtrare i risultati applicando un'espressione booleana. Le espressioni di filtro sono piuttosto potenti. sono inclusi operatori logici e aritmetici, funzioni stringa e funzioni di data.
 
-| Restituisce tutti i prodotti con categoria uguale a "Toys". | `http://localhost/Products?$filter=Category`EQ ' Toys ' |
+| Restituisce tutti i prodotti con categoria uguale a "Toys". | `http://localhost/Products?$filter=Category` EQ ' Toys ' |
 | --- | --- |
-| Restituisce tutti i prodotti con prezzo inferiore a 10. | `http://localhost/Products?$filter=Price`lt 10 |
-| Operatori logici: restituisce tutti i prodotti in cui Price >= 5 e Price <= 15. | `http://localhost/Products?$filter=Price`GE 5 e Price le 15 |
+| Restituisce tutti i prodotti con prezzo inferiore a 10. | `http://localhost/Products?$filter=Price` lt 10 |
+| Operatori logici: restituisce tutti i prodotti in cui Price >= 5 e Price <= 15. | `http://localhost/Products?$filter=Price` GE 5 e Price le 15 |
 | Funzioni stringa: restituisce tutti i prodotti con "ZZ" nel nome. | `http://localhost/Products?$filter=substringof('zz',Name)` |
-| Funzioni di data: restituiscono tutti i prodotti con rilasciato dopo 2005. | `http://localhost/Products?$filter=year(ReleaseDate)`gt 2005 |
+| Funzioni di data: restituiscono tutti i prodotti con rilasciato dopo 2005. | `http://localhost/Products?$filter=year(ReleaseDate)` gt 2005 |
 
 **Ordinamento**
 
@@ -130,7 +130,7 @@ Di seguito è riportato un esempio di risposta JSON:
 <a id="limiting_query_options"></a>
 ## <a name="limiting-the-query-options"></a>Limitazione delle opzioni di query
 
-Le opzioni di query offrono al client un elevato controllo sulla query eseguita sul server. In alcuni casi, potrebbe essere necessario limitare le opzioni disponibili per motivi di sicurezza o di prestazioni. L'attributo **[Queryable]** include alcune proprietà predefinite per questo oggetto. Ecco alcuni esempi.
+Le opzioni di query offrono al client un elevato controllo sulla query eseguita sul server. In alcuni casi, potrebbe essere necessario limitare le opzioni disponibili per motivi di sicurezza o di prestazioni. L'attributo **[Queryable]** include alcune proprietà predefinite per questo oggetto. Di seguito sono riportati alcuni esempi.
 
 Consenti solo $skip e $top, per supportare il paging e nient'altro:
 
